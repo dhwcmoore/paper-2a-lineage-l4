@@ -63,3 +63,5 @@ document/*.xdv
 legacy/exactness-2026/verified_mutation_results.json
 
 __pycache__/
+legacy/exactness-2026/audit_walkthrough
+release/artifacts/

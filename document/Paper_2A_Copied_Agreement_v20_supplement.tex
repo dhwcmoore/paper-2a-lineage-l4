@@ -1,10 +1,11 @@
-% Paper 2A, version 19 (4 October 2026). Springer svjour3 class, prepared for
+% Paper 2A, version 20 (4 October 2026). Springer svjour3 class, prepared for
 % the International Journal on Software Tools for Technology Transfer (STTT).
 % Compile with pdflatex, bibtex, pdflatex, pdflatex. Requires svjour3.cls,
-% svglov3.clo, spbasic.bst, and Paper_2A_Copied_Agreement_v19.bib in the same folder.
+% svglov3.clo, spbasic.bst, and Paper_2A_Copied_Agreement_v20.bib in the same folder.
 \RequirePackage{fix-cm}
 \documentclass[smallextended,envcountsect,envcountsame,natbib]{svjour3}
 \smartqed
+\setcitestyle{numbers,square}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
@@ -29,21 +30,21 @@
 
 \begin{document}
 
-\title{Copied Agreement: Lineage-Grounded Audits of\\ Claim Preservation in Data Migration}
-\titlerunning{Copied Agreement}
+\title{Complete technical supplement to Copied Agreement: Lineage-Grounded Audits of\\ Claim Preservation in Data Migration}
+\titlerunning{Copied Agreement: complete supplement}
 \author{Duston Moore}
 \authorrunning{D. Moore}
 \institute{D. Moore \at
   Independent researcher, Edmonton, Alberta, Canada\\
-  ORCID: 0009-0008-1103-9652
-  % \\ \email{add contact address here}
+  ORCID: 0009-0008-1103-9652\\
+  \email{dhwcmoore@gmail.com}
 }
-\date{Received: date / Accepted: date}
+\date{Version 20 technical supplement, 4 October 2026}
 
 \maketitle
 
 \begin{abstract}
-Equal outputs before and after a schema migration can reproduce a common error when the target is populated from an inadequate source. The audit given here separates three questions: whether the endpoints determine a claim, whether they agree on an exhibited carrier of migrated records, and whether they agree with a claim-relevant valuation whose production path is recorded. Four auditable conditions on a declared lineage graph expose production-path dependencies relevant to independent corroboration. Two are disclosure conditions: a shared dependency can be recorded while its defeater remains open. A countermodel shows a proposed ground satisfying the first three conditions while laundering shared coordinate ancestry. The fourth condition exposes that ancestry, and a fibre test decides whether the retained ground values factor through the retained ancestry values on the carrier. In a synthetic tax-jurisdiction migration with 1,728 seam records, endpoint comparison finds 48 disagreements, while comparison with delivery evidence finds 74 grounding witnesses. On 26 of these records both endpoints agree and both are wrong, found even though the old endpoint already fails to determine the claim. For a stably bound fixed ground, two lineage conditions compose across consecutive steps; the other two require stated ancestry conditions or a fresh outer audit. The fibre and seam lemmas are mechanised in Coq; the seam checks and the lineage and fibre decision cores are proved and extracted to OCaml behind tested wrappers. Positive assurance remains conditional on model relevance, carrier and lineage coverage, source fidelity, resolved defeaters, and custody.
+Equal outputs before and after a schema migration can reproduce a common error when the target is populated from an inadequate source. In a synthetic tax-jurisdiction migration of 1,728 records, comparing old and new flags finds 48 disagreements. Comparing both flags with separately recorded delivery evidence finds 74 affected records, including 26 where the flags agree and both are wrong. The proposed audit separates whether the available inputs determine the promised claim, whether endpoint results agree, and whether those results are supported by relevant evidence. Four checks on a declared production graph expose copying and shared dependencies. Counterexamples show why a passing graph check still cannot establish that an evaluator actually uses its independent evidence. A finite test diagnoses when ground values can be reconstructed from shared inputs; its limitations are explicit. For a fixed ground, two graph conditions compose across migration steps, while two require additional ancestry conditions or a fresh audit. Coq proofs support the core results and extracted OCaml checks. An executable walkthrough and a measured synthetic scaling experiment show how to apply the audit and where its cost grows. Positive assurance still requires adequate evaluators, faithful evidence, sufficient coverage, resolved concerns and accountable custody.
 \keywords{Data migration \and Data lineage \and Provenance \and Test oracles \and Assurance cases \and Coq}
 \end{abstract}
 
@@ -58,15 +59,32 @@ The audit developed here asks whether the inputs determine the promised claim, w
 \]
 is the recurring counterexample. It records a delivery to municipality~5 in zone~2, but the backfill assigns zone~2's primary municipality. On this row the old flag and the copied new flag agree. A separately recorded delivery scan identifies municipality~5 and shows that their common result rests on the wrong jurisdiction. The paper reuses this row to separate four questions: whether the old observation can determine the jurisdictional claim, whether the old and new coordinates agree, whether a separately produced seam valuation agrees with them, and whether that valuation's production path is independent of both coordinates. Section~\ref{ex:sec:case} gives the complete executable case and its counts.
 
+The essential comparison is already visible on the complete synthetic carrier: endpoint comparison finds 48 disagreements; the delivery-based ground finds 74 affected records, including 26 on which the endpoints agree. Table~\ref{ex:tab:opening-control} shows the recurring record. The charged rate of 60 matches the old zone-based lookup and the copied new municipality, but the delivery municipality requires 70. Equal flags therefore miss this record. These counts measure findings on a declared synthetic model; they are neither an industrial error rate nor evidence that the ground is infallible.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The recurring backfill record: charged rate 60, zone 2, delivery municipality 5, general goods, before the change.}\label{ex:tab:opening-control}
+\begin{tabularx}{\textwidth}{@{}LLL@{}}
+\toprule
+Evaluation & Required rate & Correct-rate flag \\
+\midrule
+Old zone lookup & 60 & True \\
+New copied municipality & 60 & True \\
+Delivery-based ground & 70 & False \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
 The distinction has a philosophical provenance, but none of the formal results depends on it.\footnote{A Whiteheadian motivation is that symbolic systems can remain internally orderly after their relation to the process has become defective, and that a settled record is not identical with the process from which it was produced \citep{whitehead1927symbolism,whitehead1929}. The engineering development replaces that motivation with tests stated in factorisation, provenance, lineage, coverage, and custody.}
 
 \paragraph{Audience and practical rule.} The primary audience is data engineers, auditors, and formal-methods researchers who are responsible for claims, not merely records, that must survive a migration. The governing rule is that endpoint equality is not evidence that a claim survived a migration unless three conditions hold: the relevant observation surfaces determine the claim, the migration seam is exhibited with declared coverage, and the seam valuation has a production path that neither descends from either coordinate nor silently reuses their shared ancestry. Each obligation is developed separately, so that a failed claim has a location and a repair.
 
 \paragraph{Contributions.} The paper makes four contributions. First, it decomposes claim preservation through migration into endpoint determination, seam coherence on an exhibited carrier, and grounded coherence against a lineage-qualified valuation, and it separates structural passing from certificate issuance (Sections~\ref{ex:sec:seams} and~\ref{ex:sec:evolution}). Second, it states lineage conditions (L1)--(L4) that make the production-path dependencies of a proposed ground auditable on a declared provenance graph. A countermodel shows that conditions on descent from the coordinates alone admit grounds that launder shared ancestry, and a fibre test detects extensional dependence on retained shared-ancestry values on a finite carrier (Section~\ref{ex:sec:laundering}). Third, it gives an exact composition analysis for a fixed ground: (L1) and (L4) compose across consecutive seams, while (L2) and (L3) carry over exactly under stated ancestry conditions, so a composite certificate needs either those conditions or a fresh outer audit (Section~\ref{ex:sec:lineage-composition}). Fourth, it supplies a Coq development of the exact core, extracted runtime checks, and a finite tax-jurisdiction audit in which the ground exposes 26 copied-agreement errors missed by endpoint comparison, with observational, stale-table, and backfill failures separated (Section~\ref{ex:sec:case}). The fibre criterion itself is a standard factorisation result; it serves as the observational baseline and is not claimed as a contribution.
 
-\paragraph{Relation to the calculus companion.} \emph{Grounded Transport} develops a proof-relevant rewriting calculus for the same setting: witness identity and composition, algebraic laws, erasure, scopes, contexts, and evidence-bearing assessment \citep{moore2026transport}. This paper develops the migration diagnosis, the case study, and the lineage conditions and their composition. The accompanying metric supplement keeps the bounded-error extensions separate from the exact audit. Composing already certified calculus witnesses does not establish that an unexamined outer coordinate pair satisfies the migration lineage conditions: the calculus carries supplied evidence, whereas this paper asks which evidence the migration must supply. The companion's pinned implementation checks (L1)--(L3), not (L4), and mechanises analogous fixed-ground composition results with different countermodels (Section~\ref{ex:sec:lineage-composition}). Each paper states the shared definitions it needs; their contributions and verification evidence are separate.
+\paragraph{Relation to the calculus companion.} \emph{Grounded Transport} studies proof-relevant rewriting, witness composition and evidence-bearing assessment \citep{moore2026transport}. The present paper studies migration diagnosis and which lineage obligations survive composition. Composing supplied calculus evidence does not establish the conditions of an unexamined outer migration. The companion and its L1--L3 implementation retain their own scope and verification records; the current audit adds L4 and the declared-graph results stated here.
 
-\paragraph{Scope.} The paper does not propose a general semantics for relational databases, a complete SQL-equivalence procedure, a probabilistic calibration theorem, or a proof that a concrete process has been exhaustively captured. Its mechanisation has three layers. The pinned baseline covers constructive exact factorisation, the seam grounding equations and their witness refutations, and certified evolution; exhibition and lineage enter its transport definition as abstract premises, and its finite factor-table checker and tax lineage audit are handwritten OCaml. The companion's separately pinned implementation mechanises the single-seam conditions (L1)--(L3), including the strengthened identity and directly raw ground cases \citep{moore2026transport}. The extension mechanises (L4) disclosure and its composition, the exact (L2) coverage and (L3) source-survival conditions, the paper's two finite countermodels, and a finite fibre checker with proved witness soundness, factor soundness, and non-certification on incomplete carriers. Its lineage and retained-value decision cores are extracted to OCaml; string encoding, retention validation, and output formatting remain handwritten and tested. The metric supplement and the assurance predicates lie outside the mechanisation.
+\paragraph{Scope.} The paper studies declared finite models and lineage records, rather than complete SQL semantics or industrial migration rates. Coq proves the factorisation, seam, lineage and composition claims identified in Appendix~\ref{ex:app:verification}. The lineage and retained-value fibre decision cores are extracted to OCaml. Their encoding, validation, diagnostic and presentation wrappers are tested. Actual coverage, source fidelity, evaluator adequacy and certificate issuance remain external obligations. The complete technical supplement retains the detailed proofs and verification maps; the independent calculus companion and historical records retain their own attribution.
 
 \paragraph{Organisation.} Section~\ref{ex:sec:related} relates the audit to migration testing, differential testing, truth discovery, and provenance. Section~\ref{ex:sec:static} states the static baseline and the vocabulary of application warrant. Section~\ref{ex:sec:seams} introduces the migration seam, grounding, and the lineage conditions, and Section~\ref{ex:sec:evolution} treats evolution and composition. Section~\ref{ex:sec:observational} describes how endpoint evidence enters the audit and gives the finite reference procedure. Section~\ref{ex:sec:case} works the tax case, Section~\ref{ex:sec:practice} gives the practical procedure, and Sections~\ref{ex:sec:limitations} and~\ref{ex:sec:conclusion} state limitations and conclude.
 
@@ -489,7 +507,7 @@ The ground is \emph{strictly separated} when $E_g=\emptyset$. Condition (L4) est
 \end{definition}
 
 \begin{definition}[Lineage qualification and clearance]\label{ex:def:lineage-qualified}
-An exhibited seam valuation is \emph{lineage-qualified} by $L$, written $\operatorname{LineageQualified}(\Phi_{R,t};L)$, when $\operatorname{LineageQualified}_{123}(\Phi_{R,t};L)$ and (L4) hold. This is the structural (L1)--(L4) status. It can hold with disclosed defeaters still open.
+An exhibited seam valuation is \emph{lineage-qualified} by $L$, written $\operatorname{LineageQualified}(\Phi_{R,t};L)$, when (L1)--(L3) and (L4) hold. This is the structural (L1)--(L4) status. It can hold with disclosed defeaters still open.
 
 For a declared claim and scope $C$, it is \emph{lineage-cleared}, written
 \[
@@ -564,7 +582,7 @@ Equivalently, for every $r\in R_t$,
 Status & Formal obligation & Record and institutional obligation \\
 \midrule
 Lineage-qualified & (L1)--(L4) pass on the declared graph & Exhibited valuation and source declarations; open (L2) and (L4) defeaters remain open \\
-Lineage-cleared & Lineage-qualified & Declared lineage defeaters resolved and lineage coverage closed for the claim and scope; source fidelity remains a premise \\
+Lineage-cleared & Lineage-qualified & Declared lineage defeaters resolved, lineage coverage closed and evaluator adequacy justified for the claim and scope; source fidelity remains a premise \\
 Groundedly coherent & Lineage-qualified ground and both grounding equations & Exhibited span and record; carrier and source fidelity remain stated premises \\
 Structurally transportable & Grounded coherence, inhabited carrier, endpoint admissibility, functorial evolution & Evidence bound to the same claim and declared interval \\
 Transportable for issuance & All structural obligations established & Declared defeaters and coverage gaps resolved; maintained evidence and authorised custody for the claim and use \\
@@ -908,6 +926,7 @@ A partial translation on $R'_t\subseteq R_t$ warrants only its declared coverage
 
 \paragraph{Static and operational lineage.} A declared pipeline graph describes intended production paths. Instrumented runtime events describe paths the instrumentation observed. The two records can disagree, and agreement between them still depends on coverage. In the synthetic migration, live geocoding and zone-derived backfill have different paths even where their flags match. The lineage audit checks supplied graphs and valuations; it cannot turn their declared edges into proof that no unrecorded write, manual override, or external correction occurred. An operational claim therefore needs both an account of intended dependency and a check on captured executions, with missing paths recorded as a limit.
 
+
 \section{Tax jurisdiction through a schema migration}\label{ex:sec:case}
 
 The synthetic tax case completes the running example by applying the static check, migration seam, translation, and lineage audit to the same records. Its tax rule and municipalities represent no actual jurisdiction, and all figures come from the accompanying OCaml program.
@@ -1046,6 +1065,26 @@ A real deployment introduces scale, partial coverage, concurrency, mutable sourc
 
 The case study is confined to the executable exact checks. The extended program implements (L4) disclosure and the Boolean retained-value fibre test. It checks neither metric inequalities nor the composition results. A metric production case would need an authorised tolerance, a measurement-error account, and a complete analysis of its declared fibres or a sound symbolic proof.
 
+\subsection{Measured scaling and limits of the application evidence}\label{ex:sec:scaling}
+The 48-versus-74 comparison establishes diagnostic value on one synthetic case. The graph-reference comparisons, fibre comparisons and mutation checks concern implementation correctness; they measure neither industrial throughput nor migration integration cost. To expose the current implementation's scaling, we measure its public OCaml wrappers on complete synthetic carriers, varying record count and graph size independently.
+
+The experiment crosses 32, 128 and 512 carrier records with 8, 16 and 32 total lineage nodes, two graph shapes, and three outcomes: a constant shared tuple and ground, an injective tuple with a factor entry for every record, and a shared-tuple collision with a disagreement in the first two records. The fan-out graph has shallow derived nodes with one shared status ancestor; its other nodes remain in the declared graph but outside that ancestry. The chain graph makes every intermediate derived node an ancestor of the shared status. Thus the shallow profile retains one tuple component, while the chain retains 3, 11 or 27; these profiles expose combined graph and tuple-width costs rather than isolate depth alone. All graphs satisfy L1--L4 with an open ground disposition. The injected early witness is known in advance and the returned factor sizes or witness identifiers are validated on every repetition.
+
+Each of the 54 configurations has an untimed warm-up and five timed serial repetitions. We time graph qualification separately from the complete retained-value wrapper; the latter includes its own graph check, input validation, pair search and factor presentation. Compilation, generated input construction and explicit pre-timing garbage collection are excluded. Timings include collection triggered during a call. The complete raw timings, medians, ranges, peak process memory and host information are supplied by \nolinkurl{experiments/run_scaling.py}. Table~\ref{ex:tab:scaling} reports representative medians; the supplement records all configurations.
+
+\input{scaling_v20_table.tex}
+
+\input{scaling_v20_result.tex}
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=\textwidth]{scaling_v20.pdf}
+\caption{Synthetic wrapper scaling. Left: complete constant-factor wrapper versus carrier size; right: graph qualification versus node count. Lines show medians; shading spans the five calls. The graph shapes differ in ancestry depth and retained-tuple width.}\label{ex:fig:scaling}
+\end{figure*}
+
+These measurements concern one host and synthetic inputs without database access, network traffic or pipeline instrumentation. They do not establish integration cost, effectiveness on operational migrations or an asymptotic complexity bound. A real migration study remains necessary to evaluate evidence collection, missed production paths and remediation effort. The paper's practical claim is a diagnosable assurance boundary with an executable finite audit; it does not claim industrial deployment.
+
+
 \section{Using the audit in practice}\label{ex:sec:practice}
 A migration assurance record can follow the checklist below; Table~\ref{ex:tab:audit-decisions} gives the stopping rule for each step.
 \begin{enumerate}
@@ -1059,6 +1098,27 @@ A migration assurance record can follow the checklist below; Table~\ref{ex:tab:a
 \end{enumerate}
 
 An open evidence condition is reported as open; it is not silently converted into a mathematical counterexample.
+
+\subsection{Executable walkthrough: from retained data to a repair}\label{ex:sec:walkthrough}
+The supplied example \nolinkurl{legacy/exactness-2026/audit_walkthrough.ml} binds the claim \code{request-effect}, scope \code{walkthrough-two-records}, coordinates $d_A,d_B$ and ground $g$. Its lineage input has raw nodes $a,h$, relevant source $h$, and edges
+\[
+a\to s,\quad s\to d_A,\quad s\to d_B,
+\quad s\to g,\quad h\to g.
+\]
+The shared status $s$ has a coordinate disclosure and an open ground defeater. The complete supplied carrier contains $r_{\mathrm{ok}},r_*$ with retained $s$ values $(1,1)$. The proposed copied ground returns $(1,1)$; the retained $h$ trace supplies $(1,0)$. These typed OCaml inputs are visible in the example; applying the library to another audit requires binding its own claim, scope, graph and retained records, rather than submitting arbitrary database files.
+
+From the repository root, run:
+\begin{verbatim}
+make -C legacy/exactness-2026 walkthrough
+\end{verbatim}
+The executable validates its expected diagnostics and reports:
+\begin{quote}\small
+Graph: L1--L4 pass; ground defeater $s$ remains open.\\
+Copied ground: factor image 1; no separation witness.\\
+Trace ground: witness $r_{\mathrm{ok}}/r_*$; same $s$; ground true/false.
+\end{quote}
+The first result permits inspection, not clearance. The factor table gives no evidence that the proposed ground uses $h$. The prompted repair is to evaluate the retained $h$ trace instead of reusing the common status $s$. The resulting witness refutes factorisation through $s$, and the second record exposes the old and new common error. It does not prove causal independence or faithful trace capture. The responsible auditor must still validate the evaluator against the declared claim, authenticate the trace, check coverage and resolve the production concern before issuance. The full command transcript and expected output are retained in the supplement and repository.
+
 
 \begin{table}[htbp]
 \centering\footnotesize
@@ -1094,6 +1154,13 @@ The tax migration separates a sound certificate for an old predicate from warran
 Three results reach beyond the case. First, conditions on descent from the coordinates alone admit grounds that launder shared ancestry; (L4) names that ancestry, and the fibre criterion supplies a finite test for it. Second, for a fixed ground, (L1) and (L4) compose across consecutive seams, while (L2) and (L3) carry over exactly under stated ancestry conditions, so a composite certificate needs either those conditions or a fresh outer audit. Third, checked endpoint proofs, whether from PCFW or another source, cannot supply the seam premises of transport (Proposition~\ref{ex:prop:observation-not-transport}). The first two results and the printed countermodels are mechanised in Coq, and the lineage and retained-value fibre decisions are extracted to OCaml; the transport record of Section~\ref{ex:sec:pcfw} remains an assurance specification rather than an implemented combined verifier.
 
 A positive migration claim remains conditional on the relevance of the state model, the coverage of the seam and lineage record, the accuracy of the process evidence, and continued review. Authority governs the permitted use of the resulting claim; it does not supply missing evidence. Copied agreement is dangerous precisely because coordinate-level checks can look successful while those obligations remain open.
+
+
+\section*{Declarations}
+\paragraph{Funding.} This work received no external funding.
+\paragraph{Competing interests.} The author declares no competing interests.
+\paragraph{Data and code availability.} The synthetic carrier, OCaml audit, Coq sources, extracted decision cores, expected outputs and measured scaling records are provided in the accompanying repository and release source package. No operational or personal migration data are used.
+\paragraph{Use of large language models.} OpenAI Codex assisted substantially with LaTeX preparation, including manuscript restructuring, typesetting, citation configuration, source packaging and compilation. It also assisted with prose revision, proof and implementation work, executable examples, benchmark construction and running verification commands. Coq kernel checks and recorded executable checks validate the stated formal and runtime outcomes within their documented scope; they do not validate the paper's external assurance premises. The author remains responsible for the content, accuracy and final submission.
 
 \appendix
 
@@ -1131,7 +1198,7 @@ Condition (L4) & Reflected and extracted in the extension; shared derived ground
 \section{Current artefact and verification}\label{ex:app:verification}
 \label{ex:app:extension}\label{ex:app:mechanisation}
 
-The current artefact is \url{https://github.com/dhwcmoore/paper-2a-lineage-l4}. Its verified decision cores and original evidence are pinned at \nolinkurl{945c68e08f2d267d9a8a06ec77784a3ecc47afd9}. The countermodels and controls added in version~18 leave those decision cores unchanged. The version-18 build and test replay is retained under \nolinkurl{paper2a-extension/verification-v18}. The refreshed version-19 manifest, \nolinkurl{paper2a-extension/verification-v19/SHA256SUMS}, binds the current repository sources, the version-19 manuscript, bibliography and rebuilt PDF, and the retained replay evidence. It can be checked from the repository root with \code{sha256sum -c paper2a-extension/verification-v19/SHA256SUMS}. The release also incorporates the version-18 proof extensions and fourteen executable semantic boundary checks pinned at \nolinkurl{1e9de34b63281d019502f746f57ede348b62ca5e}, preserving their independent evidence under \nolinkurl{paper2a-extension/v18}. The merged release is rebuilt and checked under \nolinkurl{paper2a-extension/verification-v19}; its selected assumption audit comprises the original 26 identifiers, eleven upstream additions and nine additional review controls, all closed under the global context. A persistent reviewer archive identifier remains to be assigned. Historical exactness, companion, and handwritten-extension records remain in the supplementary repository directories; they are not relabelled as evidence for the current implementation.
+The current artefact is \url{https://github.com/dhwcmoore/paper-2a-lineage-l4}. The complete version-19 release is pinned at \nolinkurl{a44557a06d1043d7a8d908fc7b32d891cbddc848}. It incorporates the original decision cores at \nolinkurl{945c68e08f2d267d9a8a06ec77784a3ecc47afd9} and upstream proof/runtime additions at \nolinkurl{1e9de34b63281d019502f746f57ede348b62ca5e}. Version~20 adds the practitioner walkthrough, scaling measurements and manuscript revisions. Its current source, PDF, supplement and evidence are bound by \nolinkurl{paper2a-extension/verification-v20/SHA256SUMS}. The source package contains editable LaTeX, bibliography, necessary styles, internally specified figures and both compiled PDFs. The prepared archival bundle and its deposit metadata are described in \nolinkurl{release/README.md}; an archive identifier will be inserted only after deposit and public retrieval verification. No permanent identifier is claimed for an undeposited bundle. The full verification maps and historical component records remain available in the complete technical supplement and repository.
 
 \subsection{Claim-to-proof map}
 \begin{table}[htbp]
@@ -1200,6 +1267,6 @@ The graph reference uses Boolean-matrix closure rather than the implementation's
 The supplementary six-node probe freezes its historical handwritten source, rather than testing the extracted replacement. Its separate replay reproduces 16,384 graphs, 262,144 assessments, zero mismatches, and 567 assessments passing L1--L3 but failing L4 on 186 graphs. The companion's separate L1--L3 regression and seventeen-mutant study remain supplementary checks, with their legacy-overlap restrictions and distinct attribution. The current artefact issues neither lineage clearance nor a transport certificate.
 
 \bibliographystyle{spbasic}
-\bibliography{Paper_2A_Copied_Agreement_v19}
+\bibliography{Paper_2A_Copied_Agreement_v20}
 
 \end{document}

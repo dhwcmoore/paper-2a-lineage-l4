@@ -1,11 +1,12 @@
-# Build the current Paper 2A manuscript; requires latexmk and pdflatex.
-PAPER2A = Paper_2A_Copied_Agreement_v19
+# Current main article and complete technical supplement.
+PAPER2A = Paper_2A_Copied_Agreement_v20
+SUPPLEMENT = $(PAPER2A)_supplement
 
 .PHONY: all clean
-all: $(PAPER2A).pdf
+all: $(PAPER2A).pdf $(SUPPLEMENT).pdf
 
-$(PAPER2A).pdf: $(PAPER2A).tex $(PAPER2A).bib svjour3.cls svglov3.clo spbasic.bst
-	latexmk -pdf -interaction=nonstopmode -halt-on-error $(PAPER2A).tex
+$(PAPER2A).pdf $(SUPPLEMENT).pdf: %.pdf: %.tex $(PAPER2A).bib svjour3.cls svglov3.clo spbasic.bst scaling_v20_table.tex scaling_v20_result.tex scaling_v20.pdf
+	latexmk -pdf -interaction=nonstopmode -halt-on-error $<
 
 clean:
-	latexmk -c $(PAPER2A).tex
+	latexmk -c $(PAPER2A).tex $(SUPPLEMENT).tex

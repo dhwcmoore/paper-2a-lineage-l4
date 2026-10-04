@@ -1,9 +1,11 @@
 # Status — current replay 2026-10-04; historical companion records below
 
-Current manuscript: version 19; see [the current manifest](paper2a-extension/verification-v19/README.md).
+Current manuscript: version 20; see [the current manifest](paper2a-extension/verification-v20/README.md).
+Double-column main article: 28 pages; complete technical supplement: 50 pages.
+Version 20 adds an executable walkthrough and 54 measured scaling configurations.
 The merged release preserves upstream version 18 proof/runtime additions.
 The current checks reproduce 14 semantic boundary checks and 46 selected
-assumption reports; logs are retained with the version 19 manifest.
+assumption reports; logs are retained with the historical version 19 manifest.
 
 Paper 2A version 18 replay: Dune/Make/kernel/extraction checks pass;
 26 selected core identifiers and nine review controls have no assumptions.
@@ -12,7 +14,7 @@ The 61/368,640/9,360 tests and 18/6 mutation results reproduce. See
 
 The remainder records the copied companion's pinned and historical results.
 Manuscript paths and page counts in the dated sections below describe historical
-states; the current tree keeps only Paper 2A version 19 in `document/`. In this
+states; the current tree keeps only Paper 2A version 20 in `document/`. In this
 Paper 2A repository, the three baseline Coq source files remain unchanged, but
 the OCaml implementation under `legacy/exactness-2026` has been extended.
 The companion regression uses the frozen historical audit under

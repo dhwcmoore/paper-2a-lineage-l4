@@ -1,0 +1,21 @@
+make: Entering directory '/data/paper-2a-lineage-l4/legacy/exactness-2026'
+ocamlc -c paper2a_verified_core.mli
+ocamlc -c paper2a_verified_core.ml
+ocamlc -c admissibility.ml
+ocamlc -c verified_fibre.ml
+ocamlc -c lineage_audit.mli
+ocamlc -c lineage_audit.ml
+ocamlc -c lineage_fibre.mli
+ocamlc -c lineage_fibre.ml
+ocamlc -o audit_walkthrough admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo lineage_fibre.cmo audit_walkthrough.ml
+./audit_walkthrough > walkthrough.current.txt
+cat walkthrough.current.txt
+carrier: r_ok / r_star; retained s=true / true
+lineage: a->s; s->d_A,d_B,g; h->g; relevant=h
+graph: L1-L4 pass; ground defeater s remains open
+proposed copied ground: factor image=1; no separation witness
+repair: evaluate the retained h trace, not the common s status
+trace ground: witness r_ok / r_star; same s; ground=true / false
+next: validate evaluator, source fidelity and coverage; no clearance issued
+cmp expected/walkthrough_output.txt walkthrough.current.txt
+make: Leaving directory '/data/paper-2a-lineage-l4/legacy/exactness-2026'

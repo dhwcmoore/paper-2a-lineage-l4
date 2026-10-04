@@ -70,10 +70,10 @@ additional review controls) are closed under the global
 context. The named kernel check and extraction comparison pass, as do the
 61/368,640/9,360 runtime tests, 18 wrapper/diagnostic mutants and six
 generated-core mutants, plus fourteen executable semantic boundary checks.
-Version 19 cites the preserved version 18 records and fresh merged-release checks;
+Version 20 cites the preserved version 18 records and fresh merged-release checks;
 superseded manuscripts are removed while their verification records remain. The mechanised artefact revision is
-`945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; version 19 cites it for the unchanged decision cores. The additional controls
-and retained replay are bound by the [current version 19 manifest](verification-v19/README.md).
+`945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; version 20 cites it for the unchanged decision cores. The additional controls
+and retained replay are bound by the [current version 20 manifest](verification-v20/README.md).
 
 The upstream additions include `injective_observation_no_witness` and
 `injective_complete_factor`, raw-input and actual-claim controls in
@@ -81,3 +81,8 @@ The upstream additions include `injective_observation_no_witness` and
 source is pinned at `1e9de34b63281d019502f746f57ede348b62ca5e`; independent
 records remain under [v18/](v18/README.md). Current release logs and assumption
 reports are under [verification-v19/](verification-v19/README.md).
+
+Version 20 adds the typed-input practitioner walkthrough, measured scaling and
+a complete technical supplement. Current replay and package provenance are
+under [verification-v20](verification-v20/README.md); the version 19 component
+assembly remains pinned at `a44557a06d1043d7a8d908fc7b32d891cbddc848`.

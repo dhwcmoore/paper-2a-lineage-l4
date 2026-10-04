@@ -1,5 +1,17 @@
 # Paper 2A revisions
 
+## Version 20 — 4 October 2026
+
+- Moved the 48 endpoint disagreements / 74 grounding findings / 26 agreeing-error comparison next to the opening example, with the recurring row in a small table.
+- Added a runnable typed-input walkthrough showing a graph pass, an open defeater, a copied-ground factor and the trace repair witness.
+- Measured 54 synthetic scaling configurations with five repetitions each, retained raw data and generated a publication figure and table.
+- Kept both laundering and ignored-raw-source counterexamples in the main article; preserved the complete development in a separate technical supplement.
+- Added evaluator adequacy explicitly to the clearance table.
+- Converted the main article to double columns and square-bracket numeric citations; added declarations, corresponding email and explicit substantive LLM/LaTeX disclosure.
+- Prepared editable source and complete reviewer packages, with component provenance and current manifest hashes. Archival deposit status is recorded separately.
+
+The main article recompiles to 28 pages, above the usual 10–20-page range; the complete supplement has 50 pages. The range is not a stated absolute limit.
+
 ## Version 19 — 4 October 2026
 
 Uploaded STTT manuscript with separate bibliography and Springer SVJour3 layout.

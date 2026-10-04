@@ -1,0 +1,20 @@
+\begin{table*}[htbp]
+\centering\small
+\caption{Representative scaling medians (five calls, milliseconds). Fibre timing includes the graph check. All shown factor runs use a constant tuple and ground.}\label{ex:tab:scaling}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Shape & Nodes & Records & Graph (ms) & Fibre (ms) & Peak RSS (KiB) \\
+\midrule
+fanout & 8 & 32 & 0.52 & 1.17 & 3784 \\
+fanout & 8 & 128 & 0.47 & 9.58 & 5700 \\
+fanout & 8 & 512 & 0.45 & 185.66 & 17324 \\
+fanout & 16 & 512 & 1.16 & 170.20 & 17424 \\
+fanout & 32 & 512 & 4.53 & 182.74 & 17600 \\
+chain & 8 & 32 & 0.75 & 2.22 & 4212 \\
+chain & 8 & 128 & 1.26 & 29.33 & 5720 \\
+chain & 8 & 512 & 0.78 & 325.65 & 17684 \\
+chain & 16 & 512 & 9.36 & 1746.27 & 18032 \\
+chain & 32 & 512 & 120.10 & 8511.75 & 18724 \\
+\bottomrule
+\end{tabular}
+\end{table*}

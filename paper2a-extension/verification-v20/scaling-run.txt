@@ -1,0 +1,54 @@
+fanout n= 8 rows= 32 constant      graph=0.0005s fibre=0.0012s
+fanout n= 8 rows= 32 injective     graph=0.0006s fibre=0.0011s
+fanout n= 8 rows= 32 early-witness graph=0.0006s fibre=0.0007s
+fanout n= 8 rows=128 constant      graph=0.0005s fibre=0.0096s
+fanout n= 8 rows=128 injective     graph=0.0005s fibre=0.0070s
+fanout n= 8 rows=128 early-witness graph=0.0004s fibre=0.0016s
+fanout n= 8 rows=512 constant      graph=0.0005s fibre=0.1857s
+fanout n= 8 rows=512 injective     graph=0.0004s fibre=0.1398s
+fanout n= 8 rows=512 early-witness graph=0.0005s fibre=0.0335s
+fanout n=16 rows= 32 constant      graph=0.0012s fibre=0.0018s
+fanout n=16 rows= 32 injective     graph=0.0014s fibre=0.0019s
+fanout n=16 rows= 32 early-witness graph=0.0015s fibre=0.0016s
+fanout n=16 rows=128 constant      graph=0.0012s fibre=0.0101s
+fanout n=16 rows=128 injective     graph=0.0013s fibre=0.0084s
+fanout n=16 rows=128 early-witness graph=0.0014s fibre=0.0026s
+fanout n=16 rows=512 constant      graph=0.0012s fibre=0.1702s
+fanout n=16 rows=512 injective     graph=0.0012s fibre=0.1473s
+fanout n=16 rows=512 early-witness graph=0.0012s fibre=0.0337s
+fanout n=32 rows= 32 constant      graph=0.0044s fibre=0.0049s
+fanout n=32 rows= 32 injective     graph=0.0047s fibre=0.0049s
+fanout n=32 rows= 32 early-witness graph=0.0044s fibre=0.0047s
+fanout n=32 rows=128 constant      graph=0.0045s fibre=0.0138s
+fanout n=32 rows=128 injective     graph=0.0043s fibre=0.0114s
+fanout n=32 rows=128 early-witness graph=0.0047s fibre=0.0055s
+fanout n=32 rows=512 constant      graph=0.0045s fibre=0.1827s
+fanout n=32 rows=512 injective     graph=0.0046s fibre=0.1409s
+fanout n=32 rows=512 early-witness graph=0.0044s fibre=0.0377s
+chain  n= 8 rows= 32 constant      graph=0.0008s fibre=0.0022s
+chain  n= 8 rows= 32 injective     graph=0.0010s fibre=0.0023s
+chain  n= 8 rows= 32 early-witness graph=0.0009s fibre=0.0010s
+chain  n= 8 rows=128 constant      graph=0.0013s fibre=0.0293s
+chain  n= 8 rows=128 injective     graph=0.0007s fibre=0.0176s
+chain  n= 8 rows=128 early-witness graph=0.0007s fibre=0.0020s
+chain  n= 8 rows=512 constant      graph=0.0008s fibre=0.3256s
+chain  n= 8 rows=512 injective     graph=0.0007s fibre=0.2787s
+chain  n= 8 rows=512 early-witness graph=0.0008s fibre=0.0341s
+chain  n=16 rows= 32 constant      graph=0.0093s fibre=0.0167s
+chain  n=16 rows= 32 injective     graph=0.0085s fibre=0.0156s
+chain  n=16 rows= 32 early-witness graph=0.0085s fibre=0.0088s
+chain  n=16 rows=128 constant      graph=0.0088s fibre=0.1164s
+chain  n=16 rows=128 injective     graph=0.0085s fibre=0.1094s
+chain  n=16 rows=128 early-witness graph=0.0088s fibre=0.0109s
+chain  n=16 rows=512 constant      graph=0.0094s fibre=1.7463s
+chain  n=16 rows=512 injective     graph=0.0092s fibre=1.6725s
+chain  n=16 rows=512 early-witness graph=0.0084s fibre=0.0453s
+chain  n=32 rows= 32 constant      graph=0.1215s fibre=0.1567s
+chain  n=32 rows= 32 injective     graph=0.1223s fibre=0.1569s
+chain  n=32 rows= 32 early-witness graph=0.1244s fibre=0.1260s
+chain  n=32 rows=128 constant      graph=0.1209s fibre=0.6517s
+chain  n=32 rows=128 injective     graph=0.1255s fibre=0.6496s
+chain  n=32 rows=128 early-witness graph=0.1218s fibre=0.1293s
+chain  n=32 rows=512 constant      graph=0.1201s fibre=8.5117s
+chain  n=32 rows=512 injective     graph=0.1216s fibre=8.4158s
+chain  n=32 rows=512 early-witness graph=0.1273s fibre=0.1876s

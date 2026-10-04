@@ -1,0 +1,7 @@
+carrier: r_ok / r_star; retained s=true / true
+lineage: a->s; s->d_A,d_B,g; h->g; relevant=h
+graph: L1-L4 pass; ground defeater s remains open
+proposed copied ground: factor image=1; no separation witness
+repair: evaluate the retained h trace, not the common s status
+trace ground: witness r_ok / r_star; same s; ground=true / false
+next: validate evaluator, source fidelity and coverage; no clearance issued

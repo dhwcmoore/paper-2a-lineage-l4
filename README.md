@@ -2,10 +2,11 @@
 
 **Lineage-Grounded Audits of Claim Preservation in Data Migration — Paper 2A**
 
-[Read the paper (version 19, PDF)](document/Paper_2A_Copied_Agreement_v19.pdf)
-· [LaTeX source](document/Paper_2A_Copied_Agreement_v19.tex)
+[Read the paper (version 20, PDF)](document/Paper_2A_Copied_Agreement_v20.pdf)
+· [LaTeX source](document/Paper_2A_Copied_Agreement_v20.tex)
+· [Complete technical supplement](document/Paper_2A_Copied_Agreement_v20_supplement.pdf)
 · [Mechanisation scope](paper2a-extension/MECHANISATION.md)
-· [Current manifest](paper2a-extension/verification-v19/README.md)
+· [Current manifest](paper2a-extension/verification-v20/README.md)
 
 This repository contains the paper, Coq proofs, executable OCaml audit and
 reproduction evidence. The audit separates whether an observation determines a
@@ -13,7 +14,7 @@ claim, whether migrated records agree, and whether that agreement is supported
 by a ground whose declared production path can be independently assessed.
 Agreement between endpoints can preserve a shared error.
 
-Version 18 includes four lineage conditions (L1–L4), a shared-ancestry laundering
+The audit includes four lineage conditions (L1–L4), a shared-ancestry laundering
 countermodel, a retained-value fibre test and fixed-ground composition results.
 It also adds a raw shared-input countermodel, the injective-tuple limitation and
 a claim-specific endpoint control. Clearance requires a scoped justification
@@ -58,12 +59,19 @@ not authenticate source records, establish actual coverage or causal independenc
 resolve declared defeaters, or issue a transport certificate. See the
 [precise proof and runtime boundary](paper2a-extension/MECHANISATION.md).
 
+Version 20 brings the 48-versus-74 comparison into the opening example, adds
+an executable walkthrough and measured synthetic scaling, and supplies a
+complete technical supplement. The 28-page main article uses double-column
+layout and numbered citations; the supplement retains all detailed proofs.
+[Release packages and archival status](release/README.md) describe the editable
+source package and complete reviewer bundle.
+
 ## Requirements
 
 - Coq **8.18.0** and OCaml **4.14.1**, enforced by the exactness Makefile.
 - Dune **3.8 or later** for the Coq project build.
 - Python 3 and Make for executable verification.
-- `latexmk` and `pdflatex` with the packages named in the manuscript for its PDF.
+- `latexmk`, `pdflatex` and `bibtex` with the packages named in the manuscript for its PDF.
 - OCaml Findlib with the `unix` package for the optional companion regression.
 
 ## Reproduce the paper's checks
@@ -99,13 +107,28 @@ to ignored JSON files under `legacy/exactness-2026`. Run
 To check the recorded source and evidence hashes from the root:
 
 ```sh
-sha256sum -c paper2a-extension/verification-v19/SHA256SUMS
+sha256sum -c paper2a-extension/verification-v20/SHA256SUMS
 ```
 
 Build the current manuscript with `make -C document`.
 [Document instructions](document/README.md) explain dependencies and cleanup.
-Only version 19 is kept in the current manuscript directory. Historical
+Only version 20 is kept in the current manuscript directory. Historical
 verification records are retained separately.
+
+## Apply the audit and reproduce scaling
+
+The two-record walkthrough supplies a bound claim, graph and retained values,
+then shows the diagnosis and trace-evaluation repair:
+
+```sh
+make -C legacy/exactness-2026 walkthrough
+python3 experiments/run_scaling.py
+```
+
+The experiment runs 54 configurations with five measured calls each. It requires
+OCaml, `/usr/bin/time` and Python; plots optionally require Matplotlib.
+[Experiment scope and raw measurements](experiments/README.md) distinguish
+synthetic wrapper costs from industrial throughput and integration cost.
 
 ## Supplementary and historical checks
 
@@ -136,7 +159,7 @@ pinned and historical results; it does not replace the new mechanisation record.
 
 | Path | Content |
 |---|---|
-| `document/` | Version 19 source, bibliography, PDF and build instructions |
+| `document/` | Version 20 main article, complete supplement, sources and build instructions |
 | `theories/Debt/LineageL4.v` | L4 and L1–L4 reflection; fixed-ground L4 composition |
 | `theories/Debt/FiniteFibreCheck.v` | Proved finite fibre decision procedure |
 | `theories/Debt/LineageComposition.v` | Exact composition and ancestry conditions |
@@ -144,7 +167,8 @@ pinned and historical results; it does not replace the new mechanisation record.
 | `examples/Paper2AControls.v` | Raw-source, injectivity and actual-claim review controls |
 | `legacy/exactness-2026/` | Original Coq supplement, tax case, runtime wrappers and generated decision core |
 | `extraction/` | Extraction, regeneration checks and companion regression |
-| `paper2a-extension/verification-v19/` | Merged-release checks and current version 19 manifest |
+| `paper2a-extension/verification-v20/` | Current checks, walkthrough, scaling evidence and manifest |
+| `paper2a-extension/verification-v19/` | Historical merged-release verification |
 | `paper2a-extension/v18/` | Preserved upstream version 18 verification records |
 | `paper2a-extension/verification-v18/` | Retained version 18 build and test replay |
 | `paper2a-extension/mechanisation/` | Historical version 17 mechanisation records |
@@ -162,11 +186,11 @@ and mechanisation added. The three baseline Coq sources are unchanged.
 [Extension provenance](paper2a-extension/README.md) distinguishes the historical
 baseline, handwritten extension, companion and current extracted-core integration.
 
-Version 19 is prepared for the International Journal on Software Tools for
+Version 20 is prepared for the International Journal on Software Tools for
 Technology Transfer (STTT).
 The mechanised source and verification records are pinned at
 [artefact commit `945c68e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/945c68e08f2d267d9a8a06ec77784a3ecc47afd9).
-Version 19 cites that revision for the unchanged decision cores. Its additional
+Version 20 cites that revision for the unchanged decision cores. Its additional
 review controls and merged-release verification records are included here.
 The upstream version 18 proof/runtime additions are preserved from commit
 `1e9de34b63281d019502f746f57ede348b62ca5e`; the merged release reproduces their

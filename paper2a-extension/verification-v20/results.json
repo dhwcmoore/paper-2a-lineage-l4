@@ -1,0 +1,41 @@
+{
+  "version": 20,
+  "verified_component_revision": "a44557a06d1043d7a8d908fc7b32d891cbddc848",
+  "fresh_checks": {
+    "exactness_make": 0,
+    "walkthrough": 0,
+    "main_pdf": 0,
+    "complete_supplement_pdf": 0,
+    "scaling": 0,
+    "isolated_source_package_rebuild": 0
+  },
+  "runtime_counts": {
+    "edge": 61,
+    "graph": 368640,
+    "fibre": 9360,
+    "semantic_boundary": 14
+  },
+  "retained_kernel_and_mutation_evidence": "paper2a-extension/verification-v19",
+  "selected_assumption_reports_retained": 46,
+  "scaling": {
+    "configurations": 54,
+    "measured_repetitions_per_configuration": 5,
+    "raw_records": 270,
+    "limits": "One host; synthetic complete carriers; no operational data or integration-cost measurement"
+  },
+  "layout": {
+    "main": "double-column",
+    "main_pages": 28,
+    "supplement_pages": 50,
+    "typical_journal_range": "10-20 double-column pages, not an absolute cap",
+    "citations": "numeric square brackets",
+    "bibliography": "numbered"
+  },
+  "declarations": {
+    "funding": "No external funding (author confirmed)",
+    "competing_interests": "None (author confirmed)",
+    "corresponding_email": "dhwcmoore@gmail.com",
+    "llm": "Substantive LaTeX preparation, prose, proof/implementation and verification assistance disclosed"
+  },
+  "archive_status": "Prepared package; permanent identifier awaits verified public archival retrieval"
+}
