@@ -1,23 +1,29 @@
 # Copied Agreement — Paper 2A
 
-This directory contains the current manuscript only:
+The current manuscript is version 19:
 
-- [Version 17 PDF](Paper_2A_Copied_Agreement_v17.pdf)
-- [Version 17 LaTeX source](Paper_2A_Copied_Agreement_v17.tex)
+- [Version 19 PDF](Paper_2A_Copied_Agreement_v19.pdf)
+- [Version 19 LaTeX source](Paper_2A_Copied_Agreement_v19.tex)
+- [Bibliography](Paper_2A_Copied_Agreement_v19.bib)
 - [Revision notes](REVISIONS.md)
 
-The manuscript includes Coq reflection for L1–L4, proved finite fibre checks,
-fixed-ground composition results and extracted OCaml decision cores. Runtime
-wrappers remain tested rather than proved; no transport certificate is issued.
-See [mechanisation scope and evidence](../paper2a-extension/MECHANISATION.md).
+Version 19 uses the Springer SVJour3 class for STTT. Its verification appendix
+points to the [current manifest](../paper2a-extension/verification-v19/README.md).
+Superseded manuscripts have been removed from the current tree. The
+[version 18 test replay](../paper2a-extension/verification-v18/README.md) remains
+as historical evidence. The proof and runtime sources are unchanged;
+see [mechanisation scope](../paper2a-extension/MECHANISATION.md).
 
-Build from the repository root with `make -C document`. Requires `latexmk`,
-`pdflatex` and the LaTeX packages named in the source. The bibliography is
-embedded in the source; no separate bibliography or journal class is required.
-`make -C document clean` removes intermediate files and preserves the PDF.
+Build with `make -C document`. Requires `latexmk`, `pdflatex`, `bibtex` and the
+LaTeX packages named in the source. The Makefile tracks the separate bibliography
+and bundled `svjour3.cls`, `svglov3.clo` and `spbasic.bst` dependencies.
+`make -C document clean` removes intermediates and preserves the PDF.
 
-Older manuscript versions and the historical calculus manuscript have been
-removed from the current tree. Historical tracked content remains in Git history.
-The intended venue is Journal of Logic and Computation; this article source
-has not been reformatted to a journal class. A persistent public artefact
-identifier should be added after deposit and retrieval verification.
+The class and option files are unchanged Springer template files retrieved from
+[the SVJour3 template mirror](https://github.com/DanySK/Template-LaTeX-Springer-svjour3).
+The bibliography style is unchanged from
+[the Springer template mirror](https://github.com/jflournoy/springer_latex_template/blob/main/spbasic.bst).
+Their exact hashes are included in the current manifest.
+
+A persistent public artefact identifier remains to be assigned after deposit
+and retrieval verification.

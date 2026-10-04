@@ -1,8 +1,16 @@
-# Status (2026-10-02, submission verification)
+# Status — current replay 2026-10-04; historical companion records below
 
-This file records the copied companion's pinned and historical results.
+Current manuscript: version 19; see [the current manifest](paper2a-extension/verification-v19/README.md).
+The proof/runtime sources match the retained version 18 replay.
+
+Paper 2A version 18 replay: Dune/Make/kernel/extraction checks pass;
+26 selected core identifiers and nine review controls have no assumptions.
+The 61/368,640/9,360 tests and 18/6 mutation results reproduce. See
+[the retained replay](paper2a-extension/verification-v18/README.md).
+
+The remainder records the copied companion's pinned and historical results.
 Manuscript paths and page counts in the dated sections below describe historical
-states; the current tree retains only Paper 2A version 17 in `document/`. In this
+states; the current tree keeps only Paper 2A version 19 in `document/`. In this
 Paper 2A repository, the three baseline Coq source files remain unchanged, but
 the OCaml implementation under `legacy/exactness-2026` has been extended.
 The companion regression uses the frozen historical audit under

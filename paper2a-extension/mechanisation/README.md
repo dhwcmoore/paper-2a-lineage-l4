@@ -1,4 +1,4 @@
-# Local mechanisation verification — 4 October 2026
+# Historical version 17 mechanisation verification — 4 October 2026
 
 This directory records the new Coq proof and extracted-core integration checks,
 separately from the original handwritten extension's standalone and integration
@@ -22,3 +22,8 @@ manuscript sources to the local working tree. The baseline parent revision is
 `945c68e08f2d267d9a8a06ec77784a3ecc47afd9`. The subsequent manuscript update cites
 that artefact revision and refreshes the local source/evidence manifest. These checks establish properties of declared data, not authentic
 source capture, actual coverage, causal independence or certificate clearance.
+
+This record is preserved as historical evidence. Its manuscript hashes refer to
+version 17, now retained in Git history; verify the complete historical manifest
+at commit `12aac41`. For the current manuscript and replay, use
+[verification-v18](../verification-v18/README.md).

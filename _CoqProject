@@ -44,3 +44,4 @@ examples/MaintenanceFailure.v
 examples/CertificateReissue.v
 
 examples/Paper2ALineage.v
+examples/Paper2AControls.v

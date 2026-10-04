@@ -88,6 +88,13 @@ source fidelity, authenticates custody, records lineage clearance or issues a
 transport certificate.
 
 The current
-[Paper 2A version 17](../document/Paper_2A_Copied_Agreement_v17.tex) incorporates
-the extension scope and evidence. Older manuscript versions and drafts are
-removed from the current tree; the original verification records are retained.
+[Paper 2A version 19](../document/Paper_2A_Copied_Agreement_v19.tex) incorporates
+the extension scope and evidence. Superseded manuscripts have been removed; the original verification records
+are retained as historical evidence.
+
+Current version 18 replay, review controls and source hashes are recorded in
+[verification-v18](verification-v18/README.md). The original mechanisation record
+is historical and retains its original manuscript hashes.
+
+The [version 19 manifest](verification-v19/README.md) binds the current manuscript
+and repository to that unchanged proof/runtime replay.

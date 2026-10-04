@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-04",
+  "scope": "Local version 18 replay; unchanged decision core plus new review controls",
+  "decision_core_revision": "945c68e08f2d267d9a8a06ec77784a3ecc47afd9",
+  "toolchain": {
+    "coqc --version": "The Coq Proof Assistant, version 8.18.0\ncompiled with OCaml 4.14.1",
+    "ocamlc -version": "4.14.1",
+    "dune --version": "3.14.0",
+    "latexmk -v": "Latexmk, John Collins, 31 Jan. 2024. Version 4.83"
+  },
+  "exit_statuses": {
+    "dune_build": 0,
+    "extraction_comparison": 0,
+    "exactness_make_check": 0,
+    "exactness_kernel": 0,
+    "current_kernel": 0,
+    "assumptions": 0,
+    "wrapper_mutations": 0,
+    "core_mutations": 0,
+    "probe": 0,
+    "companion_regression": 0,
+    "companion_mutations": 0,
+    "latexmk": 0
+  },
+  "counts": {
+    "edge_checks": 61,
+    "graph_reference_comparisons": 368640,
+    "fibre_reference_comparisons": 9360,
+    "core_assumption_identifiers": 26,
+    "review_control_identifiers": 9,
+    "wrapper_mutants_detected": 18,
+    "wrapper_mutants_total": 18,
+    "generated_core_mutants_detected": 6,
+    "generated_core_mutants_total": 6,
+    "companion_fixed": 5,
+    "companion_random_overlap": 1921,
+    "companion_random_skipped": 1079,
+    "companion_shallow": 3300,
+    "companion_deep": 1800,
+    "companion_edges": 6,
+    "companion_mutants_detected": 17,
+    "companion_mutants_total": 17,
+    "pdf_pages": 44
+  },
+  "probe": {
+    "graphs": 16384,
+    "assessments": 262144,
+    "reference_mismatches": 0,
+    "pass_L1_L2_L3": 4724,
+    "pass_L1_L2_L3_L4": 4157,
+    "pass_123_fail_4_assessments": 567,
+    "pass_123_fail_4_unique_graphs": 186,
+    "fixed_relevance_r1_and_L2_disclosed_graphs_pass_123": 352,
+    "fixed_relevance_r1_and_L2_disclosed_graphs_pass_123_fail_4": 96,
+    "first_laundering_graph_mask": 3088
+  },
+  "limits": [
+    "Declared data only; no source fidelity, evaluator adequacy or clearance proof.",
+    "Runtime wrappers and extraction/compiler remain trusted or tested.",
+    "Supplementary probe and companion populations are separately attributed."
+  ]
+}

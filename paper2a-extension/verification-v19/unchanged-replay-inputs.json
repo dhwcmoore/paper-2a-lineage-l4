@@ -1,0 +1,338 @@
+[
+  {
+    "path": "_CoqProject",
+    "sha256": "0f4a6488a463ab250026feaec6c40532a2b5df079b358f753994b092436a540e"
+  },
+  {
+    "path": "dune-project",
+    "sha256": "7ac58081a480afddfd07632bc97738aa5275c2ca34fa9e340bb542aa34717cb5"
+  },
+  {
+    "path": "examples/CertificateReissue.v",
+    "sha256": "8c6d92aaa703287426530311b927bf22c99a5d16e759a5208571fa40043125c7"
+  },
+  {
+    "path": "examples/CopiedCoordinates.v",
+    "sha256": "c9635291eb376ce39b52aec1509736b47e658d6d50a01ac010ee3486c32d4c8a"
+  },
+  {
+    "path": "examples/DifferentWarrants.v",
+    "sha256": "1b9511931a9bc15ccabe080d3db146063e9d080d00b147ae6dd569a46da2286d"
+  },
+  {
+    "path": "examples/EvolutionCoverage.v",
+    "sha256": "db5db20e0b5989f7d1006d33c1acaf3ad052abd3fd65dd0fb1e13f7959de5528"
+  },
+  {
+    "path": "examples/LineageCertificates.v",
+    "sha256": "7c4e28174604974ecf377ef7fdfb52c8943f12aafdbb3316d171018d26016514"
+  },
+  {
+    "path": "examples/LineageChecked.v",
+    "sha256": "1a5e2daa3e19f91f42bf52726d20962ce752bf4629f361012876704f8e352846"
+  },
+  {
+    "path": "examples/LineageNonComposition.v",
+    "sha256": "96fb3bead92e11d54644abf3ae104593e206ff8cde9ddc195f1d1bb53e7a540e"
+  },
+  {
+    "path": "examples/MaintenanceFailure.v",
+    "sha256": "98bc3efb372ad3658177c06d0300abd0519fe22be3113c96d2bae2ea36daa8aa"
+  },
+  {
+    "path": "examples/Paper2AControls.v",
+    "sha256": "2a18654ce3173328da33279138a45b551a137ed4b9c7d6b93aad92e32e0941ec"
+  },
+  {
+    "path": "examples/Paper2ALineage.v",
+    "sha256": "d58e5e3f7292832c57dd6b6ed461ea052f2599943e43d69e0ebc7b2b4f19bb83"
+  },
+  {
+    "path": "examples/SeamTransport.v",
+    "sha256": "ea8d2ec58a435fe17af4a2d0b44143fa3ac1d318ab42573ba89546dba10dccac"
+  },
+  {
+    "path": "examples/dune",
+    "sha256": "01f9ee30f3cf51b43c841ba71f4bda1bddec3f78a4d323c69b22dc5049b7adbb"
+  },
+  {
+    "path": "extraction/ExtractAssessment.v",
+    "sha256": "7461bbedd40b420f00c3ca37d3e48cff39bc5153285bb9d7e8d7d5716b5b83b2"
+  },
+  {
+    "path": "extraction/ExtractLineageCheck.v",
+    "sha256": "58c672799db976cc5e2620cb0af43a7aa4c5266e59e1432c7b914a8d3fa0ed21"
+  },
+  {
+    "path": "extraction/ExtractPaper2A.v",
+    "sha256": "f2c597f395c17224708654e3381d8b015bd06c17961444e86faf1f40ef9a8882"
+  },
+  {
+    "path": "extraction/inspect_assessment.ml",
+    "sha256": "36115f83f54195e1485416ab0a0760dcd41ed71ebd803a509ace0476fd25b2c1"
+  },
+  {
+    "path": "extraction/lineage_regression.ml",
+    "sha256": "e3cff2e2af8c97075ebe309096c01b14995957ff8d2b13fd0ea379b20bfce46f"
+  },
+  {
+    "path": "extraction/mutation_matrix.py",
+    "sha256": "6e7e87f4ebd64f48dd60a68d5b235f22f62d3f01956eca46981d221ac7d19903"
+  },
+  {
+    "path": "extraction/run_lineage_regression.sh",
+    "sha256": "e5f72be40e0f2cb07196fc7869fdc1b7d582ec9bd60235e6d3228e3614e47874"
+  },
+  {
+    "path": "extraction/verify_paper2a_extraction.sh",
+    "sha256": "21c56b6b4c4d48c542843b560ae8cd2a91031a07ce710fa8367925c3f0a3cb7a"
+  },
+  {
+    "path": "legacy/exactness-2026/Admissibility.v",
+    "sha256": "2a54b80f7705339f514a99a57b3e9b4725fe4624ff9e784118a58c5331b462e8"
+  },
+  {
+    "path": "legacy/exactness-2026/GroundedSeam.v",
+    "sha256": "efc4415fe0e174933cb5835359f09987d3c138087fdb6d2138aa5b9951261da7"
+  },
+  {
+    "path": "legacy/exactness-2026/Makefile",
+    "sha256": "ccfc13d92c2e4f3ef2e9d92b504719ac3fe496049dfd7225d263407d330ef63c"
+  },
+  {
+    "path": "legacy/exactness-2026/SeamExtraction.v",
+    "sha256": "874f73ffa4b59400b6cf4e400fec078021ad945177afb078997fb53446a482de"
+  },
+  {
+    "path": "legacy/exactness-2026/admissibility.ml",
+    "sha256": "1a4778ba7eed2742e3128d6ba0dddf9cdbedc17b1b39c43dea233a5a457dc313"
+  },
+  {
+    "path": "legacy/exactness-2026/build.sh",
+    "sha256": "f29bfcea583b2fa9916636726121b117da4fb5c9a2547d164e577ee0063d183e"
+  },
+  {
+    "path": "legacy/exactness-2026/certified_temporal_seam.ml",
+    "sha256": "102706fc63032d60b7187e5bfa8e433b4d62fc3bd21376c059b856a58630960a"
+  },
+  {
+    "path": "legacy/exactness-2026/certified_temporal_seam.mli",
+    "sha256": "d5e6bdeca38a25594ede11d4ab6bc2a734075cc71d37376128757618a8ffd7bb"
+  },
+  {
+    "path": "legacy/exactness-2026/examples.ml",
+    "sha256": "baf3372605d2e54ff1e10e28deb6c9d2d355080934e75a054b467d7f1b43661c"
+  },
+  {
+    "path": "legacy/exactness-2026/expected/jurisdiction_output.txt",
+    "sha256": "32b0889f9edef776c4ebc7f55f86c382d196a892d0f4eba4084b991881c7ca05"
+  },
+  {
+    "path": "legacy/exactness-2026/expected/lineage_examples_output.txt",
+    "sha256": "8f43c55073467e6dbe908071fe7ce1b7b93e2cd2ed77fa5bb0e69697b0b92372"
+  },
+  {
+    "path": "legacy/exactness-2026/interface_direct_forge.ml",
+    "sha256": "fcfbd9bf77b5674a1f94457049197ae2ddc51455ab4534c3bb6063c270638b9f"
+  },
+  {
+    "path": "legacy/exactness-2026/interface_ok.ml",
+    "sha256": "06729fa7a709c25e1335c57f3e388e752526e1218e8d3ef75c6b2cef1730203c"
+  },
+  {
+    "path": "legacy/exactness-2026/interface_stage_mismatch.ml",
+    "sha256": "bac00d6dd2d8bf2a77f8094bcd4aca6ab0566c7cb29b02bcd8d785038cfee8f4"
+  },
+  {
+    "path": "legacy/exactness-2026/interface_unsafe_cast.ml",
+    "sha256": "f43de00c5d34e76ae6562b013cb01daad9677d70071920597d95ce2281b04431"
+  },
+  {
+    "path": "legacy/exactness-2026/jurisdiction.ml",
+    "sha256": "bfd6d276ecfd7efbc2a368e5f4aad0774003b9814b5dfa7a63ca1a647291aa5d"
+  },
+  {
+    "path": "legacy/exactness-2026/lineage_audit.ml",
+    "sha256": "eb6d318c363b0f2a730b8469a3ff332000fc4a39fc64b81e3034188fa2b9fb18"
+  },
+  {
+    "path": "legacy/exactness-2026/lineage_audit.mli",
+    "sha256": "6569fd42d9317532f4fc4330144c6f2343c281c8499fa7cc3cadfbed3117f564"
+  },
+  {
+    "path": "legacy/exactness-2026/lineage_examples.ml",
+    "sha256": "ddfdd945aa98bd9215a238dc9fcabe5ccea6ca10b677547ddbf823d5896a7aea"
+  },
+  {
+    "path": "legacy/exactness-2026/lineage_fibre.ml",
+    "sha256": "66bafbf8da60faaedc37e63beaf901cb62f7979051b80ed7778781157f757b79"
+  },
+  {
+    "path": "legacy/exactness-2026/lineage_fibre.mli",
+    "sha256": "29d65759326fa1970b48d09cbe7822bf76b6f9a6775edeb5b41f9a982373ef63"
+  },
+  {
+    "path": "legacy/exactness-2026/mutation_check.py",
+    "sha256": "0462f4092ae88cc9e9671d7c64758622055b46b6d765cc2251c99e006dfb7da6"
+  },
+  {
+    "path": "legacy/exactness-2026/mutation_verified_core.py",
+    "sha256": "2e50d543f0f72130044bff795af09631ea0f4a5caa1d54db5d614c96d5cf2a88"
+  },
+  {
+    "path": "legacy/exactness-2026/paper2a_verified_core.ml",
+    "sha256": "e6ba8838e0a189cc66764b268fbf65b1d0a1797523eb1031eb8d6645020a3bff"
+  },
+  {
+    "path": "legacy/exactness-2026/paper2a_verified_core.mli",
+    "sha256": "5b6391fb898ee261c50437239e895b15ea40d4aa0ef398832afabc11d628ef4d"
+  },
+  {
+    "path": "legacy/exactness-2026/recorded-output/examples_output.txt",
+    "sha256": "94dd1be3db369f3b042a83ea4cba65714cadb0fbb33a7b7015bdb28fbd35c6a3"
+  },
+  {
+    "path": "legacy/exactness-2026/recorded-output/jurisdiction_output.txt",
+    "sha256": "8bba952b3bd63a7a2316ab3f6c72abebaf22bc6e23ceb037aad0b29d413835c4"
+  },
+  {
+    "path": "legacy/exactness-2026/recorded-output/make_check_output.txt",
+    "sha256": "e5d61c46efddeeca38d2cdc3e46ffcd341841fde0e4f814b8c4e0edeac752cdb"
+  },
+  {
+    "path": "legacy/exactness-2026/test_lineage.ml",
+    "sha256": "057244002286782a25755d0df1c6f6fa0ee67d98e07137b2c23e3066c756ef4b"
+  },
+  {
+    "path": "legacy/exactness-2026/verified_fibre.ml",
+    "sha256": "97ecf9aea1914c92495b2c81ba205d7e2eb9e2a4237576738bdbfa56773e7f50"
+  },
+  {
+    "path": "paper2a-extension/baseline/admissibility.ml",
+    "sha256": "1a4778ba7eed2742e3128d6ba0dddf9cdbedc17b1b39c43dea233a5a457dc313"
+  },
+  {
+    "path": "paper2a-extension/baseline/jurisdiction.ml",
+    "sha256": "62ac1b44c554c48d8f385ba0d2e056132efdbfe1db3994c8996dbaea446b621a"
+  },
+  {
+    "path": "theories/Contexts/ContextualPreservation.v",
+    "sha256": "bd0859bb40765d46e9b74cd9f7d76c2d3ef1878f9de591e94c8e1469ff3f5b52"
+  },
+  {
+    "path": "theories/Contexts/GroundedProper.v",
+    "sha256": "96ec1cdec7882eb799f67799f1f3cb792c67818c75b9429886bf682e774893b9"
+  },
+  {
+    "path": "theories/Core/Composition.v",
+    "sha256": "59ba27c9c2e818460060d2e53ce8231c483339c24e8cfe3154166c15b2126ee1"
+  },
+  {
+    "path": "theories/Core/Erasure.v",
+    "sha256": "e21ec53ef06921ed593dc4a68e411bd3cb6e951aeb8f25026795203b0786f874"
+  },
+  {
+    "path": "theories/Core/GroundedTransport.v",
+    "sha256": "78ff915d89f31649dcbcc4270c394ab24fa0797b5d910329de48a3153acc0d2b"
+  },
+  {
+    "path": "theories/Debt/Assessment.v",
+    "sha256": "4043292c9c6adbcc5bd65c2ddad0b0af8aa0c2126932365228324db474b8c4aa"
+  },
+  {
+    "path": "theories/Debt/CertificateProper.v",
+    "sha256": "a1b396099cfe7f5221b1bdd1da8fd1d8779812aa27d4a4033005a09ffc9bb41c"
+  },
+  {
+    "path": "theories/Debt/Certificates.v",
+    "sha256": "4dbee5683fed6d2c3977d652cc8254bd07d77ab2a2b15bb69352bd8c48f5b221"
+  },
+  {
+    "path": "theories/Debt/DebtClassifier.v",
+    "sha256": "7cee91adfcce59a54b850143ca2ff5637d2b9e6309c1ad269fb7f3fdccc4628f"
+  },
+  {
+    "path": "theories/Debt/EvidenceObligations.v",
+    "sha256": "d5ea5e535c890332df82beaad113f80a2e67c416340e3ce7f4dc2e766329db3e"
+  },
+  {
+    "path": "theories/Debt/FiniteFibreCheck.v",
+    "sha256": "1d6e3234fcd53aafca3d9edd0f39e2b3a2fa2c25a293b224cc5aa6d2834bf238"
+  },
+  {
+    "path": "theories/Debt/GroundedWitness.v",
+    "sha256": "241199b5f6c41dab2c419e44049e6606ce42d523ba42a4426a7db279a0ec65ac"
+  },
+  {
+    "path": "theories/Debt/LineageAssessment.v",
+    "sha256": "433388c0aa2931caaa0bbbd773e8e03b042ab5307a4142258b8bfc3f1110a453"
+  },
+  {
+    "path": "theories/Debt/LineageCheck.v",
+    "sha256": "f69e8b84bc4f31d60e8a3f4e68b588b82bbbb8bd1431b341289710d7619877aa"
+  },
+  {
+    "path": "theories/Debt/LineageComposition.v",
+    "sha256": "db7fab2e9a01ca450c2faec9bfb28877f231af99719ed6bef5161e3a54fd078a"
+  },
+  {
+    "path": "theories/Debt/LineageL4.v",
+    "sha256": "e83de27f3320a85c816a798297235b5d0c2e483918b12017fad9decd66f96c9a"
+  },
+  {
+    "path": "theories/Debt/MaintenanceDebt.v",
+    "sha256": "1c0cf8f41f4723dfdd5da8d4971d1382fdd347abfd7aa77103a1be1d9647d781"
+  },
+  {
+    "path": "theories/Debt/OriginalObligations.v",
+    "sha256": "c6b8948365556e14539d8381ab5afb89aef3ae1bff7cd4e68c5a72049fa9418a"
+  },
+  {
+    "path": "theories/Debt/PackedWarrant.v",
+    "sha256": "bc8cba5de7db730597d1333c779934255ce8e7b012f1a20b17c08dc268347f67"
+  },
+  {
+    "path": "theories/Debt/TransportAssessment.v",
+    "sha256": "7eb3eca58002ec86183efc97a3d2dc701e2fcb719670fb6d908fc8799fe19f22"
+  },
+  {
+    "path": "theories/Debt/WarrantDebt.v",
+    "sha256": "e2584400be6fcbf88697616c54cef6355ced90753e71cd0d38e1cab379a5c806"
+  },
+  {
+    "path": "theories/Instances/ExtensionalSeam.v",
+    "sha256": "0072faa0cb6e9587b7de8fbbeb60beb3bf58576e2e8b0f99fae7a71fa529a4a7"
+  },
+  {
+    "path": "theories/Instances/OriginalAdmissibility.v",
+    "sha256": "134b4af147b73439d5e2908fc832b5581365563654b447129a728134ec282312"
+  },
+  {
+    "path": "theories/Instances/OriginalDynamicSeamInstance.v",
+    "sha256": "0a8355172dd5f25487e69894f05730d19c5b116d907dc3f494da2a45a74e173c"
+  },
+  {
+    "path": "theories/Instances/OriginalGroundedSeamInstance.v",
+    "sha256": "ab65fd5006e251ecab4aa6603dce43d9172787b6f816a3a22cfa51fe12be7f21"
+  },
+  {
+    "path": "theories/Obstructions/ClassicalFactorisation.v",
+    "sha256": "1209351a264d921466c954dd1060288462dee4a4940381d86e87f6466c0e7fdb"
+  },
+  {
+    "path": "theories/Obstructions/FibreObstruction.v",
+    "sha256": "bef183349539063cb692a3c33ccd0411a7ae4655807e642651d5e1e334214f76"
+  },
+  {
+    "path": "theories/Obstructions/LineageObstruction.v",
+    "sha256": "6b3ba55fec422df7c22f5457f8b2706579c9a7315f405564969e90f3ec3b3aa3"
+  },
+  {
+    "path": "theories/Obstructions/UngroundedAgreement.v",
+    "sha256": "849ecdec592b669e00035be640557749d6ce2e321046551d33bd2084597a5d00"
+  },
+  {
+    "path": "theories/dune",
+    "sha256": "04859d912eb31dd1039f4f98a5416f656cf640705c4ad760cc7881f498b9a876"
+  }
+]

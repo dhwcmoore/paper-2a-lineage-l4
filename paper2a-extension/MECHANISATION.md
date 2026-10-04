@@ -11,6 +11,8 @@ they are not relabelled as checks of the new core.
 - `theories/Debt/LineageComposition.v`: L1 composition, the exact middle-ancestry condition for L2 coverage, the two L3 witness-survival equivalences, and a common source sufficient for all three coordinate pairs.
 - `examples/Paper2ALineage.v`: the exact raw-ground L2 and derived-ground L3 countermodels printed in Paper 2A, plus the six-node laundering pattern with undisclosed and open L4 dispositions.
 
+- `examples/Paper2AControls.v`: raw shared inputs with an ignored relevant source, actual-claim admissibility with implementation/grounding failure, and injectivity precluding fibre witnesses. These are assurance-boundary controls, not evaluator-adequacy proofs.
+
 No new axiom or admission is introduced. The new modules do not import the isolated classical factorisation file.
 
 ## Runtime connection and boundary
@@ -33,7 +35,7 @@ covered by independent tests, not a Coq theorem about the wrapper.
 The original handwritten generic `admissibility.ml` remains for the tax and static
 examples. Only the retained-value lineage fibre decision core is replaced here.
 The kernel proofs concern the declared data, not source fidelity, actual coverage,
-causal independence, custody or resolution of a defeater. Extraction, the OCaml
+causal independence, evaluator adequacy, custody or resolution of a defeater. Extraction, the OCaml
 compiler/runtime, injective encoding and machine-integer bounds remain trusted.
 No transport certificate or lineage-clearance judgement is issued.
 
@@ -48,7 +50,7 @@ bash extraction/verify_paper2a_extraction.sh
 coqchk -silent -R _build/default/legacy/exactness-2026 Exactness \
   -R _build/default/theories GTC -R _build/default/examples GTCExamples \
   GTC.Debt.LineageL4 GTC.Debt.FiniteFibreCheck \
-  GTC.Debt.LineageComposition GTCExamples.Paper2ALineage
+  GTC.Debt.LineageComposition GTCExamples.Paper2ALineage GTCExamples.Paper2AControls
 make -C legacy/exactness-2026 check
 python3 legacy/exactness-2026/mutation_check.py
 python3 legacy/exactness-2026/mutation_verified_core.py
@@ -61,10 +63,13 @@ snapshot; it is not a test of the extracted replacement.
 
 ## Recorded outcome
 
-The local build and verification records are under [mechanisation/](mechanisation/README.md).
-The 26 selected new theorem/example identifiers are closed under the global
+The current replay is under [verification-v18/](verification-v18/README.md);
+[mechanisation/](mechanisation/README.md) preserves the version 17 record.
+The 26 selected decision-core identifiers and nine additional review-control
+identifiers are closed under the global
 context. The named kernel check and extraction comparison pass, as do the
 61/368,640/9,360 runtime tests, 18 wrapper/diagnostic mutants and six
-generated-core mutants. Version 17 records this scope; older manuscript versions are removed from
-the current tree. The mechanised artefact revision is
-`945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; the subsequent manuscript update cites it.
+generated-core mutants. Version 19 cites the unchanged version 18 replay;
+superseded manuscripts are removed while their verification records remain. The mechanised artefact revision is
+`945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; version 19 cites it for the unchanged decision cores. The additional controls
+and retained replay are bound by the [current version 19 manifest](verification-v19/README.md).

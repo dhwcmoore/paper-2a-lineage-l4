@@ -1,0 +1,20 @@
+{
+  "manuscript_version": 19,
+  "date": "2026-10-04",
+  "scope": "Manifest refresh and manuscript rebuild; retained version 18 proof/runtime replay, not a new test-suite execution",
+  "retained_replay": "paper2a-extension/verification-v18/results.json",
+  "decision_core_revision": "945c68e08f2d267d9a8a06ec77784a3ecc47afd9",
+  "unchanged_replay_input_files": 84,
+  "document_build_exit_status": 0,
+  "pdf_pages": 47,
+  "latex_warnings": [
+    "mathptmx: There are no bold math fonts."
+  ],
+  "unresolved_references_or_citations": false,
+  "overfull_boxes": false,
+  "template_sources": {
+    "svjour3.cls": "https://raw.githubusercontent.com/DanySK/Template-LaTeX-Springer-svjour3/master/svjour3.cls",
+    "svglov3.clo": "https://raw.githubusercontent.com/DanySK/Template-LaTeX-Springer-svjour3/master/svglov3.clo",
+    "spbasic.bst": "https://raw.githubusercontent.com/jflournoy/springer_latex_template/main/spbasic.bst"
+  }
+}
