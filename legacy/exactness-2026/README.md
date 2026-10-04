@@ -1,12 +1,11 @@
-> Current Paper 2A: version 18 uses extracted L1-L4 and retained-value decision
-> cores and fourteen separately counted semantic controls. The original
-> 61/368,640/9,360 suites and their mutation studies are retained. See
-> `../../paper2a-extension/MECHANISATION.md` and `../../paper2a-extension/v18/README.md`.
+> Paper 2A uses extracted L1–L4 and retained-value decision cores, with
+> fourteen separately counted semantic controls. See
+> [mechanisation scope](../../paper2a-extension/MECHANISATION.md).
 > Ground-evaluator justification, clearance and transport issuance remain external.
 
-# Paper 2A source: strengthened lineage and L4 checks
+# Paper 2A source: lineage and L4 checks
 
-This directory is the runnable source of the Paper 2A code extension. See [extension README](../../paper2a-extension/README.md) for its provenance, verification scope and integration patch, and [verification report](../../paper2a-extension/Paper_2A_Lineage_L4_Verification.md) for the detailed results.
+This directory is the runnable source of the Paper 2A code extension. See [extension README](../../paper2a-extension/README.md) for its provenance, verification scope and [verification record](../../paper2a-extension/verification-v20/README.md) for the results.
 
 ## Build
 
@@ -32,10 +31,11 @@ The assessed result locates coordinate-ground identity or descent; lists shared 
 
 On the declared carrier the procedure returns a verified finite factor table or a pair with equal shared tuples and different ground values. Clean incomplete samples, missing retention and an empty carrier have separate outcomes. These checks concern declarations and retained values; they do not authenticate the identifiers or the capture process.
 
-## Original and revised output
+## Expected output
 
-The historical outputs remain under `recorded-output/`. The original examples are compared directly with their historical output. The revised tax and lineage demonstration outputs are under `expected/`; `make check` compares each new execution with these files.
+`recorded-output/` supplies reference outputs for the core examples.
+`expected/` supplies the tax, lineage, semantic-control and walkthrough outputs.
+`make check` compares execution results with the corresponding files.
 
-`BASELINE_README.md` preserves the original README as a historical document. In particular, its old `lineage-grounded` terminology and three-clause implementation account describe the input baseline, not these new modules.
-
-`make clean` removes build products and fresh execution outputs. It retains the source, expected outputs and the verification records outside this directory.
+`make clean` removes build products and execution outputs. It retains sources,
+expected outputs and verification records.

@@ -1,15 +1,15 @@
-# Version 20 verification — 4 October 2026
+# Verification — 4 October 2026
 
-Version 20 revises presentation and adds a supplied two-record walkthrough and
+The artefact includes a supplied two-record walkthrough and
 synthetic scaling experiment. The proved sources, extracted decision cores and
-existing decision wrappers match the version 19 release at
+decision wrappers match the verified component assembly at
 `a44557a06d1043d7a8d908fc7b32d891cbddc848`. Their kernel, selected-assumption and
 18/6 mutation evidence is retained in `../verification-v19/`; this record does
-not relabel those executions as fresh version 20 kernel or mutation runs.
+not report those executions as fresh kernel or mutation runs.
 
 The exactness Make checks were freshly run, reproducing 61 edge checks,
 368,640 graph comparisons, 9,360 fibre comparisons, 14 semantic boundary
-checks and the new walkthrough's expected diagnostics. The walkthrough adds no
+checks and the walkthrough's expected diagnostics. The walkthrough adds no
 new formal guarantee or clearance verdict. Every one of the 54 scaling
 configurations has five measured repetitions, with graph/fibre verdict and
 factor-size/witness validation. All 270 raw records agree with their reported
@@ -47,10 +47,10 @@ with `make -B`; both documents compile using only its supplied inputs.
 `source-package-rebuild.txt` retains that check.
 
 The repository manifest excludes itself and generated release packages to avoid
-circular hashes. Package checksums are retained separately. Historical manifests
-are historical snapshot records, rather than the current checksum command.
+circular hashes. Package checksums are retained separately. Component manifests bind their respective pinned snapshots; use the command
+above to verify the current tree.
 
-The supporting version 20 artefact is archived as
+The supporting artefact is archived as
 `swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`. The full visit and
 byte-checked public retrieval are recorded under `archive/`. The final
 archive-citation update is bound by the current manifest; see the release

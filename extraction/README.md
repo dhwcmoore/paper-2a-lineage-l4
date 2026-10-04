@@ -1,8 +1,8 @@
 # Extraction / OCaml
 
 `ExtractLineageCheck.v` extracts the PROVED lineage checker; `run_lineage_regression.sh`
-builds it and runs `lineage_regression.ml` against the frozen historical handwritten audit
-(case study; random records on the legacy overlap; stratified populations; v6
+builds it and runs `lineage_regression.ml` against the fixed handwritten reference audit
+(case study; random records on the legacy overlap; stratified populations; boundary
 edge cases).
 
 `ExtractAssessment.v` extracts the assessments of the examples to OCaml; 
@@ -10,12 +10,12 @@ edge cases).
 obstructions are DATA (lineage graph, custodian, coverage, verdict, obstruction
 constructors) and survive extraction, whereas Prop-valued evidence would not.
 
-The historical OCaml audit used by this regression is preserved byte for byte in
+The reference OCaml audit used by this regression is preserved byte for byte in
 `../paper2a-extension/baseline/jurisdiction.ml` (section "Lineage audit of a claimed
 ground (Definition 12)", from line 154), with its `admissibility.ml` dependency.
 The baseline README pins its source revision and hashes. The regression still
-compares the companion's extracted L1–L3 checker with that historical audit on
-their legacy overlap. The strengthened Paper 2A L4 audit now lives separately in
+compares the companion's extracted L1–L3 checker with that reference audit on
+their legacy overlap. The Paper 2A L4 audit lives separately in
 `../legacy/exactness-2026/lineage_audit.ml`; its independent tests run through that
 directory's Makefile. The seam extraction boundary remains in
 `../legacy/exactness-2026/certified_temporal_seam.ml(i)` / `SeamExtraction.v`.
@@ -24,8 +24,8 @@ The lineage checker (`theories/Debt/LineageCheck.v`) is proved to reflect `Linea
 its agreement with the handwritten audit is tested, not proved.
 
 In the Rocq development, the evidence layer (`theories/Debt/Certificates.v`)
-defines `LineagePasses`, the Coq form of the lineage specification (since v6 it no
-longer matches the handwritten audit everywhere; see Legacy overlap below), and
+defines `LineagePasses`, the Coq form of the lineage specification (its specification differs from the reference handwritten audit outside the
+comparison domain; see Legacy overlap below), and
 `LineageCertificate` carrying its proofs. Equivalence with the
 OCaml audit is NOT proved, and the OCaml does not build kernel certificates.
 
@@ -37,18 +37,18 @@ verified against those Props. That link is open work.
 
 ## Stratified regression and mutation study
 `run_lineage_regression.sh` also runs seventeen stratified populations (eleven
-shallow and six deep, 300 graphs each) with intended outcomes, and six v6 edge
+shallow and six deep, 300 graphs each) with intended outcomes, and six boundary edge
 cases. `mutation_matrix.py WORKDIR` (WORKDIR = the work directory given to the
 regression script) mutates the extracted checker seventeen ways and reports which
 suite detects each. Both are tests, not theorems.
 
 ## Legacy overlap
-The handwritten audit predates the v6 conditions, so the random comparison uses
+The random comparison with the handwritten reference audit uses
 only records in the legacy overlap (`legacy_overlap` in `lineage_regression.ml`):
 the ground differs from both coordinates and is not a purely raw node. On these
-records, inspection of the definitions shows the v6-only clauses to be inactive;
+records, inspection of the definitions shows the identity-separation and derived-ground clauses to be inactive;
 agreement there is regression evidence, not a proof of equivalence. Records outside it are skipped,
-not resampled (1079 of 3000 at the time of writing); the v6 clauses are tested by
+not resampled (1079 of 3000 at the time of writing); those clauses are tested by
 the edge cases instead.
 
 ## Usage
@@ -81,12 +81,12 @@ not additional proofs of semantic equivalence or production fidelity.
 
 ## Paper 2A L4 and retained-value decision cores
 
-`ExtractPaper2A.v` extracts the new `LineageL4.v` and `FiniteFibreCheck.v`
+`ExtractPaper2A.v` extracts `LineageL4.v` and `FiniteFibreCheck.v`
 decision functions. After a clean Dune build, run
 `bash extraction/verify_paper2a_extraction.sh` to compare a fresh extraction
 with the checked-in `paper2a_verified_core.ml(i)`; `--update` regenerates it.
-These new cores are separate from the historical L1–L3 regression above.
+These cores are separate from the L1–L3 regression above.
 [Mechanisation scope](../paper2a-extension/MECHANISATION.md) lists the reflection,
 factor/witness and fixed-ground composition proofs, the runtime integration,
 and the remaining tested wrappers. The frozen six-node probe still tests its
-historical handwritten snapshot.
+fixed handwritten snapshot.

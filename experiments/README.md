@@ -1,4 +1,4 @@
-# Version 20 synthetic scaling experiment
+# Synthetic scaling experiment
 
 Run `python3 experiments/run_scaling.py` from the root. It compiles the public
 OCaml wrappers as bytecode in a temporary directory, generates bound complete

@@ -1,107 +1,38 @@
-# Paper 2A extension in the copied repository
+# Paper 2A implementation and verification
 
-The separately named `paper-2a-lineage-l4` repository contains the complete
-source of `grounded-transport-calculus` at starting main commit
-`139791754787025ffaf3e37f78a869bbfa8d0ea5`, together with the tested Paper 2A
-extension. The source repository has not been modified by this task.
+The implementation supplies a declared-lineage graph audit, retained-value
+fibre checker, tax-migration example, assurance-boundary controls and a
+practitioner walkthrough. [Mechanisation scope](MECHANISATION.md) identifies
+the Coq results and the tested runtime boundary.
 
-The extension was prepared from the exactness snapshot exported at
-`51284d028e9f4fb9e75f3fbba69a538b7fde311b`. Its source patch applied cleanly to
-the copied main revision, and all 30 resulting exactness source files matched
-the previously tested standalone package before integration verification.
+The executable sources are under `../legacy/exactness-2026/`:
 
-## Build and check
+- `lineage_audit.ml` binds graph declarations to the extracted L1–L4 checker
+  and reports qualifications, shared ancestry and open defeaters.
+- `lineage_fibre.ml` binds retained values to the extracted fibre checker and
+  reports a finite factor table or witness pair.
+- `paper2a_verified_core.ml` and `.mli` contain the extracted decision functions.
+- `jurisdiction.ml` supplies the synthetic tax-migration case.
+- `boundary_controls.ml` exercises fourteen semantic assurance boundaries.
+- `audit_walkthrough.ml` shows supplied data, diagnosis and repair.
 
-From the repository root:
+From the repository root, follow the [build instructions](../README.md).
+Coq 8.18.0 and OCaml 4.14.1 are required by the exactness Makefile.
+The [verification record](verification-v20/README.md) reports results and binds
+the current tree with a source/evidence manifest. The
+[scaling experiment](../experiments/README.md) supplies raw measurements and
+explicit limits on application evidence.
 
-```bash
-make -C legacy/exactness-2026 check
-(cd legacy/exactness-2026 && coqchk Admissibility && \
- coqchk -Q . Exactness Exactness.GroundedSeam Exactness.SeamExtraction)
-python3 legacy/exactness-2026/mutation_check.py --json legacy/exactness-2026/mutation_results.json
-make -C legacy/exactness-2026 clean
-dune build --root .
-```
+The supporting Grounded Transport repository is
+[grounded-transport-calculus](https://github.com/dhwcmoore/grounded-transport-calculus),
+with source revision `139791754787025ffaf3e37f78a869bbfa8d0ea5`.
+The three baseline Coq sources are unchanged. The companion's L1–L3 regression
+uses the fixed reference sources under `baseline/`; its results are distinct
+from the Paper 2A graph and fibre tests. The six-node probe likewise checks its
+own fixed handwritten source snapshot.
 
-Run the kernel checks before `clean`: it removes the source-tree build products
-that otherwise conflict with Dune rules. Expected outputs and verification
-records are retained.
-
-The supplementary [six-node L4 probe](Paper_2A_L4_Six_Node_Probe/README.md)
-includes its own frozen inputs, results and reproduction command. Its counts
-are separate from the extension suite.
-
-The exactness Makefile retains its Coq 8.18.0 and OCaml 4.14.1 version gate.
-The inherited project requires Dune 3.8 or later. The companion's original
-verification and extraction commands remain in the repository root README.
-
-The companion extraction regression uses the original handwritten three-clause
-audit, frozen byte for byte under `baseline/`. This preserves its original record
-format and output expectations. It does not compare the companion's L1–L3 checker
-with the new L4 implementation. The new implementation has its own independent
-reference tests and mutation checks under `legacy/exactness-2026`.
-
-## Verification records
-
-`Paper_2A_Lineage_L4_Verification.md` preserves the full standalone extension
-verification account. `verification/` holds its build, kernel, independent-test,
-mutation, regression and patch records. The original baseline records remain
-separately labelled in `verification/baseline/`.
-
-`integration/` holds the additional checks performed after applying the
-extension to this complete repository copy. These records supplement the
-standalone results rather than changing their attribution.
-
-Large kernel transcripts under both evidence directories use lossless `.txt.gz`
-files; `gzip -dc FILE.txt.gz` restores their complete text. The preserved standalone
-report refers to the corresponding original `.txt` names. `compressed-logs.json`
-records the original and compressed hashes. The integration checks pass the full
-Dune build, the exactness Makefile, the kernel checks, the historical companion
-regression and its 17-mutant union, and the new extension's 18-mutant suite.
-
-## Historical implementation scope
-
-The following scope describes the original handwritten extension. The current
-[mechanised replacement](MECHANISATION.md) proves and extracts the L1--L4 and
-retained-value fibre decision cores, while retaining tested input and diagnostic
-wrappers. Historical verification logs retain their original attribution.
-
-The new code is under `legacy/exactness-2026`:
-
-- `lineage_audit.ml` and `.mli` implement graph validation, strengthened L1/L3,
-  separate L2/L4 disclosure, structural qualification and declared open-defeater
-  and coverage status.
-- `lineage_fibre.ml` and `.mli` compute the shared-node tuple from the declared
-  graph, validate retained values and subject identifiers, and return a finite
-  factor table or a refuting pair.
-- `jurisdiction.ml` uses the new graph audit without changing the original
-  static and seam calculations.
-- `lineage_examples.ml`, `test_lineage.ml` and `mutation_check.py` provide the
-  executable laundering example, independent reference comparisons and
-  single-fault mutations.
-
-The original Coq proofs and the separately extracted companion lineage checker
-are retained. The latter still implements its own L1–L3 predicate. The new L4
-checks are handwritten OCaml, not a Coq-reflected or extracted implementation.
-No graph declaration, justification string or finite-value check establishes
-source fidelity, authenticates custody, records lineage clearance or issues a
-transport certificate.
-
-The current
-[Paper 2A version 20](../document/Paper_2A_Copied_Agreement_v20.tex) incorporates
-the extension scope and evidence. Superseded manuscripts have been removed; the original verification records
-are retained as historical evidence.
-
-Current version 18 replay, review controls and source hashes are recorded in
-[verification-v18](verification-v18/README.md). The original mechanisation record
-is historical and retains its original manuscript hashes.
-
-The [version 20 manifest](verification-v20/README.md) binds the current manuscript
-and repository to the retained evidence and fresh merged-release checks.
-The upstream proof/runtime additions and their independent evidence remain
-under [v18](v18/README.md).
-
-Version 20 adds the typed-input practitioner walkthrough, measured scaling and
-a complete technical supplement. Current replay and package provenance are
-under [verification-v20](verification-v20/README.md); the version 19 component
-assembly remains pinned at `a44557a06d1043d7a8d908fc7b32d891cbddc848`.
+Component verification records retain their source revisions, execution dates
+and manifests. They establish checks of those pinned inputs, and must be read
+with the attribution in the current verification record. See
+[release provenance](../release/README.md) for component pins and the permanent
+archive, and [document instructions](../document/README.md) for editable sources.

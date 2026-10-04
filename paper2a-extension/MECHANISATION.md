@@ -1,8 +1,7 @@
 # Paper 2A mechanisation
 
-The current decision core extends the historical handwritten implementation.
-The preserved standalone and integration logs describe that earlier implementation;
-they are not relabelled as checks of the new core.
+Coq proves the declared-graph and finite-carrier results below. Runtime adapters
+and diagnostic presentation are checked separately by executable tests.
 
 ## Proofs
 
@@ -13,7 +12,7 @@ they are not relabelled as checks of the new core.
 
 - `examples/Paper2AControls.v`: raw shared inputs with an ignored relevant source, actual-claim admissibility with implementation/grounding failure, and injectivity precluding fibre witnesses. These are assurance-boundary controls, not evaluator-adequacy proofs.
 
-No new axiom or admission is introduced. The new modules do not import the isolated classical factorisation file.
+The listed modules contain no axioms or admissions. They do not import the isolated classical factorisation file.
 
 ## Runtime connection and boundary
 
@@ -56,33 +55,25 @@ python3 legacy/exactness-2026/mutation_check.py
 python3 legacy/exactness-2026/mutation_verified_core.py
 ```
 
-The 18-mutant suite targets the wrapper and diagnostics. The new six-mutant suite
+The 18-mutant suite targets the wrapper and diagnostics. The six-mutant suite
 targets the generated code separately. Compiler errors are invalid mutants rather
 than detections. The frozen six-node probe still tests its pinned handwritten
 snapshot; it is not a test of the extracted replacement.
 
 ## Recorded outcome
 
-The current replay is under [verification-v18/](verification-v18/README.md);
-[mechanisation/](mechanisation/README.md) preserves the version 17 record.
-All 46 selected identifiers (26 original, eleven upstream additions and nine
-additional review controls) are closed under the global
-context. The named kernel check and extraction comparison pass, as do the
-61/368,640/9,360 runtime tests, 18 wrapper/diagnostic mutants and six
-generated-core mutants, plus fourteen executable semantic boundary checks.
-Version 20 cites the preserved version 18 records and fresh merged-release checks;
-superseded manuscripts are removed while their verification records remain. The mechanised artefact revision is
-`945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; version 20 cites it for the unchanged decision cores. The additional controls
-and retained replay are bound by the [current version 20 manifest](verification-v20/README.md).
+All 46 selected theorem/example identifiers are closed under the global context.
+Kernel checks and byte-identical extraction checks pass. Executable results are
+61 edge checks, 368,640 graph comparisons, 9,360 fibre comparisons and fourteen
+semantic boundary checks. The wrapper/diagnostic suite detects 18/18 compiling
+mutants; the generated-core suite detects 6/6.
 
-The upstream additions include `injective_observation_no_witness` and
-`injective_complete_factor`, raw-input and actual-claim controls in
-`Paper2ALineage.v`, and `legacy/exactness-2026/boundary_controls.ml`. Their
-source is pinned at `1e9de34b63281d019502f746f57ede348b62ca5e`; independent
-records remain under [v18/](v18/README.md). Current release logs and assumption
-reports are under [verification-v19/](verification-v19/README.md).
+The [verification record](verification-v20/README.md) distinguishes the Make,
+walkthrough and scaling executions from the component kernel, assumption and
+mutation evidence. The current manifest binds the sources and these records.
+The decision-core revision is `945c68e08f2d267d9a8a06ec77784a3ecc47afd9`;
+proof/runtime controls are pinned at `1e9de34b63281d019502f746f57ede348b62ca5e`.
+The verified component assembly is `a44557a06d1043d7a8d908fc7b32d891cbddc848`.
 
-Version 20 adds the typed-input practitioner walkthrough, measured scaling and
-a complete technical supplement. Current replay and package provenance are
-under [verification-v20](verification-v20/README.md); the version 19 component
-assembly remains pinned at `a44557a06d1043d7a8d908fc7b32d891cbddc848`.
+The typed-input practitioner walkthrough, measured scaling and complete technical
+supplement are documented in the [release instructions](../release/README.md).
