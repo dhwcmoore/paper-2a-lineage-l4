@@ -1,0 +1,22 @@
+$ coqc --version
+The Coq Proof Assistant, version 8.18.0
+compiled with OCaml 4.14.1
+
+$ coqchk --version
+The Coq Proof Checker, version 8.18.0
+
+$ ocamlc -version
+4.14.1
+
+$ python3 --version
+Python 3.12.14
+
+$ make --version
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+The relocated OCaml compiler wrapper supplies -use-runtime for the private bytecode interpreter. The Makefile version gate remains Coq 8.18.0 and OCaml 4.14.1.

@@ -1,0 +1,25 @@
+{
+  "source_repository": "dhwcmoore/grounded-transport-calculus",
+  "copied_repository": "dhwcmoore/paper-2a-lineage-l4",
+  "starting_main": "139791754787025ffaf3e37f78a869bbfa8d0ea5",
+  "main_history_commits": 19,
+  "all_branch_and_tag_refs_match": true,
+  "source_refs": {
+    "refs/heads/copied-agreement-v6-lineage": "f70112dc204c4e2f4f514d8c24d3fa93af3783f0",
+    "refs/heads/copied-agreement-v6-noncomposition": "42d3d85354c7b33c29b7d6a914230b7d0d514647",
+    "refs/heads/fix-lineage-regression-dune": "d076525720574aaed4b31c0b7479f2c571c66719",
+    "refs/heads/main": "139791754787025ffaf3e37f78a869bbfa8d0ea5",
+    "refs/heads/submission-verification-2026-10-02": "f8905064afa04993b9a6486fc8ef87fc0f745fbc",
+    "refs/heads/v6-lineage-milestone-docs": "5c2c5d0ba4ce2b78d084946711fad7c221262c0b",
+    "refs/tags/submission-2026-10-02": "139791754787025ffaf3e37f78a869bbfa8d0ea5"
+  },
+  "copied_refs_before_extension": {
+    "refs/heads/copied-agreement-v6-lineage": "f70112dc204c4e2f4f514d8c24d3fa93af3783f0",
+    "refs/heads/copied-agreement-v6-noncomposition": "42d3d85354c7b33c29b7d6a914230b7d0d514647",
+    "refs/heads/fix-lineage-regression-dune": "d076525720574aaed4b31c0b7479f2c571c66719",
+    "refs/heads/main": "139791754787025ffaf3e37f78a869bbfa8d0ea5",
+    "refs/heads/submission-verification-2026-10-02": "f8905064afa04993b9a6486fc8ef87fc0f745fbc",
+    "refs/heads/v6-lineage-milestone-docs": "5c2c5d0ba4ce2b78d084946711fad7c221262c0b",
+    "refs/tags/submission-2026-10-02": "139791754787025ffaf3e37f78a869bbfa8d0ea5"
+  }
+}

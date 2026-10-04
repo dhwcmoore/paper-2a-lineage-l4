@@ -1,9 +1,9 @@
 COQC ?= coqc
 OCAMLC ?= ocamlc
 
-.PHONY: check check-versions coq ocaml interface clean
+.PHONY: check check-versions coq ocaml interface lineage-build lineage-tests clean
 
-check: check-versions coq ocaml interface
+check: check-versions coq ocaml interface lineage-tests
 
 check-versions:
 	@$(COQC) --version | grep -q "version 8.18.0" || \
@@ -16,13 +16,28 @@ coq:
 	$(COQC) -Q . Exactness GroundedSeam.v
 	$(COQC) -Q . Exactness SeamExtraction.v
 
-ocaml:
+lineage-build:
+	$(OCAMLC) -c admissibility.ml
+	$(OCAMLC) -c lineage_audit.mli
+	$(OCAMLC) -c lineage_audit.ml
+	$(OCAMLC) -c lineage_fibre.mli
+	$(OCAMLC) -c lineage_fibre.ml
+
+ocaml: lineage-build
 	$(OCAMLC) -o examples admissibility.ml examples.ml
 	./examples > examples_output.current.txt
-	cmp examples_output.txt examples_output.current.txt
-	$(OCAMLC) -o jurisdiction admissibility.ml jurisdiction.ml
+	cmp recorded-output/examples_output.txt examples_output.current.txt
+	$(OCAMLC) -o jurisdiction admissibility.cmo lineage_audit.cmo jurisdiction.ml
 	./jurisdiction > jurisdiction_output.current.txt
-	cmp jurisdiction_output.txt jurisdiction_output.current.txt
+	cmp expected/jurisdiction_output.txt jurisdiction_output.current.txt
+
+lineage-tests: lineage-build
+	$(OCAMLC) -o test_lineage admissibility.cmo lineage_audit.cmo lineage_fibre.cmo test_lineage.ml
+	./test_lineage > lineage_tests.current.txt
+	cat lineage_tests.current.txt
+	$(OCAMLC) -o lineage_examples admissibility.cmo lineage_audit.cmo lineage_fibre.cmo lineage_examples.ml
+	./lineage_examples > lineage_examples.current.txt
+	cmp expected/lineage_examples_output.txt lineage_examples.current.txt
 
 interface: coq
 	$(OCAMLC) -c seam_checks.mli
@@ -45,6 +60,7 @@ interface: coq
 
 clean:
 	rm -f *.aux *.cmi *.cmo *.cmx *.o *.vo *.vos *.vok *.glob \
-	  examples jurisdiction interface_ok interface_unsafe_cast \
+	  examples jurisdiction interface_ok interface_unsafe_cast test_lineage lineage_examples \
 	  examples_output.current.txt jurisdiction_output.current.txt interface_ok.current.txt \
+	  lineage_tests.current.txt lineage_examples.current.txt \
 	  direct_forge.log stage_mismatch.log seam_checks.ml seam_checks.mli .*.aux .lia.cache

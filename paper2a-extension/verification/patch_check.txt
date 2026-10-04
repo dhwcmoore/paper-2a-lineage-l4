@@ -1,0 +1,5 @@
+git apply --check: PASS
+git apply: PASS
+Patched source inventory and bytes match the standalone source: 30 files.
+Source files changed or added: 14
+Unchanged files at their original paths: 16

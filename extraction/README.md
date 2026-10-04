@@ -1,7 +1,7 @@
 # Extraction / OCaml
 
 `ExtractLineageCheck.v` extracts the PROVED lineage checker; `run_lineage_regression.sh`
-builds it and runs `lineage_regression.ml` against the handwritten audit
+builds it and runs `lineage_regression.ml` against the frozen historical handwritten audit
 (case study; random records on the legacy overlap; stratified populations; v6
 edge cases).
 
@@ -10,10 +10,15 @@ edge cases).
 obstructions are DATA (lineage graph, custodian, coverage, verdict, obstruction
 constructors) and survive extraction, whereas Prop-valued evidence would not.
 
-The OCaml lineage audit is not duplicated here. It is preserved in
-`../legacy/exactness-2026/jurisdiction.ml` (section "Lineage audit of a claimed
-ground (Definition 12)", from line 154), and the extraction boundary in
-`certified_temporal_seam.ml(i)` / `SeamExtraction.v`.
+The historical OCaml audit used by this regression is preserved byte for byte in
+`../paper2a-extension/baseline/jurisdiction.ml` (section "Lineage audit of a claimed
+ground (Definition 12)", from line 154), with its `admissibility.ml` dependency.
+The baseline README pins its source revision and hashes. The regression still
+compares the companion's extracted L1–L3 checker with that historical audit on
+their legacy overlap. The strengthened Paper 2A L4 audit now lives separately in
+`../legacy/exactness-2026/lineage_audit.ml`; its independent tests run through that
+directory's Makefile. The seam extraction boundary remains in
+`../legacy/exactness-2026/certified_temporal_seam.ml(i)` / `SeamExtraction.v`.
 
 The lineage checker (`theories/Debt/LineageCheck.v`) is proved to reflect `LineagePasses`;
 its agreement with the handwritten audit is tested, not proved.

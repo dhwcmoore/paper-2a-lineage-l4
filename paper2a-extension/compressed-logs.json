@@ -1,0 +1,66 @@
+[
+  {
+    "original_path": "paper2a-extension/integration/coqchk-admissibility.txt",
+    "original_bytes": 1585776,
+    "original_sha256": "0264343aabc30bb3cbd099d35b540b85efd209109ad7606592c7c536772ca4f1",
+    "compressed_path": "paper2a-extension/integration/coqchk-admissibility.txt.gz",
+    "compressed_bytes": 94301,
+    "compressed_sha256": "178eddf5b2df2c0a746ab6001bbd2e23f8a802bda076bcde9820264455719e00"
+  },
+  {
+    "original_path": "paper2a-extension/integration/coqchk-companion.txt",
+    "original_bytes": 2788562,
+    "original_sha256": "0da83868e37381d41e4dbe9b421247bbfc7148850995aa2d289dd17cac0b4f00",
+    "compressed_path": "paper2a-extension/integration/coqchk-companion.txt.gz",
+    "compressed_bytes": 175381,
+    "compressed_sha256": "3ffacf3da619d63256596cd5bc2d8ff84eaeab3a731b3bf794e127285b905dbe"
+  },
+  {
+    "original_path": "paper2a-extension/integration/coqchk-seam.txt",
+    "original_bytes": 2659516,
+    "original_sha256": "d73ac5136cbd57e8dc790ac7295b0f4ec515f335b29a73bb636bf8df205bf2d7",
+    "compressed_path": "paper2a-extension/integration/coqchk-seam.txt.gz",
+    "compressed_bytes": 163351,
+    "compressed_sha256": "fbb39092aa1efe53c757178cc0aae10c794ba7210b49e6a0c8bf21f2425dec3f"
+  },
+  {
+    "original_path": "paper2a-extension/verification/baseline/coqchk-admissibility.txt",
+    "original_bytes": 1582561,
+    "original_sha256": "6d3336a2d423ea58c4010788f69b5cf65117d2d88e1fa696fe9ead3b4a76bdbe",
+    "compressed_path": "paper2a-extension/verification/baseline/coqchk-admissibility.txt.gz",
+    "compressed_bytes": 94193,
+    "compressed_sha256": "f9f429c589f5e0686af41523007c356e2d7a3bb2566e0b084e6672c2de2a6562"
+  },
+  {
+    "original_path": "paper2a-extension/verification/baseline/coqchk-seam.txt",
+    "original_bytes": 2653660,
+    "original_sha256": "3efa34e3085b9154f8a2565829c31651e7e1e34ac0b09dccfa76424c4356ad40",
+    "compressed_path": "paper2a-extension/verification/baseline/coqchk-seam.txt.gz",
+    "compressed_bytes": 163195,
+    "compressed_sha256": "15c67d4a584cc285fef5e8704d219789dbe7861972f87cf985dc4ec7fe52b556"
+  },
+  {
+    "original_path": "paper2a-extension/verification/coqchk-admissibility.txt",
+    "original_bytes": 1585765,
+    "original_sha256": "dbaaf57b196779b036f906471ec5079c951cdb05976126dbd65cb3df4fdeeef3",
+    "compressed_path": "paper2a-extension/verification/coqchk-admissibility.txt.gz",
+    "compressed_bytes": 94288,
+    "compressed_sha256": "080743533f3e17e42aaacf448d90d3e63b176f5bea55db50758364f214b5ea9d"
+  },
+  {
+    "original_path": "paper2a-extension/verification/coqchk-seam.txt",
+    "original_bytes": 2659494,
+    "original_sha256": "6256c7bec227e60339957c590355abfafcb9fbbeb691d1ba501fe549a297d475",
+    "compressed_path": "paper2a-extension/verification/coqchk-seam.txt.gz",
+    "compressed_bytes": 163339,
+    "compressed_sha256": "b7f09f6b3c9a64d0a4a3a77415a92ca9eb1e29563aefcd798983fd719ee331ef"
+  },
+  {
+    "original_path": "paper2a-extension/integration/dune-build.txt",
+    "original_bytes": 551,
+    "original_sha256": "e0165b713d58a06a6be64abb0befe55dabf5d8cdeb1cfdd9ce191f65f6ced468",
+    "compressed_path": "paper2a-extension/integration/dune-build.txt.gz",
+    "compressed_bytes": 169,
+    "compressed_sha256": "70fc594ef4d805a8db642e33030aaaf954aaad5a72a1b55132dd691b120e1a8c"
+  }
+]

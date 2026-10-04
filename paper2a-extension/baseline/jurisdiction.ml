@@ -1,7 +1,6 @@
 (* Integrated case study: sales-tax jurisdiction through an address-schema
    migration. Uses Admissibility_check from admissibility.ml. *)
 open Admissibility
-open Lineage_audit
 
 (* ---------- The declared world ---------- *)
 type goods = General | Food
@@ -152,23 +151,95 @@ module Record_without_scan = Admissibility_check (struct
   let m x = (x.s.z, m_new x, x.s.g, x.s.e, x.s.r, x.o)
   let phi = phi_sigma  let obs_equal = ( = ) end)
 
-(* ---------- Lineage audit of the declared ground ---------- *)
+(* ---------- Lineage audit of a claimed ground (Definition 12) ---------- *)
+(* A lineage record declares derived fields with their parents, the raw
+   inputs, which of them are claim-relevant, the three distinguished nodes,
+   and a disposition for each shared non-raw ancestor of the coordinates. *)
+type disposition = Justified of string | Open_defeater of string
+
+type lineage = {
+  derived : (string * string list) list;   (* derived field, its parents *)
+  raw : string list;                        (* raw inputs: no parents *)
+  claim_relevant : string list;             (* subset of raw *)
+  d_a : string; d_b : string; ground : string;   (* coordinate and seam nodes *)
+  dispositions : (string * disposition) list;
+}
+
+let parents l n = try List.assoc n l.derived with Not_found -> []
+
+(* Well-formedness: unique names, raw inputs are not derived, every parent is
+   declared, the distinguished nodes exist, claim-relevant inputs are raw,
+   and the graph is acyclic. Returns the first defect found. *)
+let well_formed l =
+  let names = List.map fst l.derived @ l.raw in
+  let declared n = List.mem n names in
+  let rec dup = function [] -> None | x :: r -> if List.mem x r then Some x else dup r in
+  match dup names with
+  | Some n -> Some ("duplicate node " ^ n)
+  | None ->
+  match List.find_opt (fun (_, ps) -> List.exists (fun p -> not (declared p)) ps) l.derived with
+  | Some (n, _) -> Some ("undeclared parent of " ^ n)
+  | None ->
+  match List.find_opt (fun n -> not (List.mem_assoc n l.derived)) [l.d_a; l.d_b; l.ground] with
+  | Some n -> Some ("distinguished node not derived: " ^ n)
+  | None ->
+  match List.find_opt (fun n -> not (List.mem n l.raw)) l.claim_relevant with
+  | Some n -> Some ("claim-relevant input not raw: " ^ n)
+  | None ->
+    (* depth-first search with colours; grey on the stack, black finished *)
+    let colour = Hashtbl.create 32 in
+    let rec visit n =
+      match Hashtbl.find_opt colour n with
+      | Some `Grey -> Some n
+      | Some `Black -> None
+      | None ->
+          Hashtbl.replace colour n `Grey;
+          let r = List.fold_left (fun acc p -> match acc with
+                    | Some _ -> acc | None -> visit p) None (parents l n) in
+          Hashtbl.replace colour n `Black; r in
+    (match List.fold_left (fun acc n -> match acc with
+             | Some _ -> acc | None -> visit n) None names with
+     | Some n -> Some ("cycle through " ^ n)
+     | None -> None)
+
+(* Strict ancestors, computed with a visited set (terminates on any graph). *)
+let ancestors l n =
+  let seen = Hashtbl.create 32 in
+  let rec go = function
+    | [] -> ()
+    | x :: rest ->
+        if Hashtbl.mem seen x then go rest
+        else (Hashtbl.replace seen x (); go (parents l x @ rest)) in
+  go (parents l n);
+  List.sort compare (Hashtbl.fold (fun k () acc -> k :: acc) seen [])
+
 let pf b = if b then "pass" else "FAIL"
+
 let audit label l =
-  match Lineage_audit.check l with
-  | MalformedLineage defect ->
+  match well_formed l with
+  | Some defect ->
       Printf.printf "%-28s MalformedLineage: %s\n" label defect
-  | Assessed a ->
-      let disp entries n = match List.assoc_opt n entries with
+  | None ->
+      let a_anc = ancestors l l.d_a and b_anc = ancestors l l.d_b in
+      let g_anc = ancestors l l.ground in
+      (* L1: the seam valuation descends from neither coordinate *)
+      let l1 = not (List.mem l.d_a g_anc || List.mem l.d_b g_anc) in
+      (* L2: shared non-raw ancestry, each entry with a disposition *)
+      let shared = List.filter (fun n -> List.mem n b_anc && not (List.mem n l.raw)) a_anc in
+      let undisposed = List.filter (fun n -> not (List.mem_assoc n l.dispositions)) shared in
+      let l2 = undisposed = [] in
+      let disp n = match List.assoc_opt n l.dispositions with
         | Some (Justified _) -> n ^ ":justified"
         | Some (Open_defeater _) -> n ^ ":open-defeater"
         | None -> n ^ ":UNDISCLOSED" in
-      Printf.printf "%-28s L1 %s; L2 %s shared=[%s]; L3 %s ground-only=[%s] claim-relevant raw=[%s]; L4 %s ground-shared=[%s]; lineage-qualified=%b; declared-resolution-complete=%b; declared-coverage-closed=%b\n"
-        label (pf a.l1) (pf a.l2)
-        (String.concat "; " (List.map (disp l.dispositions) a.shared_coordinates))
-        (pf a.l3) (String.concat "; " a.ground_only) (String.concat "; " a.relevant_raw)
-        (pf a.l4) (String.concat "; " (List.map (disp l.ground_dispositions) a.shared_ground))
-        a.lineage_qualified a.declared_resolution_complete a.declared_coverage_closed
+      (* L3: ground-only ancestry contains a claim-relevant raw input *)
+      let ground_only = List.filter (fun n ->
+          not (List.mem n a_anc) && not (List.mem n b_anc) && n <> l.d_a && n <> l.d_b) g_anc in
+      let relevant = List.filter (fun n -> List.mem n l.claim_relevant) ground_only in
+      let l3 = relevant <> [] in
+      Printf.printf "%-28s L1 %s; L2 %s shared=[%s]; L3 %s ground-only=[%s] claim-relevant raw=[%s]; lineage-grounded=%b\n"
+        label (pf l1) (pf l2) (String.concat "; " (List.map disp shared))
+        (pf l3) (String.concat "; " ground_only) (String.concat "; " relevant) (l1 && l2 && l3)
 
 let raw_inputs = ["address_text"; "rate_charged"; "goods"; "period"; "delivery_event"; "table_v1"; "table_v2"]
 let claim_relevant_inputs = ["delivery_event"; "rate_charged"; "goods"; "period"; "table_v2"]
@@ -184,8 +255,6 @@ let derived_backfill = [
   "phi_seam", ["m_delivered"; "table_v2"; "rate_charged"; "goods"; "period"] ]
 
 let base derived dispositions = {
-  claim_id = "delivery-jurisdiction"; scope_id = "synthetic-tax-carrier-1728";
-  ground_dispositions = []; coverage_gaps = [];
   derived; raw = raw_inputs; claim_relevant = claim_relevant_inputs;
   d_a = "flag_old"; d_b = "flag_new"; ground = "phi_seam"; dispositions }
 

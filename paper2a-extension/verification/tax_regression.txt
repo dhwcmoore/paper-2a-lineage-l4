@@ -1,0 +1,3 @@
+Static and seam output before lineage audit: byte-for-byte match to the verified baseline.
+SHA256 of matched prefix: b9103ffde503e2a5a6eb1c9891e79c0ea802713bd0514539734af62d7f367d9f
+Five tax lineage results validated independently against their declared graph/disposition expectations.

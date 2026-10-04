@@ -1,5 +1,5 @@
 (* Regression / differential test: the EXTRACTED, PROVED lineage checker
-   against the HANDWRITTEN OCaml audit in legacy/exactness-2026/jurisdiction.ml.
+   against the frozen HANDWRITTEN audit in paper2a-extension/baseline/jurisdiction.ml.
 
    1. The five case-study records: compared with the recorded output.
    2. Random records: compared with the handwritten [Jurisdiction.audit], whose

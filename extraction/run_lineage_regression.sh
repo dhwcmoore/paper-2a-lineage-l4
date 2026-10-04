@@ -1,5 +1,5 @@
 #!/bin/sh
-# Extract the checked lineage audit and compare it with the handwritten one.
+# Extract the checked lineage audit and compare it with the frozen historical audit.
 # Run after the library is built (dune build or make). Works from any directory.
 #
 # Usage: extraction/run_lineage_regression.sh [WORKDIR]
@@ -11,7 +11,7 @@
 set -eu
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 WORK=${1:-$(mktemp -d)}
-LEG="$ROOT/legacy/exactness-2026"
+LEG="$ROOT/paper2a-extension/baseline"
 
 if [ -n "${GTC_LIBROOT:-}" ]; then
   LIBROOT=$(cd "$GTC_LIBROOT" && pwd)

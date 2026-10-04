@@ -1,0 +1,34 @@
+[
+  {
+    "check": "dune-build",
+    "exit_code": 0
+  },
+  {
+    "check": "make-check",
+    "exit_code": 0
+  },
+  {
+    "check": "coqchk-admissibility",
+    "exit_code": 0
+  },
+  {
+    "check": "coqchk-seam",
+    "exit_code": 0
+  },
+  {
+    "check": "coqchk-companion",
+    "exit_code": 0
+  },
+  {
+    "check": "companion-regression",
+    "exit_code": 0
+  },
+  {
+    "check": "companion-mutation",
+    "exit_code": 0
+  },
+  {
+    "check": "extension-mutation",
+    "exit_code": 0
+  }
+]
