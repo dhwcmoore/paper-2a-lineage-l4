@@ -1,5 +1,7 @@
 # Paper 2A version 18: verification and changes
 
+Proof and executable sources: [`1e9de34b63281d019502f746f57ede348b62ca5e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/1e9de34b63281d019502f746f57ede348b62ca5e). The final manuscript and release-manifest metadata follows this source revision.
+
 All reported build and test counts checked in this replay reproduce. Version 18
 adds the recommended semantic qualifications and countermodels. Version 17 is
 preserved unchanged.

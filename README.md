@@ -170,7 +170,8 @@ The manuscript's intended venue is the Journal of Logic and Computation.
 The historical version 17 mechanised source and verification records are pinned at
 [artefact commit `945c68e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/945c68e08f2d267d9a8a06ec77784a3ecc47afd9).
 The version 17 manuscript update cites that revision. Version 18 adds its
-separately recorded controls and source/evidence manifest. No metric supplement
+separately recorded controls and source/evidence manifest. Its proof and executable
+sources are pinned at [version 18 artefact commit `1e9de34`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/1e9de34b63281d019502f746f57ede348b62ca5e). No metric supplement
 is included in this repository; the current artefact is an exact audit.
 A persistent reviewer archive identifier remains to be assigned after deposit and
 public retrieval verification; no new DOI or publication status is claimed here.

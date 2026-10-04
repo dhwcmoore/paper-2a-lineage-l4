@@ -235,7 +235,7 @@ f/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/font
 s/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
 
-Output written on Paper_2A_Copied_Agreement_v18.pdf (50 pages, 612712 bytes).
+Output written on Paper_2A_Copied_Agreement_v18.pdf (50 pages, 613427 bytes).
 Transcript written on Paper_2A_Copied_Agreement_v18.log.
 Latexmk: Getting log file 'Paper_2A_Copied_Agreement_v18.log'
 Latexmk: Examining 'Paper_2A_Copied_Agreement_v18.fls'

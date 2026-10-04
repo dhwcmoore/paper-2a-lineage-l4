@@ -1,5 +1,8 @@
 # Version 18 verification records
 
+Proof and executable source pin: [`1e9de34b63281d019502f746f57ede348b62ca5e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/1e9de34b63281d019502f746f57ede348b62ca5e).
+The manuscript and release-manifest update follows this source revision.
+
 Independent replay on 4 October 2026, using Coq 8.18.0, OCaml 4.14.1,
 Dune 3.14.0 and Findlib 1.9.6. The current manuscript is
 [version 18](../../document/Paper_2A_Copied_Agreement_v18.pdf).
