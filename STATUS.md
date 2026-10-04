@@ -1,5 +1,17 @@
 # Status (2026-10-02, submission verification)
 
+This file records the copied companion's pinned and historical results.
+Manuscript paths and page counts in the dated sections below describe historical
+states; the current tree retains only Paper 2A version 17 in `document/`. In this
+Paper 2A repository, the three baseline Coq source files remain unchanged, but
+the OCaml implementation under `legacy/exactness-2026` has been extended.
+The companion regression uses the frozen historical audit under
+`paper2a-extension/baseline/`. Current extension scope and evidence are documented
+in [paper2a-extension/README.md](paper2a-extension/README.md); the L4 checks
+now use extracted Coq decision cores; see
+[mechanisation scope](paper2a-extension/MECHANISATION.md) for the new proofs
+and the remaining handwritten wrapper boundary.
+
 Reference environment: Coq 8.18.0, OCaml 4.14.1. Builds under `coq_makefile` and
 `dune build --root .`. `coqchk` passes on the whole project; on the project
 without `ClassicalFactorisation.v` it succeeds and reports no axioms. `Print
@@ -99,7 +111,7 @@ this section, and `defect_sound`, `lineage_check_rejected`,
 closed under the global context; the `coq_makefile` build compiles the new
 example; and the README verification commands pass as written.
 
-The handwritten audit belongs to the unchanged legacy supplement and does not
+The frozen historical handwritten audit under `paper2a-extension/baseline/` does not
 implement the v6 clauses, so the random differential comparison is restricted
 to the legacy overlap. The v6 clauses are tested against intended verdicts by
 the edge suite, and M14 to M17 probe them.
@@ -241,8 +253,9 @@ path is exercised less than the rejecting paths.
 Recommended use, as planned: the extracted checker replaces the handwritten
 audit's DECISION core; the handwritten code remains as input construction,
 diagnostic formatting, the case-study driver and an independent regression
-comparison. Replacing it in `jurisdiction.ml` has NOT been done (the legacy
-files are preserved unchanged).
+comparison. At this historical checkpoint, replacing it in `jurisdiction.ml`
+had not been done. The current Paper 2A driver uses the new handwritten graph
+audit; it does not replace that audit with the extracted companion checker.
 
 ### Packed warrants and summaries
 - `PackedWarrant emb x y` (`Debt/PackedWarrant.v`) packages a problem with a
@@ -331,8 +344,9 @@ Not part of `_CoqProject`; build instructions are in the file.
 
 ## Layers
 
-1. **Legacy** (`legacy/exactness-2026/`): byte-identical, checksums verified,
-   built as library `Exactness`.
+1. **Legacy** (`legacy/exactness-2026/`): the three baseline Coq source files
+   are unchanged, with the seam library built as `Exactness`; the OCaml audit
+   is extended. Historical audit inputs are frozen under `paper2a-extension/baseline/`.
 2. **Generic calculus** (`theories/{Core,Contexts,Obstructions}`).
 3. **Compatibility** (`theories/Instances/Original*.v`).
 4. **Assessment** (`theories/Debt/`):

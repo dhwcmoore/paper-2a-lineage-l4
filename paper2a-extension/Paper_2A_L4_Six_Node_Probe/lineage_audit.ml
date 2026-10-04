@@ -103,24 +103,6 @@ let ancestors l n =
   go (parents l n);
   List.sort compare (Hashtbl.fold (fun k () acc -> k :: acc) seen [])
 
-(* Injective encoding of all declared names. The validation above rejects
-   undeclared names before this adapter is used. Notes stay external. *)
-let verified_graph l =
-  let names = List.map fst l.derived @ l.raw in
-  let id n =
-    let rec find i = function
-      | [] -> failwith "FAIL: undeclared name in verified adapter"
-      | x :: xs -> if x = n then i else find (i + 1) xs in
-    find 0 names in
-  let module V = Paper2a_verified_core in
-  ({ V.lin_derived = List.map (fun (n,ps) -> id n, List.map id ps) l.derived;
-     V.lin_raw = List.map id l.raw;
-     V.lin_relevant = List.map id l.claim_relevant;
-     V.lin_dA = id l.d_a; V.lin_dB = id l.d_b; V.lin_ground = id l.ground;
-     V.lin_dispositions = List.map (fun (n,d) -> id n,
-       match d with Justified _ -> V.Justified 0 | Open_defeater _ -> V.OpenDefeater 0) l.dispositions },
-   List.map (fun (n,_) -> id n) l.ground_dispositions)
-
 let check l = match well_formed l with
   | Some reason -> MalformedLineage reason
   | None ->
@@ -147,18 +129,6 @@ let check l = match well_formed l with
     let open_ground_defeaters = open_nodes l.ground_dispositions in
     let l1 = coordinate_copy_reasons = [] and l2 = undisclosed_coordinates = [] in
     let l3 = relevant_raw <> [] and l4 = undisclosed_ground = [] in
-    let vg, ground_keys = verified_graph l in
-    let module V = Paper2a_verified_core in
-    let verified = (V.check_L1 vg, V.undisclosed vg = None,
-                    V.check_L3 vg, V.check_L4 vg ground_keys) in
-    let names = List.map fst l.derived @ l.raw in
-    let verified_shared = V.shared_ground vg
-      |> List.map (List.nth names) |> List.sort_uniq compare in
-    if shared_ground <> verified_shared || (l1,l2,l3,l4) <> verified ||
-       (l1 && l2 && l3 && l4) <> V.qualified4 vg ground_keys then
-      failwith "FAIL: handwritten diagnostics disagree with verified decision core";
-    let l1,l2,l3,l4 = verified in
-    let shared_ground = verified_shared in
     Assessed {
       l1; l2; l3; l4; coordinate_copy_reasons;
       shared_coordinates; undisclosed_coordinates; shared_ground; undisclosed_ground;

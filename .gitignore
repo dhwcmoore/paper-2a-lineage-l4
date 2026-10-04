@@ -49,3 +49,16 @@ legacy/exactness-2026/stage_mismatch.log
 legacy/exactness-2026/seam_checks.ml
 legacy/exactness-2026/seam_checks.mli
 legacy/exactness-2026/mutation_results.json
+
+# Historical root mutation output and supplementary probe build products
+/mutation_results.json
+/paper2a-extension/Paper_2A_L4_Six_Node_Probe/probe
+/paper2a-extension/Paper_2A_L4_Six_Node_Probe/results.current.json
+
+# Paper 2A LaTeX intermediate files
+document/*.synctex.gz
+document/*.xdv
+
+legacy/exactness-2026/verified_mutation_results.json
+
+__pycache__/

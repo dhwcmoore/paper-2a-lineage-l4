@@ -78,3 +78,15 @@ The current mutation union detects 17/17. Fixed, random, shallow, deep and edge
 suites detect 5, 12, 11, 8 and 4 respectively; shallow and deep together detect
 13, and M14--M17 are detected only by edge cases. These are test outcomes,
 not additional proofs of semantic equivalence or production fidelity.
+
+## Paper 2A L4 and retained-value decision cores
+
+`ExtractPaper2A.v` extracts the new `LineageL4.v` and `FiniteFibreCheck.v`
+decision functions. After a clean Dune build, run
+`bash extraction/verify_paper2a_extraction.sh` to compare a fresh extraction
+with the checked-in `paper2a_verified_core.ml(i)`; `--update` regenerates it.
+These new cores are separate from the historical L1–L3 regression above.
+[Mechanisation scope](../paper2a-extension/MECHANISATION.md) lists the reflection,
+factor/witness and fixed-ground composition proofs, the runtime integration,
+and the remaining tested wrappers. The frozen six-node probe still tests its
+historical handwritten snapshot.

@@ -1,25 +1,11 @@
-# Build the paper with the official LMCS class (lmcs.cls).
-# Requires pdflatex and bibtex; latexmk optional.
-all: paper.pdf
-
-paper.pdf: paper.tex refs.bib lmcs.cls sections/*.tex
-	latexmk -pdf -interaction=nonstopmode paper.tex
-
-clean:
-	latexmk -C
-	rm -f *.bbl *.blg *.aux *.log *.out *.fls *.fdb_latexmk
+# Build the current Paper 2A manuscript; requires latexmk and pdflatex.
+PAPER2A = Paper_2A_Copied_Agreement_v17
 
 .PHONY: all clean
+all: $(PAPER2A).pdf
 
-# arXiv source package (arXiv needs the .bbl, not the .bib): tex sources, class,
-# bibliography output.  Test-compiled from a clean directory.
-arxiv: paper.pdf
-	rm -rf arxiv-src && mkdir -p arxiv-src/sections
-	cp paper.tex lmcs.cls paper.bbl arxiv-src/
-	cp sections/*.tex arxiv-src/sections/
-	cd arxiv-src && tar czf ../arxiv-source.tar.gz .
-	rm -rf arxiv-test && mkdir arxiv-test && tar xzf arxiv-source.tar.gz -C arxiv-test
-	cd arxiv-test && pdflatex -interaction=nonstopmode paper.tex >/dev/null && pdflatex -interaction=nonstopmode paper.tex >/dev/null && pdfinfo paper.pdf | grep Pages
-	rm -rf arxiv-test arxiv-src
+$(PAPER2A).pdf: $(PAPER2A).tex
+	latexmk -pdf -interaction=nonstopmode -halt-on-error $(PAPER2A).tex
 
-.PHONY: arxiv
+clean:
+	latexmk -c $(PAPER2A).tex

@@ -48,7 +48,7 @@ let check (l : lineage) (r : retention) =
       | Some defect -> defect
       | None -> if r.rows = [] then EmptyCarrier
         else
-          let module F = Admissibility.Admissibility_check (struct
+          let module F = Verified_fibre.Admissibility_check (struct
             type state = row
             type obs = value list
             let m row = List.map (fun n -> List.assoc n row.shared_values) shared

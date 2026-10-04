@@ -62,7 +62,7 @@ MUTANTS = [
      'declared_coverage_closed = true;'),
 ]
 
-FILES = ["admissibility.ml", "lineage_audit.mli", "lineage_audit.ml",
+FILES = ["paper2a_verified_core.mli", "paper2a_verified_core.ml", "admissibility.ml", "verified_fibre.ml", "lineage_audit.mli", "lineage_audit.ml",
          "lineage_fibre.mli", "lineage_fibre.ml", "test_lineage.ml"]
 
 
@@ -79,7 +79,7 @@ def run_suite(source: Path, compiler: str, change=None):
                 return {"status": "INVALID", "error": "mutation target is not unique"}
             p.write_text(text.replace(before, after, 1))
         commands = [[compiler, "-c", name] for name in FILES[:-1]]
-        commands.append([compiler, "-o", "test_lineage", "admissibility.cmo",
+        commands.append([compiler, "-o", "test_lineage", "admissibility.cmo", "paper2a_verified_core.cmo", "verified_fibre.cmo",
                          "lineage_audit.cmo", "lineage_fibre.cmo", "test_lineage.ml"])
         for command in commands:
             built = subprocess.run(command, cwd=cwd, capture_output=True, text=True, timeout=60)
@@ -96,7 +96,7 @@ def run_suite(source: Path, compiler: str, change=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ocamlc", default="ocamlc")
-    parser.add_argument("--json", type=Path, default=Path("mutation_results.json"))
+    parser.add_argument("--json", type=Path, default=Path(__file__).resolve().parent / "mutation_results.json")
     args = parser.parse_args()
     compiler = shutil.which(args.ocamlc)
     if compiler is None:

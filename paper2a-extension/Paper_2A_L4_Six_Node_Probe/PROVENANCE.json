@@ -1,0 +1,10 @@
+{
+  "repository": "dhwcmoore/paper-2a-lineage-l4",
+  "commit": "30b1cdefc1c5d18d55e1c829fe1545f65920b688",
+  "ocaml_version": "4.14.1",
+  "source_files": {
+    "lineage_audit.ml": "0f0f81110d2b76fae2701e5ce619e0d36f1ad82624c96b243d432151937f002b",
+    "lineage_audit.mli": "6569fd42d9317532f4fc4330144c6f2343c281c8499fa7cc3cadfbed3117f564"
+  },
+  "result_scope": "ordered six-node DAGs with fixed A, B, g roles; four relevance and four disclosure configurations per graph"
+}

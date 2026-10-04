@@ -18,6 +18,9 @@ theories/Debt/DebtClassifier.v
 theories/Debt/OriginalObligations.v
 theories/Debt/Certificates.v
 theories/Debt/LineageCheck.v
+theories/Debt/LineageL4.v
+theories/Debt/FiniteFibreCheck.v
+theories/Debt/LineageComposition.v
 theories/Debt/Assessment.v
 theories/Debt/MaintenanceDebt.v
 theories/Debt/EvidenceObligations.v
@@ -39,3 +42,5 @@ examples/DifferentWarrants.v
 examples/SeamTransport.v
 examples/MaintenanceFailure.v
 examples/CertificateReissue.v
+
+examples/Paper2ALineage.v

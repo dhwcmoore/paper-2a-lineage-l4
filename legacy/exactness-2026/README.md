@@ -1,6 +1,6 @@
 # Paper 2A source: strengthened lineage and L4 checks
 
-This directory is the runnable source of the Paper 2A code extension. See `../README.md` for its provenance, verification scope and integration patch, and `../Paper_2A_Lineage_L4_Verification.md` for the detailed results.
+This directory is the runnable source of the Paper 2A code extension. See [extension README](../../paper2a-extension/README.md) for its provenance, verification scope and integration patch, and [verification report](../../paper2a-extension/Paper_2A_Lineage_L4_Verification.md) for the detailed results.
 
 ## Build
 
@@ -8,10 +8,13 @@ This directory is the runnable source of the Paper 2A code extension. See `../RE
 make check
 coqchk Admissibility
 coqchk -Q . Exactness Exactness.GroundedSeam Exactness.SeamExtraction
-python3 mutation_check.py --json ../verification/mutation_results.local.json
+python3 mutation_check.py --json mutation_results.json
 ```
 
-Required versions are Coq 8.18.0 and OCaml 4.14.1, as recorded in `VERSIONS` and enforced by the Makefile. The finite checks are ordinary OCaml programmes; the mutation harness uses Python 3.
+Required versions are Coq 8.18.0 and OCaml 4.14.1, as recorded in `VERSIONS` and enforced by the Makefile. The L1--L4 and retained-value fibre decision cores are extracted from Coq;
+input validation and diagnostic wrappers remain handwritten. See
+[mechanisation scope](../../paper2a-extension/MECHANISATION.md).
+The finite checks run as ordinary OCaml programmes; the mutation harness uses Python 3.
 
 ## Lineage modules
 

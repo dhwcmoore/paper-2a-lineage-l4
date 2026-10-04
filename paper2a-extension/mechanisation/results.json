@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-04",
+  "baseline_parent": "30b1cdefc1c5d18d55e1c829fe1545f65920b688",
+  "release_commit": null,
+  "toolchain": {
+    "coq": "8.18.0",
+    "ocaml": "4.14.1"
+  },
+  "dune_build_exit": 0,
+  "kernel_check": {
+    "exit": 0,
+    "modules": [
+      "GTC.Debt.LineageL4",
+      "GTC.Debt.FiniteFibreCheck",
+      "GTC.Debt.LineageComposition",
+      "GTCExamples.Paper2ALineage"
+    ],
+    "mode": "coqchk -silent; includes dependency closure"
+  },
+  "closed_assumption_reports": 26,
+  "extraction_comparison_exit": 0,
+  "make_check_exit": 0,
+  "edge_checks": 61,
+  "graph_comparisons": 368640,
+  "fibre_comparisons": 9360,
+  "wrapper_mutants_detected": 18,
+  "generated_core_mutants_detected": 6,
+  "pdf_pages": 46,
+  "final_latex_warnings": 0,
+  "boundary": "decision cores proved; encoding, retention validation and presentation wrappers tested; no transport certificate"
+}

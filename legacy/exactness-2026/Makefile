@@ -17,7 +17,10 @@ coq:
 	$(COQC) -Q . Exactness SeamExtraction.v
 
 lineage-build:
+	$(OCAMLC) -c paper2a_verified_core.mli
+	$(OCAMLC) -c paper2a_verified_core.ml
 	$(OCAMLC) -c admissibility.ml
+	$(OCAMLC) -c verified_fibre.ml
 	$(OCAMLC) -c lineage_audit.mli
 	$(OCAMLC) -c lineage_audit.ml
 	$(OCAMLC) -c lineage_fibre.mli
@@ -27,15 +30,15 @@ ocaml: lineage-build
 	$(OCAMLC) -o examples admissibility.ml examples.ml
 	./examples > examples_output.current.txt
 	cmp recorded-output/examples_output.txt examples_output.current.txt
-	$(OCAMLC) -o jurisdiction admissibility.cmo lineage_audit.cmo jurisdiction.ml
+	$(OCAMLC) -o jurisdiction admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo jurisdiction.ml
 	./jurisdiction > jurisdiction_output.current.txt
 	cmp expected/jurisdiction_output.txt jurisdiction_output.current.txt
 
 lineage-tests: lineage-build
-	$(OCAMLC) -o test_lineage admissibility.cmo lineage_audit.cmo lineage_fibre.cmo test_lineage.ml
+	$(OCAMLC) -o test_lineage admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo lineage_fibre.cmo test_lineage.ml
 	./test_lineage > lineage_tests.current.txt
 	cat lineage_tests.current.txt
-	$(OCAMLC) -o lineage_examples admissibility.cmo lineage_audit.cmo lineage_fibre.cmo lineage_examples.ml
+	$(OCAMLC) -o lineage_examples admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo lineage_fibre.cmo lineage_examples.ml
 	./lineage_examples > lineage_examples.current.txt
 	cmp expected/lineage_examples_output.txt lineage_examples.current.txt
 

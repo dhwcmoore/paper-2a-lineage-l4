@@ -18,9 +18,18 @@ From the repository root:
 make -C legacy/exactness-2026 check
 (cd legacy/exactness-2026 && coqchk Admissibility && \
  coqchk -Q . Exactness Exactness.GroundedSeam Exactness.SeamExtraction)
-python3 legacy/exactness-2026/mutation_check.py
+python3 legacy/exactness-2026/mutation_check.py --json legacy/exactness-2026/mutation_results.json
+make -C legacy/exactness-2026 clean
 dune build --root .
 ```
+
+Run the kernel checks before `clean`: it removes the source-tree build products
+that otherwise conflict with Dune rules. Expected outputs and verification
+records are retained.
+
+The supplementary [six-node L4 probe](Paper_2A_L4_Six_Node_Probe/README.md)
+includes its own frozen inputs, results and reproduction command. Its counts
+are separate from the extension suite.
 
 The exactness Makefile retains its Coq 8.18.0 and OCaml 4.14.1 version gate.
 The inherited project requires Dune 3.8 or later. The companion's original
@@ -50,7 +59,12 @@ records the original and compressed hashes. The integration checks pass the full
 Dune build, the exactness Makefile, the kernel checks, the historical companion
 regression and its 17-mutant union, and the new extension's 18-mutant suite.
 
-## Implementation scope
+## Historical implementation scope
+
+The following scope describes the original handwritten extension. The current
+[mechanised replacement](MECHANISATION.md) proves and extracts the L1--L4 and
+retained-value fibre decision cores, while retaining tested input and diagnostic
+wrappers. Historical verification logs retain their original attribution.
 
 The new code is under `legacy/exactness-2026`:
 
@@ -73,6 +87,7 @@ No graph declaration, justification string or finite-value check establishes
 source fidelity, authenticates custody, records lineage clearance or issues a
 transport certificate.
 
-The manuscripts retained from the copied repository describe their earlier
-source revisions. They have not been relabelled as revised manuscripts in this
-repository-duplication task.
+The current
+[Paper 2A version 17](../document/Paper_2A_Copied_Agreement_v17.tex) incorporates
+the extension scope and evidence. Older manuscript versions and drafts are
+removed from the current tree; the original verification records are retained.
