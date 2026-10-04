@@ -1,0 +1,3 @@
+Command: git rev-parse HEAD
+Working directory: /workspace/scratch/0f3d7cf399d8/gtc-pinned-companion
+e1e14a23a59906af0b14c556054133501a9b3612

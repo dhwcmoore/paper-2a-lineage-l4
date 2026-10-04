@@ -11,7 +11,8 @@ Version 19 uses the Springer SVJour3 class for STTT. Its verification appendix
 points to the [current manifest](../paper2a-extension/verification-v19/README.md).
 Superseded manuscripts have been removed from the current tree. The
 [version 18 test replay](../paper2a-extension/verification-v18/README.md) remains
-as historical evidence. The proof and runtime sources are unchanged;
+as historical evidence. The release preserves the upstream version 18 proof/runtime additions and
+includes a fresh merged-release verification;
 see [mechanisation scope](../paper2a-extension/MECHANISATION.md).
 
 Build with `make -C document`. Requires `latexmk`, `pdflatex`, `bibtex` and the

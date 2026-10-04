@@ -43,7 +43,9 @@ The original generic handwritten factor checker remains in the tax/static exampl
 |---|---|
 | New Coq modules and dependency closure | Kernel checks pass |
 | Selected decision-core theorem/example identifiers | 26 closed under the global context |
-| Version 18 review controls | 9 additional identifiers closed under the global context |
+| Upstream version 18 proof controls | 11 additional identifiers closed under the global context |
+| Additional review controls | 9 identifiers closed under the global context |
+| Executable semantic boundary controls | 14 pass |
 | Generated OCaml core | Matches fresh extraction byte for byte |
 | Edge and malformed-input checks | 61 pass |
 | Independent graph-reference comparisons | 368,640 pass |
@@ -142,7 +144,8 @@ pinned and historical results; it does not replace the new mechanisation record.
 | `examples/Paper2AControls.v` | Raw-source, injectivity and actual-claim review controls |
 | `legacy/exactness-2026/` | Original Coq supplement, tax case, runtime wrappers and generated decision core |
 | `extraction/` | Extraction, regeneration checks and companion regression |
-| `paper2a-extension/verification-v19/` | Current repository and version 19 manifest hashes |
+| `paper2a-extension/verification-v19/` | Merged-release checks and current version 19 manifest |
+| `paper2a-extension/v18/` | Preserved upstream version 18 verification records |
 | `paper2a-extension/verification-v18/` | Retained version 18 build and test replay |
 | `paper2a-extension/mechanisation/` | Historical version 17 mechanisation records |
 | `paper2a-extension/baseline/` | Frozen historical handwritten audit |
@@ -164,6 +167,9 @@ Technology Transfer (STTT).
 The mechanised source and verification records are pinned at
 [artefact commit `945c68e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/945c68e08f2d267d9a8a06ec77784a3ecc47afd9).
 Version 19 cites that revision for the unchanged decision cores. Its additional
-review controls and fresh verification records are included in this working tree.
+review controls and merged-release verification records are included here.
+The upstream version 18 proof/runtime additions are preserved from commit
+`1e9de34b63281d019502f746f57ede348b62ca5e`; the merged release reproduces their
+14 boundary checks and records 46 selected assumption reports.
 A persistent reviewer archive identifier remains to be assigned after deposit and
 public retrieval verification; no new DOI or publication status is claimed here.

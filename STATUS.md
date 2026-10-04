@@ -1,7 +1,9 @@
 # Status — current replay 2026-10-04; historical companion records below
 
 Current manuscript: version 19; see [the current manifest](paper2a-extension/verification-v19/README.md).
-The proof/runtime sources match the retained version 18 replay.
+The merged release preserves upstream version 18 proof/runtime additions.
+The current checks reproduce 14 semantic boundary checks and 46 selected
+assumption reports; logs are retained with the version 19 manifest.
 
 Paper 2A version 18 replay: Dune/Make/kernel/extraction checks pass;
 26 selected core identifiers and nine review controls have no assumptions.

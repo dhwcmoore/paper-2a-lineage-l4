@@ -59,6 +59,25 @@ Proof.
  - intros H. destruct (counterexample rows) as [[x y]|] eqn:E; [|reflexivity].
    apply counterexample_sound in E as [Hx [Hy [He Hne]]]. exfalso. apply Hne, H; assumption.
 Qed.
+(* An injective retained tuple cannot expose extensional dependence:
+   every valuation is constant on its singleton fibres. This is a limit
+   of the diagnostic, not evidence of production-path independence. *)
+Theorem injective_observation_no_witness rows :
+ (forall x y, In x rows -> In y rows -> obs x = obs y -> x = y) ->
+ counterexample rows = None.
+Proof.
+ intro HI. apply (proj2 (counterexample_none rows)).
+ intros x y Hx Hy E. rewrite (HI x y Hx Hy E). reflexivity.
+Qed.
+Theorem injective_complete_factor rows :
+ rows <> [] ->
+ (forall x y, In x rows -> In y rows -> obs x = obs y -> x = y) ->
+ fibre_check true rows = FibreFactor (map (fun x => (obs x, phi x)) rows).
+Proof.
+ intros Hrows HI. unfold fibre_check.
+ destruct rows as [|x xs]; [contradiction|].
+ rewrite (injective_observation_no_witness (x::xs) HI). reflexivity.
+Qed.
 Theorem factor_table_sound rows : counterexample rows = None ->
  forall x, In x rows -> factor_eval (map (fun y => (obs y,phi y)) rows) (obs x) = phi x.
 Proof.

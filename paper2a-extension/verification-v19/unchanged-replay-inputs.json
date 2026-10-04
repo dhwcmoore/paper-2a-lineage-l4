@@ -44,10 +44,6 @@
     "sha256": "2a18654ce3173328da33279138a45b551a137ed4b9c7d6b93aad92e32e0941ec"
   },
   {
-    "path": "examples/Paper2ALineage.v",
-    "sha256": "d58e5e3f7292832c57dd6b6ed461ea052f2599943e43d69e0ebc7b2b4f19bb83"
-  },
-  {
     "path": "examples/SeamTransport.v",
     "sha256": "ea8d2ec58a435fe17af4a2d0b44143fa3ac1d318ab42573ba89546dba10dccac"
   },
@@ -94,10 +90,6 @@
   {
     "path": "legacy/exactness-2026/GroundedSeam.v",
     "sha256": "efc4415fe0e174933cb5835359f09987d3c138087fdb6d2138aa5b9951261da7"
-  },
-  {
-    "path": "legacy/exactness-2026/Makefile",
-    "sha256": "ccfc13d92c2e4f3ef2e9d92b504719ac3fe496049dfd7225d263407d330ef63c"
   },
   {
     "path": "legacy/exactness-2026/SeamExtraction.v",
@@ -254,10 +246,6 @@
   {
     "path": "theories/Debt/EvidenceObligations.v",
     "sha256": "d5ea5e535c890332df82beaad113f80a2e67c416340e3ce7f4dc2e766329db3e"
-  },
-  {
-    "path": "theories/Debt/FiniteFibreCheck.v",
-    "sha256": "1d6e3234fcd53aafca3d9edd0f39e2b3a2fa2c25a293b224cc5aa6d2834bf238"
   },
   {
     "path": "theories/Debt/GroundedWitness.v",

@@ -1,0 +1,6 @@
+Command: coqc -R _build/default/legacy/exactness-2026 Exactness -R _build/default/theories GTC -R _build/default/examples GTCExamples FreshClassicalAssumptions.v
+Working directory: /workspace/scratch/0f3d7cf399d8/gtc-pinned-companion
+Axioms:
+ClassicalEpsilon.constructive_indefinite_description
+  : forall (A : Type) (P : A -> Prop), (exists x : A, P x) -> {x : A | P x}
+Classical_Prop.classic : forall P : Prop, P \/ ~ P

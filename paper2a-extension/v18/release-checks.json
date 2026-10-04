@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-04",
+  "pdf_pages": 50,
+  "latex_exit_code": 0,
+  "unresolved_references_or_citations": false,
+  "overfull_boxes": 0,
+  "underfull_boxes": 0,
+  "rendered_pages": 50,
+  "visual_review": "All 50 pages reviewed in contact sheets; detailed checks of the new countermodel, issuance definition, endpoint control and verification appendix pass.",
+  "version_17_source_and_pdf_unchanged": true,
+  "baseline_proofs_unchanged": true,
+  "extracted_core_unchanged": true,
+  "original_labels_preserved": true,
+  "relative_markdown_links_checked": 37,
+  "broken_relative_links": [],
+  "v17_pinned_manifest_exit_code": 0,
+  "artefact_source_commit": "1e9de34b63281d019502f746f57ede348b62ca5e"
+}

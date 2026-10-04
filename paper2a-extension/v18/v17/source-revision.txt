@@ -1,0 +1,3 @@
+Command: git rev-parse HEAD
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17
+945c68e08f2d267d9a8a06ec77784a3ecc47afd9

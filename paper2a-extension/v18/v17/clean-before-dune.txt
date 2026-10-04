@@ -1,0 +1,9 @@
+Command: make -C legacy/exactness-2026 clean
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17
+make: Entering directory '/workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17/legacy/exactness-2026'
+rm -f *.aux *.cmi *.cmo *.cmx *.o *.vo *.vos *.vok *.glob \
+  examples jurisdiction interface_ok interface_unsafe_cast test_lineage lineage_examples \
+  examples_output.current.txt jurisdiction_output.current.txt interface_ok.current.txt \
+  lineage_tests.current.txt lineage_examples.current.txt \
+  direct_forge.log stage_mismatch.log seam_checks.ml seam_checks.mli .*.aux .lia.cache
+make: Leaving directory '/workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17/legacy/exactness-2026'

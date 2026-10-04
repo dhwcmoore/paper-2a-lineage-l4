@@ -1,0 +1,9 @@
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+evolution_crossing_proper Vok e01 ok_preserves
+     : CrossingProper (sp sys false) (vA Vok false) 
+         (vB Vok false) (vS Vok false) (sp sys true) 
+         (vA Vok true) (vB Vok true) (vS Vok true) 
+         (evo_state e01)

@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-04",
+  "toolchain": {
+    "coq": "8.18.0",
+    "ocaml": "4.14.1",
+    "dune": "3.14.0",
+    "findlib": "1.9.6"
+  },
+  "pins": {
+    "baseline": "51284d028e9f4fb9e75f3fbba69a538b7fde311b",
+    "v17": "945c68e08f2d267d9a8a06ec77784a3ecc47afd9",
+    "companion": "e1e14a23a59906af0b14c556054133501a9b3612"
+  },
+  "working_tree_parent": "12aac413795105da5923a6a87fe9c141db7f0339",
+  "results": {
+    "baseline": {
+      "commands_passed": 8,
+      "all_exit_codes_zero": true
+    },
+    "v17": {
+      "commands_passed": 16,
+      "all_exit_codes_zero": true,
+      "closed_assumption_reports": 26,
+      "edge_checks": 61,
+      "graph_reference_comparisons": 368640,
+      "fibre_reference_comparisons": 9360,
+      "wrapper_mutants": {
+        "compiled_and_detected": 18,
+        "total": 18
+      },
+      "core_mutants": {
+        "compiled_and_detected": 6,
+        "total": 6
+      },
+      "six_node_probe": {
+        "graphs": 16384,
+        "assessments": 262144,
+        "reference_mismatches": 0,
+        "pass_L1_L2_L3": 4724,
+        "pass_L1_L2_L3_L4": 4157,
+        "pass_123_fail_4_assessments": 567,
+        "pass_123_fail_4_unique_graphs": 186,
+        "fixed_relevance_r1_and_L2_disclosed_graphs_pass_123": 352,
+        "fixed_relevance_r1_and_L2_disclosed_graphs_pass_123_fail_4": 96,
+        "first_laundering_graph_mask": 3088
+      }
+    },
+    "companion": {
+      "commands_passed": 13,
+      "all_exit_codes_zero": true,
+      "closed_assumption_reports": 123,
+      "fixed_comparisons": 5,
+      "random_overlap_comparisons": 1921,
+      "random_skipped": 1079,
+      "shallow_comparisons": 3300,
+      "deep_comparisons": 1800,
+      "edge_checks": 6,
+      "companion_mutants_detected": 17,
+      "nonclassical_named_modules": 36
+    },
+    "v18": {
+      "commands_passed": 16,
+      "all_exit_codes_zero": true,
+      "closed_assumption_reports": 37,
+      "edge_checks": 61,
+      "graph_reference_comparisons": 368640,
+      "fibre_reference_comparisons": 9360,
+      "wrapper_mutants": {
+        "compiled_and_detected": 18,
+        "total": 18
+      },
+      "core_mutants": {
+        "compiled_and_detected": 6,
+        "total": 6
+      },
+      "six_node_probe": {
+        "graphs": 16384,
+        "assessments": 262144,
+        "reference_mismatches": 0,
+        "pass_L1_L2_L3": 4724,
+        "pass_L1_L2_L3_L4": 4157,
+        "pass_123_fail_4_assessments": 567,
+        "pass_123_fail_4_unique_graphs": 186,
+        "fixed_relevance_r1_and_L2_disclosed_graphs_pass_123": 352,
+        "fixed_relevance_r1_and_L2_disclosed_graphs_pass_123_fail_4": 96,
+        "first_laundering_graph_mask": 3088
+      },
+      "new_boundary_checks": 14
+    }
+  },
+  "artefact_source_commit": "1e9de34b63281d019502f746f57ede348b62ca5e"
+}

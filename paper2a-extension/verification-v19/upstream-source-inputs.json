@@ -1,0 +1,27 @@
+[
+  {
+    "path": "examples/Paper2ALineage.v",
+    "sha256": "eef9d20ac0de35274a4c031bb3f758c1deb1e773539786e6b61a543f5a44e3fa",
+    "revision": "1e9de34b63281d019502f746f57ede348b62ca5e"
+  },
+  {
+    "path": "theories/Debt/FiniteFibreCheck.v",
+    "sha256": "c5d995802f0506d734a62624fdbfefcac2694509904e84be6eed8acc4260abdb",
+    "revision": "1e9de34b63281d019502f746f57ede348b62ca5e"
+  },
+  {
+    "path": "legacy/exactness-2026/Makefile",
+    "sha256": "07972bc7ace20cf1869195c7525ebba9194ad5b3c6770ebbd301747ca357a4a0",
+    "revision": "1e9de34b63281d019502f746f57ede348b62ca5e"
+  },
+  {
+    "path": "legacy/exactness-2026/boundary_controls.ml",
+    "sha256": "d53cc490f4cd1f43a00bd8c3863443f3a4e8b439993b77729329866ebe580a0f",
+    "revision": "1e9de34b63281d019502f746f57ede348b62ca5e"
+  },
+  {
+    "path": "legacy/exactness-2026/expected/boundary_controls_output.txt",
+    "sha256": "e4ebe3322df6e9a24a029da175a53eadc7506f3b908c5c6e9947bb4607568069",
+    "revision": "1e9de34b63281d019502f746f57ede348b62ca5e"
+  }
+]

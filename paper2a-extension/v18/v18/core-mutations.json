@@ -1,0 +1,58 @@
+{
+  "baseline": {
+    "status": "PASSED",
+    "test_exit": 0,
+    "stdout": "Edge and malformed-input checks: 61 PASS\nIndependent graph-reference comparisons: 368640 PASS\nIndependent fibre-reference comparisons: 9360 PASS\nAll lineage extension checks passed.\n",
+    "stderr": ""
+  },
+  "mutants": [
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "V01",
+      "fault": "require both coordinates for L4"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "V02",
+      "fault": "ignore L4 in qualification"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: copied-status values factor through shared values\n",
+      "id": "V03",
+      "fault": "invert fibre disagreement"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: clean incomplete carrier does not affirm factorisation\n",
+      "id": "V04",
+      "fault": "ignore completeness"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: trace distinguishes the same shared values\n",
+      "id": "V05",
+      "fault": "drop fibre witnesses"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: returned factor reproduces every retained value\n",
+      "id": "V06",
+      "fault": "invert factor values"
+    }
+  ]
+}

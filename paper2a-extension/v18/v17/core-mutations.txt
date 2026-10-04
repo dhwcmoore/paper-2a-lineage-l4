@@ -1,0 +1,8 @@
+Command: python3 mutation_verified_core.py
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17/legacy/exactness-2026
+V01 DETECTED require both coordinates for L4
+V02 DETECTED ignore L4 in qualification
+V03 DETECTED invert fibre disagreement
+V04 DETECTED ignore completeness
+V05 DETECTED drop fibre witnesses
+V06 DETECTED invert factor values

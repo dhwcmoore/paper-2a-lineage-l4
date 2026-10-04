@@ -1,0 +1,4 @@
+Command: coqc --version
+Working directory: /workspace/scratch/0f3d7cf399d8/gtc-pinned-companion
+The Coq Proof Assistant, version 8.18.0
+compiled with OCaml 4.14.1

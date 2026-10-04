@@ -1,10 +1,10 @@
 {
   "manuscript_version": 19,
   "date": "2026-10-04",
-  "scope": "Manifest refresh and manuscript rebuild; retained version 18 proof/runtime replay, not a new test-suite execution",
+  "scope": "Fresh merged-release build, kernel, assumptions, runtime and mutation verification; retained supplementary evidence separately attributed",
   "retained_replay": "paper2a-extension/verification-v18/results.json",
   "decision_core_revision": "945c68e08f2d267d9a8a06ec77784a3ecc47afd9",
-  "unchanged_replay_input_files": 84,
+  "unchanged_replay_input_files": 81,
   "document_build_exit_status": 0,
   "pdf_pages": 47,
   "latex_warnings": [
@@ -16,5 +16,36 @@
     "svjour3.cls": "https://raw.githubusercontent.com/DanySK/Template-LaTeX-Springer-svjour3/master/svjour3.cls",
     "svglov3.clo": "https://raw.githubusercontent.com/DanySK/Template-LaTeX-Springer-svjour3/master/svglov3.clo",
     "spbasic.bst": "https://raw.githubusercontent.com/jflournoy/springer_latex_template/main/spbasic.bst"
-  }
+  },
+  "integrated_remote_revision": "43946e7",
+  "upstream_proof_runtime_revision": "1e9de34b63281d019502f746f57ede348b62ca5e",
+  "assumption_identifiers": {
+    "original": 26,
+    "upstream_additions": 11,
+    "additional_controls": 9,
+    "total": 46
+  },
+  "runtime_counts": {
+    "edge": 61,
+    "graph": 368640,
+    "fibre": 9360,
+    "semantic_boundary": 14
+  },
+  "release_check_exit_statuses": {
+    "dune": 0,
+    "extraction": 0,
+    "kernel": 0,
+    "assumptions": 0,
+    "make": 0,
+    "document": 0,
+    "wrapper_mutations": 0,
+    "core_mutations": 0
+  },
+  "mutation_counts": {
+    "wrapper_detected": 18,
+    "wrapper_total": 18,
+    "core_detected": 6,
+    "core_total": 6
+  },
+  "retained_upstream_replay": "paper2a-extension/v18/v18/commands.json"
 }

@@ -1,0 +1,80 @@
+[
+  {
+    "name": "source-revision",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "seconds": 0.003
+  },
+  {
+    "name": "coq-version",
+    "command": [
+      "coqc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.038
+  },
+  {
+    "name": "ocaml-version",
+    "command": [
+      "ocamlc",
+      "-version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.005
+  },
+  {
+    "name": "dune-version",
+    "command": [
+      "dune",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.01
+  },
+  {
+    "name": "findlib-version",
+    "command": [
+      "ocamlfind",
+      "printconf"
+    ],
+    "exit_code": 0,
+    "seconds": 0.002
+  },
+  {
+    "name": "clean-before-dune",
+    "command": [
+      "make",
+      "-C",
+      "legacy/exactness-2026",
+      "clean"
+    ],
+    "exit_code": 0,
+    "seconds": 0.007
+  },
+  {
+    "name": "dune-build",
+    "command": [
+      "dune",
+      "build",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "seconds": 6.254
+  },
+  {
+    "name": "lineage-regression",
+    "command": [
+      "bash",
+      "extraction/run_lineage_regression.sh",
+      "/workspace/scratch/0f3d7cf399d8/verification_runs/companion/regression-work"
+    ],
+    "exit_code": 2,
+    "seconds": 0.367
+  }
+]

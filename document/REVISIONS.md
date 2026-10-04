@@ -6,7 +6,10 @@ Uploaded STTT manuscript with separate bibliography and Springer SVJour3 layout.
 Updated the verification appendix to point to `verification-v19/SHA256SUMS`,
 while attributing the unchanged build/test results to the retained version 18
 replay. Rebuilt the PDF, updated the current manuscript links and build target,
-and checked the new repository manifest. No proof or runtime source changes.
+and checked the new repository manifest. The publishing merge preserves the
+upstream version 18 proof/runtime additions, removes superseded manuscripts,
+and records fresh release checks (14 semantic controls and 46 selected
+assumption reports).
 
 ## Version 18 — 4 October 2026
 

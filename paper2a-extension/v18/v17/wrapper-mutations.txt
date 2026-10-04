@@ -1,0 +1,22 @@
+Command: python3 mutation_check.py --json /workspace/scratch/0f3d7cf399d8/verification_runs/v17/wrapper-mutations.json
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17/legacy/exactness-2026
+Unchanged independent suite: PASS
+M01 DETECTED: omit ground/A inequality
+M02 DETECTED: omit ground/B inequality
+M03 DETECTED: exclude the ground itself from L3
+M04 DETECTED: again require a derived ground
+M05 DETECTED: L4 requires sharing with both coordinates
+M06 DETECTED: L4 wrongly includes shared raw nodes
+M07 DETECTED: omit L4 from structural qualification
+M08 DETECTED: confuse open L4 disclosure with failed disclosure
+M09 DETECTED: treat an open ground defeater as resolved
+M10 DETECTED: substitute L2 dispositions for L4
+M11 DETECTED: affirm factorisation on an incomplete carrier
+M12 DETECTED: discard a refuting fibre witness
+M13 DETECTED: use caller tuple order instead of node identity
+M14 DETECTED: ignore ground identifier binding
+M15 DETECTED: affirm an empty carrier
+M16 DETECTED: mark undisclosed dependencies as resolved
+M17 DETECTED: ignore scope identifier binding
+M18 DETECTED: close an outstanding coverage gap
+Mutation result: 18/18 detected

@@ -65,11 +65,19 @@ snapshot; it is not a test of the extracted replacement.
 
 The current replay is under [verification-v18/](verification-v18/README.md);
 [mechanisation/](mechanisation/README.md) preserves the version 17 record.
-The 26 selected decision-core identifiers and nine additional review-control
-identifiers are closed under the global
+All 46 selected identifiers (26 original, eleven upstream additions and nine
+additional review controls) are closed under the global
 context. The named kernel check and extraction comparison pass, as do the
 61/368,640/9,360 runtime tests, 18 wrapper/diagnostic mutants and six
-generated-core mutants. Version 19 cites the unchanged version 18 replay;
+generated-core mutants, plus fourteen executable semantic boundary checks.
+Version 19 cites the preserved version 18 records and fresh merged-release checks;
 superseded manuscripts are removed while their verification records remain. The mechanised artefact revision is
 `945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; version 19 cites it for the unchanged decision cores. The additional controls
 and retained replay are bound by the [current version 19 manifest](verification-v19/README.md).
+
+The upstream additions include `injective_observation_no_witness` and
+`injective_complete_factor`, raw-input and actual-claim controls in
+`Paper2ALineage.v`, and `legacy/exactness-2026/boundary_controls.ml`. Their
+source is pinned at `1e9de34b63281d019502f746f57ede348b62ca5e`; independent
+records remain under [v18/](v18/README.md). Current release logs and assumption
+reports are under [verification-v19/](verification-v19/README.md).

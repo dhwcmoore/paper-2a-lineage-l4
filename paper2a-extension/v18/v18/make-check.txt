@@ -1,0 +1,6 @@
+Command: make check
+Working directory: /workspace/scratch/0f3d7cf399d8/paper-2a-lineage-l4/legacy/exactness-2026
+coqc Admissibility.v
+Closed under the global context
+Closed under the global context
+coqc -Q . Exactness GroundedSeam.v

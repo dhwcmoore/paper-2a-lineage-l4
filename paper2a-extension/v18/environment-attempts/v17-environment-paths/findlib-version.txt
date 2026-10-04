@@ -1,0 +1,16 @@
+Command: ocamlfind printconf
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17
+Effective configuration:
+Configuration file:
+    /workspace/scratch/0f3d7cf399d8/task-toolchain/root/etc/ocamlfind.conf
+Search path:
+    /workspace/scratch/0f3d7cf399d8/task-toolchain/root/usr/lib/ocaml
+    /workspace/scratch/0f3d7cf399d8/task-toolchain/root/usr/lib/ocaml/METAS
+Packages will be installed in/removed from:
+    /workspace/scratch/0f3d7cf399d8/task-toolchain/root/usr/local/lib/ocaml/4.14.1 (not found)
+META files will be installed in/removed from:
+    the corresponding package directories
+The standard library is assumed to reside in:
+    /workspace/scratch/0f3d7cf399d8/task-toolchain/root/usr/lib/ocaml
+The ld.conf file can be found here:
+    /usr/lib/ocaml/ld.conf

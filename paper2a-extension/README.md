@@ -97,4 +97,6 @@ Current version 18 replay, review controls and source hashes are recorded in
 is historical and retains its original manuscript hashes.
 
 The [version 19 manifest](verification-v19/README.md) binds the current manuscript
-and repository to that unchanged proof/runtime replay.
+and repository to the retained evidence and fresh merged-release checks.
+The upstream proof/runtime additions and their independent evidence remain
+under [v18](v18/README.md).

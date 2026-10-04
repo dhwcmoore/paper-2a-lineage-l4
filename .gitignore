@@ -43,6 +43,7 @@ legacy/exactness-2026/interface_ok
 legacy/exactness-2026/interface_unsafe_cast
 legacy/exactness-2026/test_lineage
 legacy/exactness-2026/lineage_examples
+legacy/exactness-2026/boundary_controls
 legacy/exactness-2026/*.current.txt
 legacy/exactness-2026/direct_forge.log
 legacy/exactness-2026/stage_mismatch.log

@@ -1,0 +1,156 @@
+{
+  "baseline": {
+    "status": "PASSED",
+    "test_exit": 0,
+    "stdout": "Edge and malformed-input checks: 61 PASS\nIndependent graph-reference comparisons: 368640 PASS\nIndependent fibre-reference comparisons: 9360 PASS\nAll lineage extension checks passed.\n",
+    "stderr": ""
+  },
+  "mutants": [
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "M01",
+      "fault": "omit ground/A inequality"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "M02",
+      "fault": "omit ground/B inequality"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: L3 includes the derived ground in G\n",
+      "id": "M03",
+      "fault": "exclude the ground itself from L3"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: unexpected malformed graph: ground not declared: h\n",
+      "id": "M04",
+      "fault": "again require a derived ground"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "M05",
+      "fault": "L4 requires sharing with both coordinates"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "M06",
+      "fault": "L4 wrongly includes shared raw nodes"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: L2 justification does not substitute for L4 disclosure\n",
+      "id": "M07",
+      "fault": "omit L4 from structural qualification"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "M08",
+      "fault": "confuse open L4 disclosure with failed disclosure"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: open L4 defeater is unresolved\n",
+      "id": "M09",
+      "fault": "treat an open ground defeater as resolved"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 2,
+      "stdout": "",
+      "stderr": "Fatal error: exception Failure(\"FAIL: handwritten diagnostics disagree with verified decision core\")\n",
+      "id": "M10",
+      "fault": "substitute L2 dispositions for L4"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: clean incomplete carrier does not affirm factorisation\n",
+      "id": "M11",
+      "fault": "affirm factorisation on an incomplete carrier"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: trace distinguishes the same shared values\n",
+      "id": "M12",
+      "fault": "discard a refuting fibre witness"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: returned factor reproduces every retained value\n",
+      "id": "M13",
+      "fault": "use caller tuple order instead of node identity"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: wrong ground retention is rejected\n",
+      "id": "M14",
+      "fault": "ignore ground identifier binding"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: empty carrier is reported\n",
+      "id": "M15",
+      "fault": "affirm an empty carrier"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: undisclosed L4 concern cannot be marked resolved\n",
+      "id": "M16",
+      "fault": "mark undisclosed dependencies as resolved"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: wrong scope retention is rejected\n",
+      "id": "M17",
+      "fault": "ignore scope identifier binding"
+    },
+    {
+      "status": "DETECTED",
+      "test_exit": 1,
+      "stdout": "",
+      "stderr": "FAIL: coverage gap remains recorded\n",
+      "id": "M18",
+      "fault": "close an outstanding coverage gap"
+    }
+  ],
+  "detected": 18,
+  "total": 18
+}

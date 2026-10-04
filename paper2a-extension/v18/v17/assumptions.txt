@@ -1,0 +1,28 @@
+Command: coqc -R _build/default/legacy/exactness-2026 Exactness -R _build/default/theories GTC -R _build/default/examples GTCExamples FreshAssumptions.v
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
