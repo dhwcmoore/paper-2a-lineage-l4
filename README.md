@@ -152,6 +152,8 @@ and mechanisation added. The three baseline Coq sources are unchanged.
 baseline, handwritten extension, companion and current extracted-core integration.
 
 The manuscript's intended venue is the Journal of Logic and Computation.
-The new source and evidence manifest must be bound to the eventual release commit.
+The mechanised source and verification records are pinned at
+[artefact commit `945c68e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/945c68e08f2d267d9a8a06ec77784a3ecc47afd9).
+The subsequent manuscript update cites that revision.
 A persistent reviewer archive identifier remains to be assigned after deposit and
 public retrieval verification; no new DOI or publication status is claimed here.

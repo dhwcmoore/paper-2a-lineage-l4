@@ -1,7 +1,7 @@
 {
   "date": "2026-10-04",
   "baseline_parent": "30b1cdefc1c5d18d55e1c829fe1545f65920b688",
-  "release_commit": null,
+  "release_commit": "945c68e08f2d267d9a8a06ec77784a3ecc47afd9",
   "toolchain": {
     "coq": "8.18.0",
     "ocaml": "4.14.1"
@@ -27,5 +27,6 @@
   "generated_core_mutants_detected": 6,
   "pdf_pages": 46,
   "final_latex_warnings": 0,
-  "boundary": "decision cores proved; encoding, retention validation and presentation wrappers tested; no transport certificate"
+  "boundary": "decision cores proved; encoding, retention validation and presentation wrappers tested; no transport certificate",
+  "release_commit_scope": "Verified decision cores and original verification records; subsequent manuscript and metadata update cite this revision."
 }

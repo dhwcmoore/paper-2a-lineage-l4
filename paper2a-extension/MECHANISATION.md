@@ -66,4 +66,5 @@ The 26 selected new theorem/example identifiers are closed under the global
 context. The named kernel check and extraction comparison pass, as do the
 61/368,640/9,360 runtime tests, 18 wrapper/diagnostic mutants and six
 generated-core mutants. Version 17 records this scope; older manuscript versions are removed from
-the current tree. No new public release revision has been assigned.
+the current tree. The mechanised artefact revision is
+`945c68e08f2d267d9a8a06ec77784a3ecc47afd9`; the subsequent manuscript update cites it.
