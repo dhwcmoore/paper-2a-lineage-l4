@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.9)  4 OCT 2026 09:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.9)  4 OCT 2026 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./scaling_v20_table.tex) (./scaling_v20_result.tex) [23]
-<scaling_v20.pdf, id=469, 505.89pt x 187.902pt>
+<scaling_v20.pdf, id=468, 505.89pt x 187.902pt>
 File: scaling_v20.pdf Graphic file (type pdf)
 <use scaling_v20.pdf>
 Package pdftex.def Info: scaling_v20.pdf  used on input line 1052.
@@ -1135,10 +1135,10 @@ mf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts
 symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Paper_2A_Copied_Agreement_v20.pdf (28 pages, 301742 bytes).
+Output written on Paper_2A_Copied_Agreement_v20.pdf (28 pages, 302375 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 569 compressed objects within 6 object streams
+ 664 PDF objects out of 1000 (max. 8388607)
+ 570 compressed objects within 6 object streams
  226 named destinations out of 1000 (max. 500000)
  87666 words of extra memory for PDF output out of 89155 (max. 10000000)
 

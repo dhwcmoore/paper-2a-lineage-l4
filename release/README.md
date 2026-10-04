@@ -31,9 +31,27 @@ The verified version 19 component assembly is pinned at
 benchmark and manuscript/source-package changes; the current manifest binds
 those additions and the retained component evidence.
 
-Archival deposit is not completed merely by creating a local package. A
-permanent identifier must be recorded only after successful deposit and public
-retrieval of the archived release. The manuscript currently describes the
-prepared bundle without claiming a DOI or completed deposit. The final archive
-record should state the release revision, package hashes and relationship to
-the pinned components above. Deposit service/account details remain outstanding.
+The version 20 supporting artefact is permanently archived at:
+
+- Revision: `swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`.
+- [Persistent archive resolver](https://archive.softwareheritage.org/swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7/).
+- Snapshot: `swh:1:snp:2bd5c3f083ff44f44938215726df410027da0349`.
+- [Completed archival request](https://archive.softwareheritage.org/api/1/origin/save/2534032/).
+
+The request succeeded with a full visit. The archived revision matches the
+published Git commit `bea91080c022e4891731aa7a7bf60369269b25c7`. Public retrieval
+of the generated decision core, raw scaling data, main PDF and supplement
+source was checked byte for byte against that revision. The API response,
+revision metadata and retrieval checks are retained under
+`paper2a-extension/verification-v20/archive/`.
+
+The archived revision contains all version 20 experimental and implementation
+additions, plus the manuscript before its archive-citation update. The final
+paper cites that supporting artefact; the later provenance paragraph, final PDF
+and current source/reviewer packages have their own current manifest and package
+hashes. The archive identifier is an SWHID, not a DOI or publication claim.
+The component relationship is:
+
+`945c68e` decision core → `1e9de34` proof/runtime additions → `a44557a`
+verified component assembly → `bea9108` archived version 20 artefact → final
+manuscript/archive-citation update.

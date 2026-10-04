@@ -37,5 +37,14 @@
     "corresponding_email": "dhwcmoore@gmail.com",
     "llm": "Substantive LaTeX preparation, prose, proof/implementation and verification assistance disclosed"
   },
-  "archive_status": "Prepared package; permanent identifier awaits verified public archival retrieval"
+  "archive_status": "Completed full Software Heritage archive; public retrieval verified",
+  "archive": {
+    "revision_swhid": "swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7",
+    "snapshot_swhid": "swh:1:snp:2bd5c3f083ff44f44938215726df410027da0349",
+    "request_id": 2534032,
+    "save_task_status": "succeeded",
+    "visit_status": "full",
+    "public_retrieval_files_verified": 4,
+    "scope": "Supporting artefact includes initial version 20 paper; final manuscript adds the archive citation"
+  }
 }

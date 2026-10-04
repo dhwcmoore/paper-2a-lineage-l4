@@ -36,5 +36,7 @@ The bibliography style is unchanged from
 [the Springer template mirror](https://github.com/jflournoy/springer_latex_template/blob/main/spbasic.bst).
 Their exact hashes are included in the current manifest.
 
-A persistent public artefact identifier remains to be assigned after deposit
-and retrieval verification.
+The supporting version 20 artefact is archived under
+`swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`;
+[archive and release details](../release/README.md) explain its relationship to
+the final manuscript and pinned components.

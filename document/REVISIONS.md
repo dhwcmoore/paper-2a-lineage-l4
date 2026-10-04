@@ -8,7 +8,7 @@
 - Kept both laundering and ignored-raw-source counterexamples in the main article; preserved the complete development in a separate technical supplement.
 - Added evaluator adequacy explicitly to the clearance table.
 - Converted the main article to double columns and square-bracket numeric citations; added declarations, corresponding email and explicit substantive LLM/LaTeX disclosure.
-- Prepared editable source and complete reviewer packages, with component provenance and current manifest hashes. Archival deposit status is recorded separately.
+- Prepared editable source and complete reviewer packages, with component provenance and current manifest hashes. Completed a full Software Heritage archive and byte-checked public retrieval; the final paper cites the archived supporting revision and records its component relationship.
 
 The main article recompiles to 28 pages, above the usual 10–20-page range; the complete supplement has 50 pages. The range is not a stated absolute limit.
 

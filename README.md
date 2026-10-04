@@ -195,5 +195,8 @@ review controls and merged-release verification records are included here.
 The upstream version 18 proof/runtime additions are preserved from commit
 `1e9de34b63281d019502f746f57ede348b62ca5e`; the merged release reproduces their
 14 boundary checks and records 46 selected assumption reports.
-A persistent reviewer archive identifier remains to be assigned after deposit and
-public retrieval verification; no new DOI or publication status is claimed here.
+The supporting version 20 artefact is permanently archived as
+[`swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`](https://archive.softwareheritage.org/swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7/).
+Its full archive visit and public file retrieval were verified.
+[Release provenance](release/README.md) distinguishes this archived source from
+the final manuscript citation update; no DOI or publication status is claimed.

@@ -49,3 +49,9 @@ with `make -B`; both documents compile using only its supplied inputs.
 The repository manifest excludes itself and generated release packages to avoid
 circular hashes. Package checksums are retained separately. Historical manifests
 are historical snapshot records, rather than the current checksum command.
+
+The supporting version 20 artefact is archived as
+`swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`. The full visit and
+byte-checked public retrieval are recorded under `archive/`. The final
+archive-citation update is bound by the current manifest; see the release
+provenance for its relationship to the archived revision.
