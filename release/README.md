@@ -31,7 +31,15 @@ The verified component assembly is pinned at
 benchmark and manuscript/source package; the current manifest binds
 these files and the component evidence.
 
-The supporting artefact is permanently archived at:
+The paper, supplement and supporting artefact are deposited on
+[Zenodo (DOI: 10.5281/zenodo.23143172)](https://doi.org/10.5281/zenodo.23143172). The record identifies
+commit `0619413077a4cb85fcc67819ec776ce414085d29` and supplies
+`paper2a-v20-zenodo.zip` (4,757,791 bytes; deposited MD5 checksum
+`88215daabe1e6b73479ebf455033d5c6`). The public record metadata was checked;
+the deposited ZIP has not been independently byte-verified. Repository edits
+after the pinned commit are not part of that deposit.
+
+The supporting source snapshot is also permanently archived at:
 
 - Revision: `swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`.
 - [Persistent archive resolver](https://archive.softwareheritage.org/swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7/).
@@ -49,7 +57,8 @@ The archived revision contains the experimental and implementation
 material, plus the manuscript before its archive-citation update. The final
 paper cites that supporting artefact; the later provenance paragraph, final PDF
 and current source/reviewer packages have their own current manifest and package
-hashes. The archive identifier is an SWHID, not a DOI or publication claim.
+hashes. The Software Heritage identifier identifies a source revision; the Zenodo DOI
+identifies the deposited paper and artefact. Neither establishes journal acceptance.
 The component relationship is:
 
 `945c68e` decision core → `1e9de34` proof/runtime additions → `a44557a`

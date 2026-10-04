@@ -4,6 +4,7 @@ The manuscript and supporting material:
 
 - [Paper PDF](Paper_2A_Copied_Agreement_v20.pdf)
 - [LaTeX source](Paper_2A_Copied_Agreement_v20.tex)
+- [Archived paper and artefact (DOI)](https://doi.org/10.5281/zenodo.23143172)
 - [Bibliography](Paper_2A_Copied_Agreement_v20.bib)
 - [Complete technical supplement](Paper_2A_Copied_Agreement_v20_supplement.pdf)
 - [Supplement source](Paper_2A_Copied_Agreement_v20_supplement.tex)

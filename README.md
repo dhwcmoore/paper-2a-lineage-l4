@@ -3,6 +3,7 @@
 **Lineage-Grounded Audits of Claim Preservation in Data Migration — Paper 2A**
 
 [Read the paper (PDF)](document/Paper_2A_Copied_Agreement_v20.pdf)
+· [Archived paper and artefact (DOI)](https://doi.org/10.5281/zenodo.23143172)
 · [LaTeX source](document/Paper_2A_Copied_Agreement_v20.tex)
 · [Complete technical supplement](document/Paper_2A_Copied_Agreement_v20_supplement.pdf)
 · [Mechanisation scope](paper2a-extension/MECHANISATION.md)
@@ -179,7 +180,10 @@ proofs, runtime wrappers, companion checks and reference implementations.
 The manuscript is prepared for the International Journal on Software Tools for
 Technology Transfer (STTT). The decision-core source is pinned at
 [artefact commit `945c68e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/945c68e08f2d267d9a8a06ec77784a3ecc47afd9).
-The supporting artefact is permanently archived as
+The paper, supplement and supporting artefact are archived on
+[Zenodo (DOI: 10.5281/zenodo.23143172)](https://doi.org/10.5281/zenodo.23143172), pinned to commit
+`0619413077a4cb85fcc67819ec776ce414085d29`.
+The supporting source snapshot is also permanently archived as
 [`swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7`](https://archive.softwareheritage.org/swh:1:rev:bea91080c022e4891731aa7a7bf60369269b25c7/).
 Its full archive visit and public file retrieval were verified.
 [Release provenance](release/README.md) identifies the archived source and
