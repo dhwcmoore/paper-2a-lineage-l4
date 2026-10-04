@@ -1,3 +1,9 @@
+> Current Paper 2A: version 18 uses extracted L1-L4 and retained-value decision
+> cores and fourteen separately counted semantic controls. The original
+> 61/368,640/9,360 suites and their mutation studies are retained. See
+> `../../paper2a-extension/MECHANISATION.md` and `../../paper2a-extension/v18/README.md`.
+> Ground-evaluator justification, clearance and transport issuance remain external.
+
 # Paper 2A source: strengthened lineage and L4 checks
 
 This directory is the runnable source of the Paper 2A code extension. See [extension README](../../paper2a-extension/README.md) for its provenance, verification scope and integration patch, and [verification report](../../paper2a-extension/Paper_2A_Lineage_L4_Verification.md) for the detailed results.

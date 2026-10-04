@@ -1,5 +1,15 @@
 # Paper 2A extension in the copied repository
 
+## Current version 18
+
+Use the [root reproduction commands](../README.md#reproduce-the-papers-checks),
+[mechanisation scope](MECHANISATION.md) and [independent replay records](v18/README.md).
+Current L1-L4 and retained-value decisions use extracted cores. Fourteen semantic
+controls expose their remaining boundary; the 37 selected identifiers are closed.
+Ground-evaluator justification, clearance and transport issuance remain external.
+The sections below retain the original copy/integration account and its historical
+handwritten scope; they are not relabelled as current-core verification.
+
 The separately named `paper-2a-lineage-l4` repository contains the complete
 source of `grounded-transport-calculus` at starting main commit
 `139791754787025ffaf3e37f78a869bbfa8d0ea5`, together with the tested Paper 2A
@@ -87,7 +97,7 @@ No graph declaration, justification string or finite-value check establishes
 source fidelity, authenticates custody, records lineage clearance or issues a
 transport certificate.
 
-The current
-[Paper 2A version 17](../document/Paper_2A_Copied_Agreement_v17.tex) incorporates
-the extension scope and evidence. Older manuscript versions and drafts are
-removed from the current tree; the original verification records are retained.
+The historical [version 17](../document/Paper_2A_Copied_Agreement_v17.tex)
+records its extension scope. The current [version 18](../document/Paper_2A_Copied_Agreement_v18.tex)
+adds the semantic controls and independent replay. Both versions and the original
+verification records are retained.

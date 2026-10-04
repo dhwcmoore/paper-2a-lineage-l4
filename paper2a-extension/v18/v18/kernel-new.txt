@@ -1,0 +1,2 @@
+Command: coqchk -silent -R _build/default/legacy/exactness-2026 Exactness -R _build/default/theories GTC -R _build/default/examples GTCExamples GTC.Debt.LineageL4 GTC.Debt.FiniteFibreCheck GTC.Debt.LineageComposition GTCExamples.Paper2ALineage
+Working directory: /workspace/scratch/0f3d7cf399d8/paper-2a-lineage-l4

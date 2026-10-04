@@ -1,0 +1,52 @@
+Command: make check
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17/legacy/exactness-2026
+coqc Admissibility.v
+Closed under the global context
+Closed under the global context
+coqc -Q . Exactness GroundedSeam.v
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+coqc -Q . Exactness SeamExtraction.v
+ocamlc -c paper2a_verified_core.mli
+ocamlc -c paper2a_verified_core.ml
+ocamlc -c admissibility.ml
+ocamlc -c verified_fibre.ml
+ocamlc -c lineage_audit.mli
+ocamlc -c lineage_audit.ml
+ocamlc -c lineage_fibre.mli
+ocamlc -c lineage_fibre.ml
+ocamlc -o examples admissibility.ml examples.ml
+./examples > examples_output.current.txt
+cmp recorded-output/examples_output.txt examples_output.current.txt
+ocamlc -o jurisdiction admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo jurisdiction.ml
+./jurisdiction > jurisdiction_output.current.txt
+cmp expected/jurisdiction_output.txt jurisdiction_output.current.txt
+ocamlc -c seam_checks.mli
+ocamlc -c seam_checks.ml
+ocamlc -c certified_temporal_seam.mli
+ocamlc -c certified_temporal_seam.ml
+ocamlc -o interface_ok seam_checks.cmo certified_temporal_seam.cmo interface_ok.ml
+./interface_ok > interface_ok.current.txt
+grep -q "non-commuting evolution rejected at element 0" interface_ok.current.txt
+grep -q "grounded candidate certified" interface_ok.current.txt
+grep -q "rejected at request 1" interface_ok.current.txt
+direct construction rejected
+stage mismatch rejected
+ocamlc -o interface_unsafe_cast seam_checks.cmo certified_temporal_seam.cmo interface_unsafe_cast.ml
+./interface_unsafe_cast | grep -q "unsafe cast compiled"
+ocamlc -o test_lineage admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo lineage_fibre.cmo test_lineage.ml
+./test_lineage > lineage_tests.current.txt
+cat lineage_tests.current.txt
+Edge and malformed-input checks: 61 PASS
+Independent graph-reference comparisons: 368640 PASS
+Independent fibre-reference comparisons: 9360 PASS
+All lineage extension checks passed.
+ocamlc -o lineage_examples admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo lineage_fibre.cmo lineage_examples.ml
+./lineage_examples > lineage_examples.current.txt
+cmp expected/lineage_examples_output.txt lineage_examples.current.txt

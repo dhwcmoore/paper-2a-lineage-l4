@@ -1,0 +1,4 @@
+Edge and malformed-input checks: 61 PASS
+Independent graph-reference comparisons: 368640 PASS
+Independent fibre-reference comparisons: 9360 PASS
+All lineage extension checks passed.

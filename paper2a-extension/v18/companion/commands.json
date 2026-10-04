@@ -1,0 +1,232 @@
+[
+  {
+    "name": "source-revision",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "seconds": 0.003
+  },
+  {
+    "name": "coq-version",
+    "command": [
+      "coqc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.039
+  },
+  {
+    "name": "ocaml-version",
+    "command": [
+      "ocamlc",
+      "-version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "dune-version",
+    "command": [
+      "dune",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.016
+  },
+  {
+    "name": "findlib-version",
+    "command": [
+      "ocamlfind",
+      "printconf"
+    ],
+    "exit_code": 0,
+    "seconds": 0.003
+  },
+  {
+    "name": "clean-before-dune",
+    "command": [
+      "make",
+      "-C",
+      "legacy/exactness-2026",
+      "clean"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "dune-build",
+    "command": [
+      "dune",
+      "build",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "seconds": 0.731
+  },
+  {
+    "name": "kernel-companion",
+    "command": [
+      "coqchk",
+      "-silent",
+      "-R",
+      "_build/default/legacy/exactness-2026",
+      "Exactness",
+      "-R",
+      "_build/default/theories",
+      "GTC",
+      "-R",
+      "_build/default/examples",
+      "GTCExamples",
+      "GTC.Contexts.ContextualPreservation",
+      "GTC.Contexts.GroundedProper",
+      "GTC.Core.Composition",
+      "GTC.Core.Erasure",
+      "GTC.Core.GroundedTransport",
+      "GTC.Debt.Assessment",
+      "GTC.Debt.CertificateProper",
+      "GTC.Debt.Certificates",
+      "GTC.Debt.DebtClassifier",
+      "GTC.Debt.EvidenceObligations",
+      "GTC.Debt.GroundedWitness",
+      "GTC.Debt.LineageAssessment",
+      "GTC.Debt.LineageCheck",
+      "GTC.Debt.MaintenanceDebt",
+      "GTC.Debt.OriginalObligations",
+      "GTC.Debt.PackedWarrant",
+      "GTC.Debt.TransportAssessment",
+      "GTC.Debt.WarrantDebt",
+      "GTC.Instances.ExtensionalSeam",
+      "GTC.Instances.OriginalAdmissibility",
+      "GTC.Instances.OriginalDynamicSeamInstance",
+      "GTC.Instances.OriginalGroundedSeamInstance",
+      "GTC.Obstructions.FibreObstruction",
+      "GTC.Obstructions.LineageObstruction",
+      "GTC.Obstructions.UngroundedAgreement",
+      "GTCExamples.CertificateReissue",
+      "GTCExamples.CopiedCoordinates",
+      "GTCExamples.DifferentWarrants",
+      "GTCExamples.EvolutionCoverage",
+      "GTCExamples.LineageCertificates",
+      "GTCExamples.LineageChecked",
+      "GTCExamples.LineageNonComposition",
+      "GTCExamples.MaintenanceFailure",
+      "GTCExamples.SeamTransport"
+    ],
+    "exit_code": 0,
+    "seconds": 36.778
+  },
+  {
+    "name": "assumptions",
+    "command": [
+      "coqc",
+      "-R",
+      "_build/default/legacy/exactness-2026",
+      "Exactness",
+      "-R",
+      "_build/default/theories",
+      "GTC",
+      "-R",
+      "_build/default/examples",
+      "GTCExamples",
+      "FreshAssumptions.v"
+    ],
+    "exit_code": 0,
+    "seconds": 10.324
+  },
+  {
+    "name": "lineage-regression",
+    "command": [
+      "bash",
+      "extraction/run_lineage_regression.sh",
+      "/workspace/scratch/0f3d7cf399d8/verification_runs/companion/regression-work"
+    ],
+    "exit_code": 0,
+    "seconds": 14.482
+  },
+  {
+    "name": "lineage-mutations",
+    "command": [
+      "python3",
+      "extraction/mutation_matrix.py",
+      "/workspace/scratch/0f3d7cf399d8/verification_runs/companion/regression-work"
+    ],
+    "exit_code": 0,
+    "seconds": 233.572
+  },
+  {
+    "name": "kernel-all-36",
+    "command": [
+      "coqchk",
+      "-silent",
+      "-R",
+      "_build/default/legacy/exactness-2026",
+      "Exactness",
+      "-R",
+      "_build/default/theories",
+      "GTC",
+      "-R",
+      "_build/default/examples",
+      "GTCExamples",
+      "Exactness.Admissibility",
+      "Exactness.GroundedSeam",
+      "GTC.Contexts.ContextualPreservation",
+      "GTC.Contexts.GroundedProper",
+      "GTC.Core.Composition",
+      "GTC.Core.Erasure",
+      "GTC.Core.GroundedTransport",
+      "GTC.Debt.Assessment",
+      "GTC.Debt.CertificateProper",
+      "GTC.Debt.Certificates",
+      "GTC.Debt.DebtClassifier",
+      "GTC.Debt.EvidenceObligations",
+      "GTC.Debt.GroundedWitness",
+      "GTC.Debt.LineageAssessment",
+      "GTC.Debt.LineageCheck",
+      "GTC.Debt.MaintenanceDebt",
+      "GTC.Debt.OriginalObligations",
+      "GTC.Debt.PackedWarrant",
+      "GTC.Debt.TransportAssessment",
+      "GTC.Debt.WarrantDebt",
+      "GTC.Instances.ExtensionalSeam",
+      "GTC.Instances.OriginalAdmissibility",
+      "GTC.Instances.OriginalDynamicSeamInstance",
+      "GTC.Instances.OriginalGroundedSeamInstance",
+      "GTC.Obstructions.FibreObstruction",
+      "GTC.Obstructions.LineageObstruction",
+      "GTC.Obstructions.UngroundedAgreement",
+      "GTCExamples.CertificateReissue",
+      "GTCExamples.CopiedCoordinates",
+      "GTCExamples.DifferentWarrants",
+      "GTCExamples.EvolutionCoverage",
+      "GTCExamples.LineageCertificates",
+      "GTCExamples.LineageChecked",
+      "GTCExamples.LineageNonComposition",
+      "GTCExamples.MaintenanceFailure",
+      "GTCExamples.SeamTransport"
+    ],
+    "exit_code": 0,
+    "seconds": 37.246
+  },
+  {
+    "name": "isolated-classical-assumptions",
+    "command": [
+      "coqc",
+      "-R",
+      "_build/default/legacy/exactness-2026",
+      "Exactness",
+      "-R",
+      "_build/default/theories",
+      "GTC",
+      "-R",
+      "_build/default/examples",
+      "GTCExamples",
+      "FreshClassicalAssumptions.v"
+    ],
+    "exit_code": 0,
+    "seconds": 0.3
+  }
+]

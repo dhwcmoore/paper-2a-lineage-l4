@@ -1,0 +1,5 @@
+boundary controls: 14 checks passed
+raw-sharing control: L1-L4 pass; D=[]; E=[]; ignored source; evaluator failure=r_star
+claim-specific endpoint control: actual-claim admissibility=PASS/PASS; endpoint agreement=PASS; grounding witness=r_star
+injective shared tuple: factor image=2; no separation witness; defeater remains open
+No evaluator-validity proof, lineage clearance or transport certificate is issued.

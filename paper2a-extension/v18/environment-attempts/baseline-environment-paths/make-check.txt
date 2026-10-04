@@ -1,0 +1,19 @@
+Command: make check
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-baseline/legacy/exactness-2026
+coqc Admissibility.v
+Closed under the global context
+Closed under the global context
+coqc -Q . Exactness GroundedSeam.v
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+coqc -Q . Exactness SeamExtraction.v
+ocamlc -o examples admissibility.ml examples.ml
+./examples > examples_output.current.txt
+/bin/sh: 1: ./examples: not found
+make: *** [Makefile:21: ocaml] Error 127

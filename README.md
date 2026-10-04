@@ -1,11 +1,11 @@
 # Copied Agreement
 
-**Lineage-Grounded Audits of Claim Preservation in Data Migration — Paper 2A**
+**Lineage-Grounded Audits of Claim Preservation in Data Migration, Paper 2A**
 
-[Read the paper (version 17, PDF)](document/Paper_2A_Copied_Agreement_v17.pdf)
-· [LaTeX source](document/Paper_2A_Copied_Agreement_v17.tex)
+[Read the paper (version 18, PDF)](document/Paper_2A_Copied_Agreement_v18.pdf)
+· [LaTeX source](document/Paper_2A_Copied_Agreement_v18.tex)
 · [Mechanisation scope](paper2a-extension/MECHANISATION.md)
-· [Verification records](paper2a-extension/mechanisation/README.md)
+· [Independent replay records](paper2a-extension/v18/README.md)
 
 This repository contains the paper, Coq proofs, executable OCaml audit and
 reproduction evidence. The audit separates whether an observation determines a
@@ -13,12 +13,18 @@ claim, whether migrated records agree, and whether that agreement is supported
 by a ground whose declared production path can be independently assessed.
 Agreement between endpoints can preserve a shared error.
 
-Version 17 includes four lineage conditions (L1–L4), a shared-ancestry laundering
+Version 18 includes four lineage conditions (L1–L4), a shared-ancestry laundering
 countermodel, a retained-value fibre test and fixed-ground composition results.
 In the synthetic tax-migration example, endpoint comparison finds 48 disagreements
 among 1,728 records. Comparison with delivery evidence finds 74 grounding
 witnesses, including 26 records where both endpoints agree and both are wrong.
 These are finite synthetic results, not estimates of production failure rates.
+
+Version 18 adds a shared-raw-input countermodel in which L1-L4 pass while the
+ground ignores its independent source; a control where both endpoint surfaces
+determine the actual claim before grounding fails; and the injective retained-tuple
+limit. Clearance and issuance require a recorded ground-evaluator/source-use
+justification. The graph checker does not decide that assurance judgement.
 
 ## What is proved and tested
 
@@ -30,6 +36,7 @@ The new Coq development proves:
   cannot yield a positive factor, and global correctness requires complete enumeration.
 - Fixed-ground L1/L4 composition, the exact L2 coverage and L3 source-survival
   conditions, and the paper's finite composition countermodels.
+- The injective-observation limit and nine added finite boundary examples.
 
 The lineage and retained-value fibre decision cores are extracted to OCaml.
 String encoding, retention binding and validation, diagnostic reporting and
@@ -39,11 +46,13 @@ The original generic handwritten factor checker remains in the tax/static exampl
 | Verification | Recorded result |
 |---|---|
 | New Coq modules and dependency closure | Kernel checks pass |
-| Selected new theorem/example identifiers | 26 closed under the global context |
+| Selected theorem/example identifiers | 37 closed under the global context, including the original 26 |
 | Generated OCaml core | Matches fresh extraction byte for byte |
 | Edge and malformed-input checks | 61 pass |
 | Independent graph-reference comparisons | 368,640 pass |
 | Independent fibre-reference comparisons | 9,360 pass |
+| New semantic boundary controls | 14 pass, separately counted |
+| Pinned baseline and version 17 replay | Make, Dune where applicable, kernel and extraction checks pass |
 | Wrapper/diagnostic mutation suite | 18/18 compiling mutants detected |
 | Generated-core mutation suite | 6/6 compiling mutants detected |
 
@@ -76,6 +85,9 @@ coqchk -silent -R _build/default/legacy/exactness-2026 Exactness \
   -R _build/default/theories GTC -R _build/default/examples GTCExamples \
   GTC.Debt.LineageL4 GTC.Debt.FiniteFibreCheck \
   GTC.Debt.LineageComposition GTCExamples.Paper2ALineage
+coqc -R _build/default/legacy/exactness-2026 Exactness \
+  -R _build/default/theories GTC -R _build/default/examples GTCExamples \
+  paper2a-extension/v18/Assumptions.v
 
 # Run examples, interface checks and independent-reference tests.
 make -C legacy/exactness-2026 check
@@ -93,12 +105,14 @@ to ignored JSON files under `legacy/exactness-2026`. Run
 To check the recorded source and evidence hashes from the root:
 
 ```sh
-sha256sum -c paper2a-extension/mechanisation/SHA256SUMS
+sha256sum -c paper2a-extension/v18/SHA256SUMS
 ```
 
 Build the current manuscript with `make -C document`.
 [Document instructions](document/README.md) explain dependencies and cleanup.
-Older papers and drafts have been removed from the current tree.
+Version 17 remains unchanged for comparison. The historical version 17
+manifest belongs to its pinned snapshot, not to the changed version 18 tree.
+Earlier calculus drafts remain in Git history.
 
 ## Supplementary and historical checks
 
@@ -129,14 +143,15 @@ pinned and historical results; it does not replace the new mechanisation record.
 
 | Path | Content |
 |---|---|
-| `document/` | Version 17 source, PDF and build instructions |
+| `document/` | Current version 18, unchanged version 17 and build instructions |
 | `theories/Debt/LineageL4.v` | L4 and L1–L4 reflection; fixed-ground L4 composition |
-| `theories/Debt/FiniteFibreCheck.v` | Proved finite fibre decision procedure |
+| `theories/Debt/FiniteFibreCheck.v` | Proved finite fibre decision procedure and injectivity limit |
 | `theories/Debt/LineageComposition.v` | Exact composition and ancestry conditions |
-| `examples/Paper2ALineage.v` | Paper 2A's finite lineage countermodels |
+| `examples/Paper2ALineage.v` | Composition, laundering, ignored-source and endpoint countermodels |
 | `legacy/exactness-2026/` | Original Coq supplement, tax case, runtime wrappers and generated decision core |
 | `extraction/` | Extraction, regeneration checks and companion regression |
-| `paper2a-extension/mechanisation/` | Current local verification records and source/evidence hashes |
+| `paper2a-extension/v18/` | Independent pinned replays, current records and source/evidence hashes |
+| `paper2a-extension/mechanisation/` | Historical version 17 mechanisation records |
 | `paper2a-extension/baseline/` | Frozen historical handwritten audit |
 | `paper2a-extension/verification/`, `paper2a-extension/integration/` | Historical extension verification records |
 | `theories/`, `examples/` | Supporting Grounded Transport calculus and demonstrations |
@@ -152,8 +167,10 @@ and mechanisation added. The three baseline Coq sources are unchanged.
 baseline, handwritten extension, companion and current extracted-core integration.
 
 The manuscript's intended venue is the Journal of Logic and Computation.
-The mechanised source and verification records are pinned at
+The historical version 17 mechanised source and verification records are pinned at
 [artefact commit `945c68e`](https://github.com/dhwcmoore/paper-2a-lineage-l4/tree/945c68e08f2d267d9a8a06ec77784a3ecc47afd9).
-The subsequent manuscript update cites that revision.
+The version 17 manuscript update cites that revision. Version 18 adds its
+separately recorded controls and source/evidence manifest. No metric supplement
+is included in this repository; the current artefact is an exact audit.
 A persistent reviewer archive identifier remains to be assigned after deposit and
 public retrieval verification; no new DOI or publication status is claimed here.

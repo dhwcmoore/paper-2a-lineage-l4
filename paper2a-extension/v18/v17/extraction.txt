@@ -1,0 +1,2 @@
+Command: bash extraction/verify_paper2a_extraction.sh
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17

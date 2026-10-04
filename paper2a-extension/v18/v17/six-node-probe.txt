@@ -1,0 +1,3 @@
+Command: bash paper2a-extension/Paper_2A_L4_Six_Node_Probe/run.sh
+Working directory: /workspace/scratch/0f3d7cf399d8/paper2a-pinned-v17
+{"graphs":16384,"assessments":262144,"reference_mismatches":0,"pass_L1_L2_L3":4724,"pass_L1_L2_L3_L4":4157,"pass_123_fail_4_assessments":567,"pass_123_fail_4_unique_graphs":186,"fixed_relevance_r1_and_L2_disclosed_graphs_pass_123":352,"fixed_relevance_r1_and_L2_disclosed_graphs_pass_123_fail_4":96,"first_laundering_graph_mask":3088}

@@ -1,5 +1,5 @@
 # Build the current Paper 2A manuscript; requires latexmk and pdflatex.
-PAPER2A = Paper_2A_Copied_Agreement_v17
+PAPER2A = Paper_2A_Copied_Agreement_v18
 
 .PHONY: all clean
 all: $(PAPER2A).pdf

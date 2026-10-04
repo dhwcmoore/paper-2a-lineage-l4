@@ -1,0 +1,57 @@
+[
+  {
+    "name": "source-revision",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "seconds": 0.003
+  },
+  {
+    "name": "coq-version",
+    "command": [
+      "coqc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.033
+  },
+  {
+    "name": "ocaml-version",
+    "command": [
+      "ocamlc",
+      "-version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "dune-version",
+    "command": [
+      "dune",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.011
+  },
+  {
+    "name": "findlib-version",
+    "command": [
+      "ocamlfind",
+      "printconf"
+    ],
+    "exit_code": 0,
+    "seconds": 0.002
+  },
+  {
+    "name": "make-check",
+    "command": [
+      "make",
+      "check"
+    ],
+    "exit_code": 2,
+    "seconds": 1.394
+  }
+]

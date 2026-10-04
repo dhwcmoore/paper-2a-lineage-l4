@@ -1,0 +1,179 @@
+[
+  {
+    "name": "source-revision",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "seconds": 0.003
+  },
+  {
+    "name": "coq-version",
+    "command": [
+      "coqc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.031
+  },
+  {
+    "name": "ocaml-version",
+    "command": [
+      "ocamlc",
+      "-version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.005
+  },
+  {
+    "name": "dune-version",
+    "command": [
+      "dune",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.014
+  },
+  {
+    "name": "findlib-version",
+    "command": [
+      "ocamlfind",
+      "printconf"
+    ],
+    "exit_code": 0,
+    "seconds": 0.003
+  },
+  {
+    "name": "clean-before-dune",
+    "command": [
+      "make",
+      "-C",
+      "legacy/exactness-2026",
+      "clean"
+    ],
+    "exit_code": 0,
+    "seconds": 0.008
+  },
+  {
+    "name": "dune-build",
+    "command": [
+      "dune",
+      "build",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "seconds": 0.494
+  },
+  {
+    "name": "extraction",
+    "command": [
+      "bash",
+      "extraction/verify_paper2a_extraction.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 0.743
+  },
+  {
+    "name": "kernel-new",
+    "command": [
+      "coqchk",
+      "-silent",
+      "-R",
+      "_build/default/legacy/exactness-2026",
+      "Exactness",
+      "-R",
+      "_build/default/theories",
+      "GTC",
+      "-R",
+      "_build/default/examples",
+      "GTCExamples",
+      "GTC.Debt.LineageL4",
+      "GTC.Debt.FiniteFibreCheck",
+      "GTC.Debt.LineageComposition",
+      "GTCExamples.Paper2ALineage"
+    ],
+    "exit_code": 0,
+    "seconds": 50.594
+  },
+  {
+    "name": "assumptions",
+    "command": [
+      "coqc",
+      "-R",
+      "_build/default/legacy/exactness-2026",
+      "Exactness",
+      "-R",
+      "_build/default/theories",
+      "GTC",
+      "-R",
+      "_build/default/examples",
+      "GTCExamples",
+      "FreshAssumptions.v"
+    ],
+    "exit_code": 0,
+    "seconds": 1.895
+  },
+  {
+    "name": "make-check",
+    "command": [
+      "make",
+      "check"
+    ],
+    "exit_code": 0,
+    "seconds": 45.193
+  },
+  {
+    "name": "kernel-admissibility",
+    "command": [
+      "coqchk",
+      "Admissibility"
+    ],
+    "exit_code": 0,
+    "seconds": 19.925
+  },
+  {
+    "name": "kernel-seam",
+    "command": [
+      "coqchk",
+      "-Q",
+      ".",
+      "Exactness",
+      "Exactness.GroundedSeam",
+      "Exactness.SeamExtraction"
+    ],
+    "exit_code": 0,
+    "seconds": 40.939
+  },
+  {
+    "name": "wrapper-mutations",
+    "command": [
+      "python3",
+      "mutation_check.py",
+      "--json",
+      "/workspace/scratch/0f3d7cf399d8/verification_runs/v17/wrapper-mutations.json"
+    ],
+    "exit_code": 0,
+    "seconds": 88.371
+  },
+  {
+    "name": "core-mutations",
+    "command": [
+      "python3",
+      "mutation_verified_core.py"
+    ],
+    "exit_code": 0,
+    "seconds": 79.313
+  },
+  {
+    "name": "six-node-probe",
+    "command": [
+      "bash",
+      "paper2a-extension/Paper_2A_L4_Six_Node_Probe/run.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 9.513
+  }
+]

@@ -1,8 +1,27 @@
 # Status (2026-10-02, submission verification)
 
+## Current Paper 2A state, 4 October 2026
+
+The default document build selects version 18; version 17 is retained unchanged.
+The lineage and retained-value decision cores are extracted. Nine added finite
+Coq examples, two injectivity lemmas and fourteen semantic controls are checked.
+All 37 selected identifiers are closed under the global context. Builds, kernel
+checks, extraction, original reference counts and the 18/6 mutation studies pass.
+
+The original `51284d0` baseline, `945c68e` mechanised extension and `e1e14a2`
+companion were independently replayed. All reported test counts reproduce.
+[Current evidence](paper2a-extension/v18/README.md) retains complete commands,
+outcomes and source hashes. The source-use/evaluator obligation is an assurance
+judgement, not a checker decision. No metric supplement or new archive DOI is
+included in this release.
+
+The dated companion sections below retain historical document paths, page counts
+and open tasks. Replacing the handwritten decision core is completed for the
+current Paper 2A driver; that historical item is not a current Paper 2A open task.
+
 This file records the copied companion's pinned and historical results.
 Manuscript paths and page counts in the dated sections below describe historical
-states; the current tree retains only Paper 2A version 17 in `document/`. In this
+states; the current tree retains Paper 2A versions 18 and 17 in `document/`. In this
 Paper 2A repository, the three baseline Coq source files remain unchanged, but
 the OCaml implementation under `legacy/exactness-2026` has been extended.
 The companion regression uses the frozen historical audit under
@@ -392,7 +411,7 @@ institutional debt. Certificates are ISSUED outside the kernel.
 - "Only X flagged" means one failure under the declared history stated at the top
   of each example; the categories are diagnostic loci, not a partition.
 
-## Open
+## Historical companion open items
 1. Replace the handwritten audit's decision core with the extracted checker in
    the case-study driver (the audit is otherwise done: Coq checker <-> Coq spec is
    proved; Coq checker vs OCaml is regression-tested).

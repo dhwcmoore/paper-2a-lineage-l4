@@ -1,9 +1,9 @@
 COQC ?= coqc
 OCAMLC ?= ocamlc
 
-.PHONY: check check-versions coq ocaml interface lineage-build lineage-tests clean
+.PHONY: check check-versions coq ocaml interface lineage-build lineage-tests boundary-controls clean
 
-check: check-versions coq ocaml interface lineage-tests
+check: check-versions coq ocaml interface lineage-tests boundary-controls
 
 check-versions:
 	@$(COQC) --version | grep -q "version 8.18.0" || \
@@ -42,6 +42,12 @@ lineage-tests: lineage-build
 	./lineage_examples > lineage_examples.current.txt
 	cmp expected/lineage_examples_output.txt lineage_examples.current.txt
 
+boundary-controls: lineage-build
+	$(OCAMLC) -o boundary_controls admissibility.cmo paper2a_verified_core.cmo verified_fibre.cmo lineage_audit.cmo lineage_fibre.cmo boundary_controls.ml
+	./boundary_controls > boundary_controls.current.txt
+	cat boundary_controls.current.txt
+	cmp expected/boundary_controls_output.txt boundary_controls.current.txt
+
 interface: coq
 	$(OCAMLC) -c seam_checks.mli
 	$(OCAMLC) -c seam_checks.ml
@@ -63,7 +69,7 @@ interface: coq
 
 clean:
 	rm -f *.aux *.cmi *.cmo *.cmx *.o *.vo *.vos *.vok *.glob \
-	  examples jurisdiction interface_ok interface_unsafe_cast test_lineage lineage_examples \
+	  examples jurisdiction interface_ok interface_unsafe_cast test_lineage lineage_examples boundary_controls \
 	  examples_output.current.txt jurisdiction_output.current.txt interface_ok.current.txt \
-	  lineage_tests.current.txt lineage_examples.current.txt \
+	  lineage_tests.current.txt lineage_examples.current.txt boundary_controls.current.txt \
 	  direct_forge.log stage_mismatch.log seam_checks.ml seam_checks.mli .*.aux .lia.cache

@@ -1,0 +1,17 @@
+Command: dune build --root .
+Working directory: /workspace/scratch/0f3d7cf399d8/gtc-pinned-companion
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+evolution_crossing_proper Vok e01 ok_preserves
+     : CrossingProper (sp sys false) (vA Vok false) 
+         (vB Vok false) (vS Vok false) (sp sys true) 
+         (vA Vok true) (vB Vok true) (vS Vok true) 
+         (evo_state e01)

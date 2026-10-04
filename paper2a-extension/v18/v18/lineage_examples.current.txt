@@ -1,0 +1,11 @@
+ground equals A: L1=false L2=true L3=false L4=false qualified=false open-coordinate=[] open-ground=[] coverage-gaps=0
+ground equals B: L1=false L2=true L3=false L4=false qualified=false open-coordinate=[] open-ground=[] coverage-gaps=0
+direct raw ground: L1=true L2=true L3=true L4=true qualified=true open-coordinate=[] open-ground=[] coverage-gaps=0
+laundering, undisclosed: L1=true L2=true L3=true L4=false qualified=false open-coordinate=[] open-ground=[] coverage-gaps=0
+laundering, disclosed open: L1=true L2=true L3=true L4=true qualified=true open-coordinate=[] open-ground=[s] coverage-gaps=0
+coverage gap retained: L1=true L2=true L3=true L4=true qualified=true open-coordinate=[] open-ground=[] coverage-gaps=1
+copied status: factors through retained shared values; image=1; no causal conclusion
+trace valuation: witness r_ok / r_star; same shared values, ground=true / false; no causal conclusion
+copied status, sample: NoWitnessFound on incomplete carrier
+trace witness, sample: witness r_ok / r_star; same shared values, ground=true / false; no causal conclusion
+No lineage-clearance judgement or transport certificate is issued.
